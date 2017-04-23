@@ -1,0 +1,190 @@
+<ion-header>
+  <ion-navbar>
+    
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  
+    
+    <ion-title text-center>ON-Demand</ion-title>
+    
+    <ion-buttons right>
+      <button ion-button icon-only>
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    
+    
+  </ion-navbar>
+  
+  <ion-toolbar>
+  
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="notifications"></ion-icon>
+        <ion-badge item-right>2</ion-badge>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="car"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="heart"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="cash"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+  
+  
+  
+</ion-header>
+
+<ion-content>
+
+
+    <div padding>
+      <ion-segment [(ngModel)]="onDemand">
+        <ion-segment-button value="drivers">
+          Drivers
+        </ion-segment-button>
+        <ion-segment-button value="listings">
+          Listings
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    
+    <section #map id="map"></section>
+    
+    <div [ngSwitch]="onDemand">
+      
+      <div *ngSwitchCase="'drivers'">
+        
+        
+        
+        <ion-content>
+          <ion-row>
+              <ion-col>
+                  <img src="assets/rasvi.jpg">
+              </ion-col>
+          </ion-row>
+          
+        </ion-content>
+        
+
+      </div>
+      
+    <ion-card *ngSwitchCase="'listings'">
+
+        <ion-row center>
+          <ion-col width-33>
+                <ion-img width="100" height="100" src="assets/rasvi.jpg"></ion-img>
+
+          </ion-col>
+          <ion-col width-50>
+              <div>123, Calle Chingon,</div>
+              <div>San Diego, Ca 91910</div>
+                          
+            
+          </ion-col>
+          
+           <ion-col>
+              <div>
+                <button ion-button icon-only>
+                  <ion-icon name="navigate"></ion-icon></button>
+              </div>
+              
+              <div>
+                <button ion-button icon-left color="danger" small (click)="openModal({driver: 'Tom'})">
+                    <ion-icon name="star"></ion-icon> Rate
+                </button>
+              </div>
+              
+            
+          </ion-col>
+          
+        </ion-row>
+
+        
+        <ion-row center>
+          <ion-col>
+                <ion-img width="100" height="100" src="assets/rasvi.jpg"></ion-img>
+
+          </ion-col>
+          <ion-col>
+              <div>123, Calle Chingon,</div>
+              <div>San Diego, Ca 91910</div>
+                          
+            
+          </ion-col>
+          
+           <ion-col>
+              <div>
+                <button ion-button icon-only>
+                  <ion-icon name="navigate"></ion-icon></button>
+              </div>
+              
+              <div>
+                <button ion-button icon-left color="danger" small (click)="openModal({driver: 'Bill'})">
+                    <ion-icon name="star"></ion-icon> Rate
+                </button>
+              </div>
+              
+            
+          </ion-col>
+          
+        </ion-row>
+        
+        
+        <ion-row center>
+          <ion-col width-33>
+                <ion-img width="100" height="100" src="assets/rasvi.jpg"></ion-img>
+
+          </ion-col>
+          <ion-col width-50>
+              <div>123, Calle Chingon,</div>
+              <div>San Diego, Ca 91910</div>
+                          
+            
+          </ion-col>
+          
+           <ion-col>
+              <div>
+                <button ion-button icon-only>
+                  <ion-icon name="navigate"></ion-icon></button>
+              </div>
+              
+              <div>
+                <button ion-button icon-left color="danger" small (click)="openModal({driver: 'Rasvi'})">
+                    <ion-icon name="star"></ion-icon> Rate
+                </button>
+              </div>
+              
+            
+          </ion-col>
+          
+        </ion-row>
+
+      </ion-card>
+      
+    </div>
+    
+
+</ion-content>

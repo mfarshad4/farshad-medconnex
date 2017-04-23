@@ -1,0 +1,149 @@
+<ion-header>
+  <ion-navbar>
+    
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  
+    
+    <ion-title text-center>Reservations</ion-title>
+    
+    <ion-buttons right>
+      <button ion-button icon-only>
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    
+    
+  </ion-navbar>
+  
+  <ion-toolbar>
+  
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="notifications"></ion-icon>
+        <ion-badge item-right>2</ion-badge>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="car"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="heart"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="cash"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+  
+  
+  
+</ion-header>
+
+<ion-content>
+
+    <img src="assets/reservationBanner.png" />
+
+    <div padding>
+      <ion-segment [(ngModel)]="reservations">
+        <ion-segment-button value="schedule">
+          Schedule
+        </ion-segment-button>
+        <ion-segment-button value="info">
+          Info
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    
+    
+    <div [ngSwitch]="reservations">
+      
+      <div *ngSwitchCase="'schedule'">
+
+        <ion-title text-center>Schedule an Appointment</ion-title>
+            
+            <div text-center>
+              
+              <p padding>As soon as we receive your information, we'll be in touch to confirm your appointment</p>
+              
+              <ion-list>
+                  <ion-item>
+                      <ion-input type="text" placeholder="Full Name"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-input type="email" placeholder="Email"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-input type="phone" placeholder="Phone"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Preferred Date</ion-label>
+                      <ion-input type="date" ></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Preferred Time</ion-label>
+                      <ion-input type="time"></ion-input>
+                  </ion-item>
+              </ion-list>
+              
+              <button ion-button round big color="danger">
+                  Request an Appointment
+              </button>
+              
+          </div>
+        
+      </div>
+      
+      
+      
+      <div *ngSwitchCase="'info'">
+        
+          <div text-center>
+            <p>Book your Reservation TODAY</p>
+            <p>123 Calle Chingon, San Diego, CA 91910</p>
+            <p>Time Slots Available for Booking</p>
+          </div>  
+          
+          <ion-list>
+              
+              <ion-item>
+                Sunday - Friday    6:00 AM - 11:00 PM
+              </ion-item>
+              
+              <ion-item>
+                Saturday           6:00 AM - 10:30 PM
+              </ion-item>
+              
+          </ion-list>
+
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    <ion-card>
+    
+        <img src="assets/adbanner.png"/>
+    
+    </ion-card>
+
+</ion-content>

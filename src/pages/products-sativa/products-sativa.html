@@ -1,0 +1,350 @@
+
+<ion-content>
+  
+  <ion-segment [(ngModel)]="sativa_products">
+      <ion-segment-button value="flowers">
+        Flowers
+      </ion-segment-button>
+      <ion-segment-button value="edibles">
+        Edibles
+      </ion-segment-button>
+      <ion-segment-button value="vape_pens">
+        Vape Pens
+      </ion-segment-button>
+      <ion-segment-button value="beverages">
+        Beverages
+      </ion-segment-button>
+  </ion-segment>
+  
+  
+  <div [ngSwitch]="sativa_products">
+ 
+    <ion-row center *ngSwitchCase="'flowers'">
+      <ion-col>
+        <ion-card>
+          
+          <img src="assets/dank.jpg" (click)="openProductInfo()"/>
+          
+          <ion-card-content>
+            <p>
+              BLR
+            </p>
+          </ion-card-content>
+
+          <ion-item>
+            
+            <button ion-button icon-left clear item-left>
+              <ion-icon name="heart"></ion-icon>
+              
+            </button>
+        
+            <button ion-button icon-left clear item-left>
+              <ion-icon name="share-alt"></ion-icon>
+              
+            </button>
+            
+            <button ion-button icon-left clear item-left (click)="addToCart('15')">
+              Add to Cart
+              
+            </button>
+        
+            <button ion-button icon-left clear item-right>
+              <ion-icon name="cart"></ion-icon>
+                  $35.00
+            </button>
+          </ion-item>
+
+        </ion-card>
+        
+      </ion-col>
+      
+      <ion-col>              
+        
+        <ion-card>
+
+          <img src="assets/dank1.jpg"/>
+
+          <ion-card-content>
+      
+            <p>
+              Bloody Kush
+            </p>
+          </ion-card-content>
+
+          <ion-item>
+            
+            <button ion-button icon-left clear item-left>
+              <ion-icon name="heart"></ion-icon>
+              
+            </button>
+        
+            <button ion-button icon-left clear item-left>
+              <ion-icon name="share-alt"></ion-icon>
+              
+            </button>
+            
+            <button ion-button icon-left clear item-left>
+              Add to Cart
+              
+            </button>
+        
+            <button ion-button icon-left clear item-right>
+              <ion-icon name="cart"></ion-icon>
+                  $50.00
+            </button>
+          </ion-item>
+
+        </ion-card>
+              
+      </ion-col>
+      
+    </ion-row>
+    
+    
+    <ion-row center *ngSwitchCase="'edibles'">
+      <ion-col>
+        <ion-card>
+          
+          <img src="assets/dank.jpg" (click)="openProductInfo()"/>
+          
+          <ion-card-content>
+            <p>
+              BLR
+            </p>
+          </ion-card-content>
+
+          <ion-item>
+            
+            <button ion-button icon-left clear item-left>
+              <ion-icon name="heart"></ion-icon>
+              
+            </button>
+        
+            <button ion-button icon-left clear item-left>
+              <ion-icon name="share-alt"></ion-icon>
+              
+            </button>
+            
+            <button ion-button icon-left clear item-left>
+              Add to Cart
+              
+            </button>
+        
+            <button ion-button icon-left clear item-right>
+              <ion-icon name="cart"></ion-icon>
+                  $50.00
+            </button>
+          </ion-item>
+
+        </ion-card>
+        
+      </ion-col>
+      
+      <ion-col>              
+        
+        <ion-card>
+
+          <img src="assets/dank1.jpg"/>
+
+          <ion-card-content>
+      
+            <p>
+              Bloody Kush
+            </p>
+          </ion-card-content>
+
+          <ion-item>
+            
+            <button ion-button icon-left clear item-left>
+              <ion-icon name="heart"></ion-icon>
+              
+            </button>
+        
+            <button ion-button icon-left clear item-left>
+              <ion-icon name="share-alt"></ion-icon>
+              
+            </button>
+            
+            <button ion-button icon-left clear item-left>
+              Add to Cart
+              
+            </button>
+        
+            <button ion-button icon-left clear item-right>
+              <ion-icon name="cart"></ion-icon>
+                  $50.00
+            </button>
+          </ion-item>
+
+        </ion-card>
+              
+      </ion-col>
+      
+    </ion-row>
+    
+    
+    <ion-row center *ngSwitchCase="'vape_pens'">
+      <ion-col>
+        <ion-card>
+          
+          <img src="assets/dank.jpg" (click)="openProductInfo()"/>
+          
+          <ion-card-content>
+            <p>
+              BLR
+            </p>
+          </ion-card-content>
+
+          <ion-item>
+            
+            <button ion-button icon-left clear item-left>
+              <ion-icon name="heart"></ion-icon>
+              
+            </button>
+        
+            <button ion-button icon-left clear item-left>
+              <ion-icon name="share-alt"></ion-icon>
+              
+            </button>
+            
+            <button ion-button icon-left clear item-left>
+              Add to Cart
+              
+            </button>
+        
+            <button ion-button icon-left clear item-right>
+              <ion-icon name="cart"></ion-icon>
+                  $50.00
+            </button>
+          </ion-item>
+
+        </ion-card>
+        
+      </ion-col>
+      
+      <ion-col>              
+        
+        <ion-card>
+
+          <img src="assets/dank1.jpg"/>
+
+          <ion-card-content>
+      
+            <p>
+              Bloody Kush
+            </p>
+          </ion-card-content>
+
+          <ion-item>
+            
+            <button ion-button icon-left clear item-left>
+              <ion-icon name="heart"></ion-icon>
+              
+            </button>
+        
+            <button ion-button icon-left clear item-left>
+              <ion-icon name="share-alt"></ion-icon>
+              
+            </button>
+            
+            <button ion-button icon-left clear item-left>
+              Add to Cart
+              
+            </button>
+        
+            <button ion-button icon-left clear item-right>
+              <ion-icon name="cart"></ion-icon>
+                  $50.00
+            </button>
+          </ion-item>
+
+        </ion-card>
+              
+      </ion-col>
+      
+    </ion-row>
+    
+    
+    <ion-row center *ngSwitchCase="'beverages'">
+      <ion-col>
+        <ion-card>
+          
+          <img src="assets/dank.jpg" (click)="openProductInfo()"/>
+          
+          <ion-card-content>
+            <p>
+              BLR
+            </p>
+          </ion-card-content>
+
+          <ion-item>
+            
+            <button ion-button icon-left clear item-left>
+              <ion-icon name="heart"></ion-icon>
+              
+            </button>
+        
+            <button ion-button icon-left clear item-left>
+              <ion-icon name="share-alt"></ion-icon>
+              
+            </button>
+            
+            <button ion-button icon-left clear item-left>
+              Add to Cart
+              
+            </button>
+        
+            <button ion-button icon-left clear item-right>
+              <ion-icon name="cart"></ion-icon>
+                  $50.00
+            </button>
+          </ion-item>
+
+        </ion-card>
+        
+      </ion-col>
+      
+      <ion-col>              
+        
+        <ion-card>
+
+          <img src="assets/dank1.jpg"/>
+
+          <ion-card-content>
+      
+            <p>
+              Bloody Kush
+            </p>
+          </ion-card-content>
+
+          <ion-item>
+            
+            <button ion-button icon-left clear item-left>
+              <ion-icon name="heart"></ion-icon>
+              
+            </button>
+        
+            <button ion-button icon-left clear item-left>
+              <ion-icon name="share-alt"></ion-icon>
+              
+            </button>
+            
+            <button ion-button icon-left clear item-left>
+              Add to Cart
+              
+            </button>
+        
+            <button ion-button icon-left clear item-right>
+              <ion-icon name="cart"></ion-icon>
+                  $50.00
+            </button>
+          </ion-item>
+
+        </ion-card>
+              
+      </ion-col>
+      
+    </ion-row>    
+    
+  </div>
+</ion-content>

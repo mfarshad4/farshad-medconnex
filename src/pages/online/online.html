@@ -1,0 +1,155 @@
+<ion-header>
+  <ion-navbar>
+    
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  
+    
+    <ion-title text-center>Online</ion-title>
+    
+    <ion-buttons right>
+      <button ion-button icon-only>
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    
+    
+  </ion-navbar>
+  
+  <ion-toolbar>
+  
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="notifications"></ion-icon>
+        <ion-badge item-right>2</ion-badge>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="car"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="heart"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="cash"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+  
+  
+  
+</ion-header>
+
+<ion-content>
+
+
+    <div padding>
+      <ion-segment [(ngModel)]="online">
+        <ion-segment-button value="following">
+          Following
+        </ion-segment-button>
+        <ion-segment-button value="you">
+          You
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    
+    
+    <div [ngSwitch]="online">
+      
+      <ion-card *ngSwitchCase="'following'">
+
+          <ion-item>
+          <ion-avatar item-left>
+            <img src="assets/wesley.png">
+          </ion-avatar>
+          <h2>Wesley</h2>
+        </ion-item>
+
+        <img src="assets/following.png">
+
+        <ion-card-content>
+          <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+        </ion-card-content>
+
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>12 Likes</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="text"></ion-icon>
+              <div>4 Comments</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+            <ion-note>
+              11h ago
+            </ion-note>
+          </ion-col>
+        </ion-row>
+        
+
+      </ion-card>
+      
+    <ion-card *ngSwitchCase="'you'">
+
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="assets/wesley.png">
+          </ion-avatar>
+          <h2>Wesley</h2>
+        </ion-item>
+
+        <img src="assets/following.png">
+
+        <ion-card-content>
+          <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+        </ion-card-content>
+
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>12 Likes</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="text"></ion-icon>
+              <div>4 Comments</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+            <ion-note>
+              11h ago
+            </ion-note>
+          </ion-col>
+        </ion-row>
+
+      </ion-card>
+      
+    </div>
+    
+
+</ion-content>

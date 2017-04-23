@@ -1,0 +1,25 @@
+<ion-menu [content]="content">
+  
+  
+  <ion-content>
+    <ion-list>
+  <ion-item>
+    <ion-thumbnail item-left>
+      <img src="assets/rasvi.jpg">
+    </ion-thumbnail>
+    <h2>Angelo</h2>
+    <p>Driver</p>
+    
+  </ion-item>
+</ion-list>
+    
+    <ion-list sliding>
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

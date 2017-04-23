@@ -1,0 +1,180 @@
+<ion-header>
+  <ion-navbar>
+    
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  
+    
+    <ion-title text-center>Driver's Documents</ion-title>
+    
+    <ion-buttons right>
+      <button ion-button icon-only>
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    
+    
+  </ion-navbar>
+  
+  <ion-toolbar>
+  
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="notifications"></ion-icon>
+        <ion-badge item-right>2</ion-badge>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="car"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="heart"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="cash"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+  
+  
+  
+</ion-header>
+
+<ion-content>
+
+    
+    <div padding>
+      <ion-segment [(ngModel)]="drivers_documents">
+        <ion-segment-button value="upload">
+          Upload 
+        </ion-segment-button>
+        <ion-segment-button value="documents">
+          Documents
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    
+    
+    <div [ngSwitch]="drivers_documents">
+      
+      <div *ngSwitchCase="'upload'">
+
+        <ion-title text-center>Upload Documents</ion-title>
+            
+            <div>
+              
+              
+              <ion-grid>
+                  <ion-row>
+                      <ion-col>
+                          <ion-input type="file" placeholder="Full Name"></ion-input>
+                      </ion-col>
+                      <ion-col>
+                          <ion-input type="file"></ion-input>
+                      </ion-col>
+                  </ion-row>
+                  
+              </ion-grid>
+              
+              
+          </div>
+        
+      </div>
+      
+      
+      
+      <div *ngSwitchCase="'documents'">
+        
+          <ion-row center>
+          <ion-col width-33>
+                <ion-img width="100" height="100" src="assets/rasvi.jpg"></ion-img>
+
+          </ion-col>
+          <ion-col width-50>
+              <div>Driver's License</div>
+              <div>1 Week ago</div>
+              <div>
+                  <button ion-button icon-left outline>
+                      <ion-icon name="trash"></ion-icon>
+                      Delete
+                  </button>
+              </div>
+                          
+            
+          </ion-col>
+          
+        </ion-row>
+
+        
+        <ion-row center>
+          <ion-col width-33>
+                <ion-img width="100" height="100" src="assets/rasvi.jpg"></ion-img>
+
+          </ion-col>
+          <ion-col width-50>
+              <div>Driver's License</div>
+              <div>1 Week ago</div>
+              <div>
+                  <button ion-button icon-left outline>
+                      <ion-icon name="trash"></ion-icon>
+                      Delete
+                  </button>
+              </div>
+                          
+            
+          </ion-col>
+          
+        </ion-row>
+        
+        
+        <ion-row center>
+          <ion-col width-33>
+                <ion-img width="100" height="100" src="assets/rasvi.jpg"></ion-img>
+
+          </ion-col>
+          <ion-col width-50>
+              <div>Driver's License</div>
+              <div>1 Week ago</div>
+              <div>
+                  <button ion-button icon-left outline>
+                      <ion-icon name="trash"></ion-icon>
+                      Delete
+                  </button>
+              </div>
+                          
+            
+          </ion-col>
+          
+        </ion-row>
+
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    <ion-card>
+    
+        <img src="assets/adbanner.png"/>
+    
+    </ion-card>
+
+</ion-content>

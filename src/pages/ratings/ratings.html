@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-navbar>
+    
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  
+    
+    <ion-title text-center>Ratings and Reviews</ion-title>
+    
+    <ion-buttons right>
+      <button ion-button icon-only>
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    
+    
+  </ion-navbar>
+  
+  <ion-toolbar>
+  
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="notifications"></ion-icon>
+        <ion-badge item-right>2</ion-badge>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="car"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="heart"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="cash"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+  
+  
+  
+</ion-header>
+
+<ion-content>
+
+
+    <div padding>
+      <ion-segment [(ngModel)]="rate">
+        <ion-segment-button value="reviews">
+          Reviews
+        </ion-segment-button>
+        <ion-segment-button value="ratings">
+          Ratings
+        </ion-segment-button>
+        <ion-segment-button value="quality">
+          Quality
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    
+    <div [ngSwitch]="rate">
+      
+      <ion-card *ngSwitchCase="'reviews'">
+
+        
+
+      </ion-card>
+      
+      
+      <ion-card *ngSwitchCase="'ratings'">
+
+        
+
+      </ion-card>
+      
+      <ion-card *ngSwitchCase="'quality'">
+
+        
+
+      </ion-card>
+      
+      
+    </div>
+    
+
+</ion-content>

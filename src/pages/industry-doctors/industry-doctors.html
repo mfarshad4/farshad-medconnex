@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-navbar>
+    
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  
+    
+    <ion-title text-center>Industry Doctors</ion-title>
+    
+    <ion-buttons right>
+      <button ion-button icon-only>
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    
+    
+  </ion-navbar>
+  
+  <ion-toolbar>
+  
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="notifications"></ion-icon>
+        <ion-badge item-right>2</ion-badge>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="car"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="heart"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="cash"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+  
+  
+  
+</ion-header>
+
+<ion-content>
+
+    
+    <div>
+      
+      <ion-card>
+        
+        <ion-row center *ngFor="let doctor of doctors">
+          
+          <ion-col width-33>
+                <ion-img width="100" height="100" src="assets/rasvi.jpg"></ion-img>
+
+          </ion-col>
+          
+          <ion-col width-50>
+              <div>{{doctor.address}}</div>
+              
+          </ion-col>
+          
+           <ion-col>
+              <div>
+                <button ion-button icon-only (click)="openLoadingAdvert(doctor.id)">
+                  <ion-icon name="navigate"></ion-icon></button>
+              </div>
+              
+              <div>
+                <button ion-button icon-left color="danger" small >
+                    <ion-icon name="star"></ion-icon> Review
+                </button>
+              </div>
+              
+          </ion-col>
+          
+        </ion-row>
+
+      </ion-card>
+      
+      
+    </div>
+    
+
+</ion-content>

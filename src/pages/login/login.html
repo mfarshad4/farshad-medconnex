@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  
+    
+    <ion-title text-center>Login</ion-title>
+    
+    <ion-buttons right>
+      <button ion-button icon-only>
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    
+    
+  </ion-navbar>
+  
+  
+</ion-header>
+
+<ion-content>
+            
+          <div text-center>
+             
+              <img src="assets/medconnex-logo.png" />
+              
+              <form (ngSubmit)="login()" #registerForm="ngForm">
+                  <ion-row>
+                    <ion-col>
+                      <ion-list inset>
+            
+                        <ion-item>
+                          <ion-input type="text" placeholder="Phone" name="phone" [(ngModel)]="registerCredentials.phone" required></ion-input>
+                        </ion-item>
+            
+                        <ion-item>
+                          <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+                        </ion-item>
+            
+                      </ion-list>
+                    </ion-col>
+                  </ion-row>
+      
+                  <ion-row>
+                    <ion-col class="signup-col">
+                      <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Login</button>
+                      <button ion-button class="register-btn" block clear (click)="createAccount()">Create New Account</button>
+                    </ion-col>
+                  </ion-row>
+      
+              </form>
+              
+          </div>
+
+</ion-content>

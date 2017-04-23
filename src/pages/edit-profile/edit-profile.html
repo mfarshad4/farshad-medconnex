@@ -1,0 +1,138 @@
+<ion-header>
+  <ion-navbar>
+    
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  
+    
+    <ion-title text-center>Edit Profile</ion-title>
+    
+    <ion-buttons right>
+      <button ion-button icon-only>
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    
+    
+  </ion-navbar>
+  
+  <ion-toolbar>
+  
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="notifications"></ion-icon>
+        <ion-badge item-right>2</ion-badge>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="car"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="heart"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons left padding-horizontal>
+      <button ion-button icon-only>
+        <ion-icon name="cash"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+  
+  
+  
+</ion-header>
+
+
+
+<ion-content>
+      
+      <ion-row center>
+          <ion-col offset-33 padding>
+              <div><ion-img width="140" height="140" src="assets/rasvi.jpg"></ion-img></div>
+              
+              <div>
+                    <button ion-button icon-left clear small>
+                      <ion-icon name="create"></ion-icon>
+                      <div>Edit Picture</div>
+                    </button>
+              </div>
+              
+          </ion-col>
+          
+      </ion-row>
+      
+      
+      <ion-list>
+
+        <ion-item>
+          <ion-label>Full Name</ion-label>
+          <ion-input type="text" Value="Bill Gates"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>About Me</ion-label>
+          <ion-textarea value="I Founded Microsoft"></ion-textarea>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>Email</ion-label>
+          <ion-input type="email" value="bill@ms.com"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>Phone</ion-label>
+          <ion-input type="text" value="301-456-9980"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label>Gender</ion-label>
+            <ion-select [(ngModel)]="gender">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>City</ion-label>
+          <ion-input type="text" value="Seatle"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>ZIp Code</ion-label>
+          <ion-input type="text" value="12345"></ion-input>
+        </ion-item>
+
+      </ion-list>
+      
+      
+      <ion-row center>
+          <ion-col offset-33 padding>
+              
+              <div>
+                    <button ion-button color="danger" round>
+                        Update Profile
+                    </button>
+              </div>
+              
+          </ion-col>
+          
+      </ion-row>
+      
+      
+      
+</ion-content>
