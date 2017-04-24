@@ -1,6 +1,5 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
 import { MyApp } from './app.component';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
@@ -25,17 +24,14 @@ import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 import { TermsPage } from '../pages/terms/terms';
 import { RatingsPage } from '../pages/ratings/ratings';
 
-import { SativaPage } from '../pages/products-sativa/products-sativa';
-import { IndicaPage } from '../pages/products-indica/products-indica';
-import { HybridPage } from '../pages/products-hybrid/products-hybrid';
-
-
 import { DriversReviews } from '../pages/drivers-reviews/drivers-reviews';
 import { StoresReviews } from '../pages/stores-reviews/stores-reviews';
 import { ComplimentaryAdverts } from '../pages/complimentary-adverts/complimentary-adverts';
 import { PatientDocument } from '../pages/patient-document/patient-document';
 
 import { ConnectivityService } from '../providers/connectivity-service';
+import { ResetPasswordPage } from '../pages/reset-password/reset-password';
+import { NewPasswordPage } from '../pages/new-password/new-password';
 import { AuthService } from '../providers/auth-service';
 
 // Import ionic2-rating module
@@ -71,15 +67,13 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     StoresReviews,
     ComplimentaryAdverts,
     PatientDocument,
-    SativaPage,
-    IndicaPage,
-    HybridPage
+    ResetPasswordPage,
+    NewPasswordPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    IonicModule.forRoot(MyApp,{tabsPlacement: 'top'}),
-    Ionic2RatingModule 
-    
+    IonicModule.forRoot(MyApp,{tabsPlacement: 'bottom'}),
+    Ionic2RatingModule // Put ionic2-rating module here
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -110,10 +104,9 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     StoresReviews,
     ComplimentaryAdverts,
     PatientDocument,
-    SativaPage,
-    IndicaPage,
-    HybridPage
+    ResetPasswordPage,
+    NewPasswordPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ConnectivityService, AuthService, Storage]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ConnectivityService, AuthService]
 })
 export class AppModule {}

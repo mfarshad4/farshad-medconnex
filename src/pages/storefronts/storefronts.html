@@ -1,191 +1,242 @@
 <ion-header>
-  <ion-navbar>
-    
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-  
-    
-    <ion-title text-center>Storefronts</ion-title>
-    
-    <ion-buttons right>
-      <button ion-button icon-only>
-        <ion-icon name="options"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    
-    
-  </ion-navbar>
-  
-  <ion-toolbar>
-  
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="notifications"></ion-icon>
-        <ion-badge item-right>2</ion-badge>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="cart"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="car"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="heart"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="cash"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-  </ion-toolbar>
-  
-  
-  
+    <ion-navbar color="header">
+        <button ion-button menuToggle no-margin>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+
+
+        <ion-title text-center>Storefronts</ion-title>
+
+        <ion-buttons right>
+            <button ion-button icon-only>
+                <ion-icon name="bookmark"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+    <ion-toolbar color="darkGreen" class="toolBarIcons">
+
+        
+        <ion-buttons left padding-horizontal>
+            <button ion-button icon-only (click)="notifications()" class="notificationsBtn">
+                <ion-icon name="ios-notifications-outline"></ion-icon>
+                <ion-badge class="notificationNumb" color="pink" item-right>2</ion-badge>
+            </button>
+        </ion-buttons>
+
+        <ion-buttons left padding-horizontal>
+            <button ion-button icon-only>
+                <ion-icon name="ios-cart-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-buttons left padding-horizontal class="borderForDriver">
+            <button ion-button icon-only (click)="drivers()">
+                <ion-icon name="ios-car-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-buttons left padding-horizontal>
+            <button ion-button icon-only (click)="favorites()">
+                <ion-icon name="ios-heart-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-buttons left padding-horizontal>
+            <button ion-button icon-only (click)="referral()">
+                <ion-icon name="logo-usd"></ion-icon>
+            </button>
+        </ion-buttons>
+
+    </ion-toolbar>
 </ion-header>
+  
 
-<ion-content>
-
-
-    <div padding>
-      <ion-segment [(ngModel)]="storefronts">
-        <ion-segment-button value="listings">
-          Listings
-        </ion-segment-button>
-        <ion-segment-button value="map">
-          Map
-        </ion-segment-button>
+<ion-content class="storefrontsWrap">
+    <ion-row padding class="remove-padding-top remove-padding-bottom">
+      <ion-segment [(ngModel)]="storefronts" padding>
+        <ion-segment-button col-4 value="listings">Listings</ion-segment-button>
+        <ion-segment-button col-4 value="map">Map</ion-segment-button>
+        <ion-img class="uploadIcn" width="32" height="22" src="assets/upload.png"></ion-img>
       </ion-segment>
-    </div>
+    </ion-row>
     
-    
-    <div #map id="map"></div>
-    
-    
-    <div [ngSwitch]="storefronts">
-      
-      <ion-card *ngSwitchCase="'listings'">
-
-        <ion-row center>
-          <ion-col width-33>
-                <ion-img width="100" height="100" src="assets/rasvi.jpg"></ion-img>
-
+    <ion-content [ngSwitch]="storefronts">
+      <ion-card *ngSwitchCase="'listings'" class="listingWrap">
+        <ion-row class="margin-bottom">
+          <ion-col col-4>
+                <ion-img src="assets/listing/location-1.png"></ion-img>
           </ion-col>
-          <ion-col width-50>
+
+          <ion-col col-5 align-self-center>
               <div>123, Calle Chingon,</div>
-              <div>San Diego, Ca 91910</div>
-                          
-            
+              <div>San Diego, Ca <br> 91910</div>
+              <div padding-top class="ratingStars remove-padding-left">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
           </ion-col>
           
-           <ion-col>
-              <div>
-                <button ion-button icon-only>
-                  <ion-icon name="navigate"></ion-icon></button>
-              </div>
-              
-              <div>
-                <button ion-button icon-left color="danger" small (click)="openRatings({store: 'Puma'})">
-                    <ion-icon name="star"></ion-icon> Review
+           <ion-col col-3 class="btnRightSide">
+                <img class="item-top-right" src="assets/locationIcon.png" />
+                <button class="item-bottom-right"  ion-button icon-left round color="pink" small no-padding padding-left padding-right (click)="openRatings({store: 'Puma'})">
+                    <ion-icon name="star"></ion-icon> Rate
                 </button>
-              </div>
-              
-            
           </ion-col>
-          
         </ion-row>
 
         
-        <ion-row center>
-          <ion-col>
-                <ion-img width="100" height="100" src="assets/rasvi.jpg"></ion-img>
-
+        <ion-row class="margin-bottom">
+          <ion-col col-4>
+                <ion-img src="assets/listing/location-2.png"></ion-img>
           </ion-col>
-          <ion-col>
+          
+          <ion-col col-5 align-self-center>
               <div>123, Calle Chingon,</div>
-              <div>San Diego, Ca 91910</div>
-                          
-            
+              <div>San Diego, Ca <br> 91910</div>
+              <div padding-top class="ratingStars remove-padding-left">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
           </ion-col>
           
-           <ion-col>
-              <div>
-                <button ion-button icon-only>
-                  <ion-icon name="navigate"></ion-icon></button>
-              </div>
-              
-              <div>
-                <button ion-button icon-left color="danger" small (click)="openRatings({store: 'Nike'})">
-                    <ion-icon name="star"></ion-icon> Review
+           <ion-col col-3 class="btnRightSide">
+                <img class="item-top-right" src="assets/locationIcon.png" />
+                <button class="item-bottom-right"  ion-button icon-left round color="pink" small no-padding padding-left padding-right  (click)="openRatings({store: 'Nike'})">
+                    <ion-icon name="star"></ion-icon> Rate
                 </button>
-              </div>
-              
-            
           </ion-col>
-          
         </ion-row>
         
-        
-        <ion-row center>
-          <ion-col width-33>
-                <ion-img width="100" height="100" src="assets/rasvi.jpg"></ion-img>
+        <ion-row class="margin-bottom">
+          <ion-col col-4>
+                <ion-img src="assets/listing/location-3.png"></ion-img>
+          </ion-col>
 
-          </ion-col>
-          <ion-col width-50>
+          <ion-col col-5 align-self-center>
               <div>123, Calle Chingon,</div>
-              <div>San Diego, Ca 91910</div>
-                          
-            
+              <div>San Diego, Ca <br> 91910</div>
+              <div padding-top class="ratingStars remove-padding-left">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
           </ion-col>
           
-           <ion-col>
-              <div>
-                <button ion-button icon-only>
-                  <ion-icon name="navigate"></ion-icon></button>
-              </div>
-              
-              <div>
-                <button ion-button icon-left color="danger" small (click)="openRatings({store: 'Macys'})">
-                    <ion-icon name="star"></ion-icon> Review
+           <ion-col col-3 class="btnRightSide">
+                <img class="item-top-right" src="assets/locationIcon.png" />
+                <button class="item-bottom-right"  ion-button icon-left round color="pink" small no-padding padding-left padding-right  (click)="openRatings({store: 'Macys'})">
+                    <ion-icon name="star"></ion-icon> Rate
                 </button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="margin-bottom">
+          <ion-col col-4>
+                <ion-img src="assets/listing/location-4.png"></ion-img>
+          </ion-col>
+
+          <ion-col col-5 align-self-center>
+              <div>123, Calle Chingon,</div>
+              <div>San Diego, Ca <br> 91910</div>
+              <div padding-top class="ratingStars remove-padding-left">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
               </div>
-              
-            
           </ion-col>
           
+           <ion-col col-3 class="btnRightSide">
+                <img class="item-top-right" src="assets/locationIcon.png" />
+                <button class="item-bottom-right"  ion-button icon-left round color="pink" small no-padding padding-left padding-right>
+                    <ion-icon name="star"></ion-icon> Rate
+                </button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="margin-bottom">
+          <ion-col col-4>
+                <ion-img src="assets/listing/location-2.png"></ion-img>
+          </ion-col>
+          
+          <ion-col col-5 align-self-center>
+              <div>123, Calle Chingon,</div>
+              <div>San Diego, Ca <br> 91910</div>
+              <div padding-top class="ratingStars remove-padding-left">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+          </ion-col>
+          
+           <ion-col col-3 class="btnRightSide">
+                <img class="item-top-right" src="assets/locationIcon.png" />
+                <button class="item-bottom-right"  ion-button icon-left round color="pink" small no-padding padding-left padding-right>
+                    <ion-icon name="star"></ion-icon> Rate
+                </button>
+          </ion-col>
+        </ion-row>
+        
+        <ion-row class="margin-bottom">
+          <ion-col col-4>
+                <ion-img src="assets/listing/location-3.png"></ion-img>
+          </ion-col>
+
+          <ion-col col-5 align-self-center>
+              <div>123, Calle Chingon,</div>
+              <div>San Diego, Ca <br> 91910</div>
+              <div padding-top class="ratingStars remove-padding-left">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+          </ion-col>
+          
+           <ion-col col-3 class="btnRightSide">
+                <img class="item-top-right" src="assets/locationIcon.png" />
+                <button class="item-bottom-right"  ion-button icon-left round color="pink" small no-padding padding-left padding-right>
+                    <ion-icon name="star"></ion-icon> Rate
+                </button>
+          </ion-col>
         </ion-row>
 
       </ion-card>
       
       
-      <div *ngSwitchCase="'map'">
-        
+      <ion-card *ngSwitchCase="'map'">
+        <div #map id="map"></div>
         <ion-content>
           <ion-row>
               <ion-col>
-                  <img src="assets/rasvi.jpg">
+                  <img src="assets/listing/location-1.png">
               </ion-col>
           </ion-row>
           
         </ion-content>
         
 
-      </div>
+      </ion-card>
       
-    </div>
+    </ion-content>
+
+
+
+    
+   
     
 
 </ion-content>
