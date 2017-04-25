@@ -4,6 +4,9 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { StatusBar, Splashscreen } from 'ionic-native';
 
+import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
+import { ListPage } from '../pages/list/list';
+
 import { ProductsPage } from '../pages/products/products';
 
 import { CartPage } from '../pages/cart/cart';
@@ -26,13 +29,7 @@ import { RegisterPage } from '../pages/register/register';
 
 import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 
-import { ResetPasswordPage } from '../pages/reset-password/reset-password';
-
-import { NewPasswordPage } from '../pages/new-password/new-password';
-
 import { TermsPage } from '../pages/terms/terms';
-
-
 
 @Component({
   templateUrl: 'app.html'
@@ -41,7 +38,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage: any = TermsPage;
+  rootPage: any = LoginPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -52,6 +49,8 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
+      { title: 'Hello Ionic', component: HelloIonicPage },
+      { title: 'My First List', component: ListPage },
       { title: 'Storefronts', component: StorefrontsPage },
       { title: 'Industry Doctors', component: IndustryDoctorsPage },
       { title: 'Reservations', component: ReservationsPage },
@@ -64,9 +63,7 @@ export class MyApp {
       { title: 'Login', component: LoginPage },
       { title: 'Register', component: RegisterPage },
       { title: 'Forgot Password', component: ForgotPasswordPage },
-      { title: 'Terms & Agreements', component: TermsPage },
-      { title: 'Reset Password', component: ResetPasswordPage },
-      { title: 'New Password', component: NewPasswordPage }
+      { title: 'Terms & Agreements', component: TermsPage }
       
     ];
   }
