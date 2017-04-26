@@ -14,3 +14,411 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+body, h1, h2, h3, h4, p, span, input, label, div {
+    text-shadow: 0px 0px 0px;
+    font-family: Century Gothic!important;
+}
+
+input::-webkit-input-placeholder {
+  color: color($colors, gray);
+}
+input:-moz-placeholder {
+ color: color($colors, gray);
+}
+input:-ms-input-placeholder { /* IE10+ */
+  color: color($colors, gray);
+}
+
+
+ion-content {
+    background: url(../assets/layoutBG.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+p {
+    margin-top:0;
+    margin-bottom:5px;
+}
+.button-md {
+    text-transform: capitalize;
+    letter-spacing: 0.8px;
+}
+
+$mycustomcolor: #000;
+
+/*Font-sizes*/
+
+$font-small: 11px;
+$font-medium: 14px;
+$font-normal: 16px;
+$font-large: 18px;
+$font-big: 20px;
+
+
+/*Font weights*/
+
+$weight-medium: 400;
+$weight-bold: 700;
+
+
+$text-color: (
+    blue: #00a4e4,
+    profile: #947638,   
+    white: #fff,
+    gray: #5f5f5f,
+    black: #000,
+    darkGrey: #333,
+);
+ion-toolbar ion-icon.icon.icon-md.ion-logo-usd {
+    border: 1px solid white;
+    border-radius: 100%;
+    height: 20px;
+    width: 20px;
+    min-width: 20px;
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+/*My Profile*/
+.prifile-pic-img  {
+    border-radius: 50%;
+    border: 4px solid #10a8a3;
+    overflow: hidden;
+}
+.prifile-pic-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile-name {
+     font-size: 16px;
+     padding: 5px 0px 5px 0px;
+}
+.remove-padding-left {
+    padding-left: 0px !important; 
+}
+.remove-padding-top {
+    padding-top:0!important;
+}
+.remove-padding-right {
+    padding-right:0!important;
+}
+.remove-padding-bottom {
+    padding-bottom:0!important;
+}
+.margin-bottom {
+    margin-bottom:5px!important;
+}
+.profileDetails > p:nth-child(2) {
+    font-size:12px;
+}
+.profileTwoBtn div {
+    font-size: 11px;
+}
+.profileTwoBtn .button-round-md {
+    height:1.9em;
+}
+.profileDetails > p:nth-child(2) strong,.profileDetails > p:nth-child(3) strong,  .profileDetails > p:nth-child(3){
+    font-size:11px;
+}
+.margin-bottom{
+    margin-bottom:15px;
+}
+
+.toolbar-title-md {
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+.notificationNumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 100% !important;
+    padding: 3px 0px 4px 0px;
+    font-size: 8px;
+    margin: -10px 0px 0px -10px;
+}
+.toolBarIcons .bar-button-md[icon-only] ion-icon {
+    font-size: 1.2em;
+}
+.toolBarIcons{
+    min-height: 32px;
+    padding: 0px;
+}
+ion-buttons.borderForDriver {
+    border-right: 1px solid rgba(255, 255, 255, 0.36);
+    border-left: 1px solid rgba(255, 255, 255, 0.36);
+}  
+.notificationsBtn{ 
+    margin-left: 15px!important;
+}
+/*End My Profile*/
+
+
+
+/*Login Page*/
+
+
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+    box-shadow: inset 0 -1px 0 0 #f53d3d!important;
+}
+
+.loginPageWrapper .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child, .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+    border-bottom-color: initial;
+    box-shadow: 0px 0px 0px;
+}   
+.loginPageWrapper > img {
+    padding-left: 32%;
+    padding-right: 32%;
+    padding-top: 10%;
+}
+
+.loginPageWrapper ion-list ion-item{
+    background-color: rgba(255, 255, 255, 0);
+}
+.loginPageWrapper .list-md .item-block .item-inner {
+    border-bottom: 1px solid #dedede!important;
+     font-size:$font-medium;
+     font-weight: 100;
+}
+.loginPageWrapper .list-md .item-block .item-inner ion-label{
+    margin-top: 10px;
+    color:  color($text-color, gray)
+}
+.loginPageWrapper ion-list ion-item:last-child{
+    border-bottom:0!important;
+}
+.input-has-focus .label-md[stacked],
+.input-has-focus .label-md[floating] {
+  color: #10b1ac!important;
+
+}
+.item-md.item-input.input-has-focus .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner, .item-md.item-input.input-has-focus:last-child .item-inner {
+  border-bottom-color: #10b1ac;
+  box-shadow: inset 0 -1px 0 0 #10b1ac!important;
+}
+.list-md .item-input.input-has-focus:last-child {
+  border-bottom-color: rgba(255, 255, 255, 0);
+  box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0);
+}
+.loginBottomWrapper > p {
+    font-size:$font-small;
+
+}
+.loginBottomWrapper > p:last-child {
+    color:color($text-color, darkGrey);
+    font-size:$font-medium;
+}
+.item-label-stacked .text-input-md, .item-label-floating .text-input-md {
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+.socialMediaIcons img{
+    width:85%;
+}
+
+/*End Login Page*/
+
+
+
+/* Sign Up Page */
+
+.registerForm ion-input::placeholder {
+    color:color($text-color, darkGrey);
+}
+
+
+/* Storefronts */
+
+.listingWrap ion-img img {
+    width:100%;
+    height: 100%;
+}
+.storefrontsWrap .segment-md .segment-button.activated, .storefrontsWrap .segment-md .segment-button.segment-activated {
+    background: color($colors, pink);
+    color: color($colors, white);
+    border-radius: 30px;
+}
+.storefrontsWrap .segment-md .segment-button {
+    height: 2.6em;
+    border-bottom-width: 0px;
+    font-size: $font-medium;
+    line-height: 2.7;
+    text-transform: capitalize;
+    color: color($colors, darkGrey);
+    font-weight: 400;
+}
+.uploadIcn {
+        position: absolute;
+    right: 0;
+        top: 25px;
+}
+.listingWrap ion-img {
+    width: 92px!important;
+    height: 92px!important;
+    border: 4px solid white!important;
+}
+.listingWrap{
+    margin: 10px 10px 10px 10px;
+    width: calc(100% - 20px);
+    border-radius: 0px;
+    font-size: 1.4rem;
+    background: rgba(227, 227, 227, 0); 
+    box-shadow: 0px 0px 0px;
+}
+.listingWrap ion-row {
+ background: rgba(227, 227, 227, 0.62);   
+}
+.ratingStars ion-icon {
+    color: color($colors, gold);
+    font-size: $font-big;
+}
+.btnRightSide .button-small-md {
+    height: 1.9em;
+    font-size: 11px;
+    font-weight: $weight-medium;
+}
+.btnRightSide .item-top-right {
+    width:22px!important;
+}
+.item-bottom-right {
+        position: absolute;
+    bottom: 5px;
+    right: 4px;
+}
+.item-top-right {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+
+/* Online Page */
+
+.myProfileDetails h2 {
+    font-size:$font-medium;
+}
+.onlineWrapper ion-card{
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px;
+}
+.onlinePageWrap + ion-card-content + a  {
+    text-decoration:none;
+}
+.onlinePageWrap button {
+    color: color($colors, darkGrey)
+}
+.postActions.row {
+    margin: 5px 0px;
+    border-bottom: 1px solid #bebebe;
+}
+
+/* forgot password */
+
+.forgotPasswordWrap > p {
+    font-size: $font-big;
+}
+
+
+/* Side Menu */
+
+.sideMenu ion-item ion-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+.sideMenu + ion-list > button .item-inner {
+    padding-left: 16px;
+    color: color($colors, gray);
+    font-size: $font-medium;
+}
+.text-underline{
+    text-decoration:underline;
+}
+
+/* Products Page */
+
+.productsColumns img{
+    max-height: 170px;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    min-height: 170px;
+}
+.productsColumns ion-card-content {
+    font-size: $font-small;
+}
+.masterWraper::after{
+    background-image: none;
+}
+.masterWraper .segment-md-black .segment-button.activated, .masterWraper .segment-md-black .segment-button.segment-activated {
+    border-color: #10b1ac;
+    color: #10b1ac;
+}   
+.masterWraper .segment-md .segment-button {
+    border-bottom-color: rgba(0, 0, 0, 0);
+
+}
+.productsTopLinks .segment-button {
+    font-weight: $weight-bold;    
+}
+.productsColumns ion-card-content p {
+    padding-left: 6px;
+    padding-top: 5px;
+}
+.productsColumns ion-col ion-item button {
+    margin:0px!important;
+}
+.productIndividualWrappers{
+    background-color: color($colors, white);
+}
+.productIndividualWrappers .item-md.item-block .item-inner {
+    border-bottom: 0px solid #dedede;
+}
+.individualFilter .segment-md-darkGrey .segment-button.activated, .individualFilter .segment-md-darkGrey .segment-button.segment-activated {
+    color: color($colors, darkGreen);
+}
+
+/*  Terms and conditions page */
+
+.termsPageWrapper {
+    font-size: $font-medium;
+    color: color($colors, gray);
+}
+.termsPageWrapper p {
+    font-size:$font-normal;
+    color: color($colors, darkGrey);
+    font-weight: $weight-medium;
+ }
+
+ /* Edit Profile */
+
+ .editProfileBody .item-input ion-label.label-md, .editProfileBody  .item-select .label-md {
+    font-size: $font-normal;
+    color:color($colors, gray);
+ }
+  .editProfileBody .text-input-md {
+      font-size: $font-medium;
+    color:color($colors, gray);
+  }
+ .editProfileBody .list-md .item-input:last-child {
+    border-bottom: 0px solid #dedede;
+}
+.editProfileBody > ion-item {
+    padding-left:0;
+        background: rgba(255, 255, 255, 0);
+}
+.favorites-page .card-subtitle {
+    position: absolute;
+    bottom: 0.5em!important;
+    top:initial!important;
+    left: 1.2em!important;
+}
+.favorites-page .card-subtitle ion-img {
+    width:50px!important;
+    height:50px!important;
+    border:0;
+}
