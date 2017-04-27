@@ -36,6 +36,8 @@ import { ComplimentaryAdverts } from '../pages/complimentary-adverts/complimenta
 import { PatientDocument } from '../pages/patient-document/patient-document';
 
 import { ConnectivityService } from '../providers/connectivity-service';
+import { ResetPasswordPage } from '../pages/reset-password/reset-password';
+import { NewPasswordPage } from '../pages/new-password/new-password';
 import { AuthService } from '../providers/auth-service';
 
 // Import ionic2-rating module
@@ -73,7 +75,9 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     PatientDocument,
     SativaPage,
     IndicaPage,
-    HybridPage
+    HybridPage,
+    ResetPasswordPage,
+    NewPasswordPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -112,7 +116,9 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     PatientDocument,
     SativaPage,
     IndicaPage,
-    HybridPage
+    HybridPage,
+    ResetPasswordPage,
+    NewPasswordPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ConnectivityService, AuthService, Storage]
 })
