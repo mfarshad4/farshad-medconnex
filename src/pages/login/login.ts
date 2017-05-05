@@ -5,6 +5,7 @@ import { NavController, AlertController, LoadingController, Loading} from 'ionic
 import { AuthService } from '../../providers/auth-service';
 import { RegisterPage } from '../register/register';
 import { TermsPage } from '../terms/terms';
+import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 
 @Component({
   templateUrl: 'login.html'
@@ -36,7 +37,11 @@ export class LoginPage {
       this.showError(error);
     });
   }
- 
+    
+  forgotPassword() {
+      this.nav.push(ForgotPasswordPage);
+  }
+    
   showLoading() {
     this.loading = this.loadingCtrl.create({
       content: 'Please wait...'

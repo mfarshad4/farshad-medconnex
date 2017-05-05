@@ -14,7 +14,7 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-// Farshad test
+
 
 body, h1, h2, h3, h4, p, span, input, label, div {
     text-shadow: 0px 0px 0px;
@@ -383,7 +383,7 @@ ion-buttons.borderForDriver {
 }
 
 /*  Terms and conditions page */
- 
+
 .termsPageWrapper {
     font-size: $font-medium;
     color: color($colors, gray);

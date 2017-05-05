@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 
-import {NavController} from 'ionic-angular';
+import { Platform, MenuController, Nav, NavController} from 'ionic-angular';
+
+import { LoginPage } from '../login/login';
 
 @Component({
   templateUrl: 'terms.html'
@@ -12,6 +14,8 @@ export class TermsPage {
 
   }
   
-  
+  loginPage(){
+  	this.navCtrl.push(LoginPage);
+  }
     
 }

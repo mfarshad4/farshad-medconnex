@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
+import { LoginPage } from '../login/login'; 
+
 
 @Component({
   templateUrl: 'register.html'
@@ -25,7 +27,7 @@ export class RegisterPage {
     error => {
       this.showPopup("Error", error);
     });
-  }
+  } 
  
   showPopup(title, text) {
     let alert = this.alertCtrl.create({
@@ -44,4 +46,8 @@ export class RegisterPage {
     });
     alert.present();
   }
+  
+  goToLogin() {
+      this.nav.push(LoginPage);
+   }
 }
