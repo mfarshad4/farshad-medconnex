@@ -1,60 +1,54 @@
 <ion-header>
-  <ion-navbar>
-    
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-  
-    
-    <ion-title text-center>Edit Profile</ion-title>
-    
-    <ion-buttons right>
-      <button ion-button icon-only>
-        <ion-icon name="options"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    
-    
-  </ion-navbar>
-  
-  <ion-toolbar>
-  
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="notifications"></ion-icon>
-        <ion-badge item-right>2</ion-badge>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="cart"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="car"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="heart"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="cash"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-  </ion-toolbar>
-  
-  
-  
+    <ion-navbar color="header">
+        <button ion-button menuToggle no-margin>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+
+
+        <ion-title text-center>Edit Profile</ion-title>
+
+        <ion-buttons right>
+            <button ion-button icon-only>
+                <ion-icon name="bookmark"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+    <ion-toolbar color="darkGreen" class="toolBarIcons">
+
+        
+        <ion-buttons left padding-horizontal>
+            <button ion-button icon-only (click)="notifications()" class="notificationsBtn">
+                <ion-icon name="ios-notifications-outline"></ion-icon>
+                <ion-badge class="notificationNumb" color="pink" item-right>2</ion-badge>
+            </button>
+        </ion-buttons>
+
+        <ion-buttons left padding-horizontal>
+            <button ion-button icon-only>
+                <ion-icon name="ios-cart-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-buttons left padding-horizontal class="borderForDriver">
+            <button ion-button icon-only (click)="drivers()">
+                <ion-icon name="ios-car-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-buttons left padding-horizontal>
+            <button ion-button icon-only (click)="favorites()">
+                <ion-icon name="ios-heart-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-buttons left padding-horizontal>
+            <button ion-button icon-only (click)="referral()">
+                <ion-icon name="logo-usd"></ion-icon>
+            </button>
+        </ion-buttons>
+
+    </ion-toolbar>
 </ion-header>
 
 
@@ -62,26 +56,27 @@
 <ion-content>
       
       <ion-row center>
-          <ion-col offset-33 padding>
-              <div><ion-img width="140" height="140" src="assets/rasvi.jpg"></ion-img></div>
-              
-              <div>
-                    <button ion-button icon-left clear small>
+          <ion-col padding>
+              <ion-col offset-33>
+                  <ion-img class="prifile-pic-img" width="120" height="120" src="assets/wesley.png"></ion-img>
+              </ion-col>
+              <div text-center>
+                    <button ion-button icon-left clear full color="darkGreen" >
                       <ion-icon name="create"></ion-icon>
-                      <div>Edit Picture</div>
-                    </button>
+                      <div class="text-underline">Edit Picture</div>
+                    </button>              
               </div>
-              
+              <ion-img class="uploadIcn" width="32" height="22" src="assets/upload.png"></ion-img>
           </ion-col>
           
       </ion-row>
       
       
-      <ion-list>
+      <ion-list class="editProfileBody remove-padding-bottom" padding>
 
         <ion-item>
           <ion-label>Full Name</ion-label>
-          <ion-input type="text" Value="Bill Gates"></ion-input>
+          <ion-input type="text" value="Wesley D"></ion-input>
         </ion-item>
 
         <ion-item>
@@ -106,7 +101,7 @@
               <ion-option value="m">Male</ion-option>
             </ion-select>
         </ion-item>
-        
+         
         <ion-item>
           <ion-label>City</ion-label>
           <ion-input type="text" value="Seatle"></ion-input>
@@ -119,20 +114,15 @@
 
       </ion-list>
       
-      
-      <ion-row center>
-          <ion-col offset-33 padding>
-              
-              <div>
-                    <button ion-button color="danger" round>
-                        Update Profile
-                    </button>
-              </div>
-              
-          </ion-col>
-          
-      </ion-row>
-      
+      <ion-row padding>
+        <ion-col col-3></ion-col>
+        <ion-col col-6>
+           <button ion-button round full class="margin-bottom" color="pink">
+                Update Profile
+           </button>
+         </ion-col>
+         <ion-col col-3></ion-col>
+     </ion-row>
       
       
 </ion-content>
