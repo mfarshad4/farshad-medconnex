@@ -1,11 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { Platform, MenuController, Nav } from 'ionic-angular';
+import { Platform, MenuController, Nav  } from 'ionic-angular';
 
 import { StatusBar, Splashscreen } from 'ionic-native';
-
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { ListPage } from '../pages/list/list';
 
 import { ProductsPage } from '../pages/products/products';
 
@@ -17,8 +14,6 @@ import { ProfilePage } from '../pages/profile/profile';
 
 import { StorefrontsPage } from '../pages/storefronts/storefronts';
 
-import { IndustryDoctorsPage } from '../pages/industry-doctors/industry-doctors';
-
 import { ReservationsPage } from '../pages/reservations/reservations';
 
 import { DriversDocumentsPage } from '../pages/drivers-documents/drivers-documents';
@@ -29,25 +24,33 @@ import { RegisterPage } from '../pages/register/register';
 
 import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 
+import { TermsPage } from '../pages/terms/terms';
+
 import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 
 import { NewPasswordPage } from '../pages/new-password/new-password';
 
-import { TermsPage } from '../pages/terms/terms';
+import { IndustryDoctorsPage } from '../pages/industry-doctors/industry-doctors';
+
+
+
+
+
 
 @Component({
-  templateUrl: 'app.html' 
+  templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage: any = ProductsPage;
+  rootPage: any = TermsPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
     public platform: Platform,
-    public menu: MenuController
+    public menu: MenuController,
+
   ) {
     this.initializeApp();
 
@@ -63,13 +66,9 @@ export class MyApp {
       { title: 'Legal Docs', component: CartPage },
       { title: 'Drivers Documents', component: DriversDocumentsPage },
       { title: 'Login', component: LoginPage },
-      { title: 'Register', component: RegisterPage },
-      { title: 'Forgot Password', component: ForgotPasswordPage },
-      { title: 'Terms & Agreements', component: TermsPage },
-      { title: 'Reset Password', component: ResetPasswordPage },
-      { title: 'New Password', component: NewPasswordPage }
-      
+      { title: 'Register', component: RegisterPage }   
     ];
+
   }
 
   initializeApp() {
@@ -87,4 +86,7 @@ export class MyApp {
     // navigate to the new page if it is not the current page
     this.nav.setRoot(page.component);
   }
+
+
 }
+

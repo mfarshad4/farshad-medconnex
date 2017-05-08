@@ -1,4 +1,6 @@
 <ion-menu [content]="content">
+  
+  
   <ion-content>
     <ion-list class="sideMenu" padding-top>
       <ion-item>
@@ -7,23 +9,19 @@
         </ion-thumbnail>
         <h2 color="darkGrey">Angelo</h2>
         <p color="pink">Driver</p>
+        
       </ion-item>
     </ion-list>
     
-    <ion-list>
+    <ion-list sliding>
       <button no-padding ion-item *ngFor="let p of pages" (click)="openPage(p)">
         <div padding-right>{{p.title}}</div>
       </button>
     </ion-list>
 
     <div text-center class="menuBottomWraper">
-        <ion-row offset-md-3>
-            <ion-col width-20></ion-col>
-            <ion-col width-25><span color="pink" underline class="text-underline">Users</span></ion-col>
-            <ion-col width-10><span color="gray">Or</span></ion-col>
-            <ion-col width-25 class="text-underline">Drivers</ion-col>
-            <ion-col width-20></ion-col>
-        </ion-row>
+      <ion-col><span color="pink" underline class="text-underline">Users</span></ion-col><span color="gray">Or</span>
+      <ion-col class="text-underline">Drivers</ion-col>
       <ion-row padding-vertical>
         <ion-col center>
          <button ion-button round default color="pink">
@@ -32,7 +30,9 @@
         </ion-col>
       </ion-row>
     </div>
+ 
   </ion-content>
+
 </ion-menu>
 
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
