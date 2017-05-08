@@ -42,7 +42,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage: any = StorefrontsPage;
+  rootPage: any = ProductsPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -53,12 +53,10 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage },
-      { title: 'Storefronts', component: StorefrontsPage },
+      { title: 'Providers', component: StorefrontsPage },
+      { title: 'Products', component: ProductsPage },
       { title: 'Industry Doctors', component: IndustryDoctorsPage },
       { title: 'Reservations', component: ReservationsPage },
-      { title: 'Products', component: ProductsPage },
       { title: 'Order / Cart', component: CartPage },
       { title: 'Online', component: OnlinePage },
       { title: 'My Profile', component: ProfilePage },

@@ -1,21 +1,19 @@
-
 <ion-content>
   
   <ion-segment [(ngModel)]="sativa_products">
-      <ion-segment-button value="flowers">
+      <ion-segment-button value="flowers" class="text-capitalize">
         Flowers
       </ion-segment-button>
-      <ion-segment-button value="edibles">
+      <ion-segment-button value="edibles" class="text-capitalize">
         Edibles
       </ion-segment-button>
-      <ion-segment-button value="vape_pens">
+      <ion-segment-button value="vape_pens" class="text-capitalize">
         Vape Pens
       </ion-segment-button>
-      <ion-segment-button value="beverages">
+      <ion-segment-button value="beverages" class="text-capitalize">
         Beverages
       </ion-segment-button>
   </ion-segment>
-  
   
   <div [ngSwitch]="sativa_products">
  
@@ -100,7 +98,6 @@
       
     </ion-row>
     
-    
     <ion-row center *ngSwitchCase="'edibles'">
       <ion-col>
         <ion-card>
@@ -181,7 +178,6 @@
       </ion-col>
       
     </ion-row>
-    
     
     <ion-row center *ngSwitchCase="'vape_pens'">
       <ion-col>
@@ -264,87 +260,32 @@
       
     </ion-row>
     
-    
-    <ion-row center *ngSwitchCase="'beverages'">
-      <ion-col>
-        <ion-card>
-          
-          <img src="assets/dank.jpg" (click)="openProductInfo()"/>
-          
-          <ion-card-content>
-            <p>
-              BLR
-            </p>
-          </ion-card-content>
+    <ion-list *ngSwitchCase="'beverages'">
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="assets/img/thumbnail-duckling-1.jpg">
+        </ion-thumbnail>
+        <h2>Daffy</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="assets/img/thumbnail-duckling-2.jpg">
+        </ion-thumbnail>
+        <h2>Huey</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="assets/img/thumbnail-duckling-3.jpg">
+        </ion-thumbnail>
+        <h2>Dewey</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="assets/img/thumbnail-duckling-4.jpg">
+        </ion-thumbnail>
+        <h2>Louie</h2>
+      </ion-item>
+    </ion-list> 
 
-          <ion-item>
-            
-            <button ion-button icon-left clear item-left>
-              <ion-icon name="heart"></ion-icon>
-              
-            </button>
-        
-            <button ion-button icon-left clear item-left>
-              <ion-icon name="share-alt"></ion-icon>
-              
-            </button>
-            
-            <button ion-button icon-left clear item-left>
-              Add to Cart
-              
-            </button>
-        
-            <button ion-button icon-left clear item-right>
-              <ion-icon name="cart"></ion-icon>
-                  $50.00
-            </button>
-          </ion-item>
-
-        </ion-card>
-        
-      </ion-col>
-      
-      <ion-col>              
-        
-        <ion-card>
-
-          <img src="assets/dank1.jpg"/>
-
-          <ion-card-content>
-      
-            <p>
-              Bloody Kush
-            </p>
-          </ion-card-content>
-
-          <ion-item>
-            
-            <button ion-button icon-left clear item-left>
-              <ion-icon name="heart"></ion-icon>
-              
-            </button>
-        
-            <button ion-button icon-left clear item-left>
-              <ion-icon name="share-alt"></ion-icon>
-              
-            </button>
-            
-            <button ion-button icon-left clear item-left>
-              Add to Cart
-              
-            </button>
-        
-            <button ion-button icon-left clear item-right>
-              <ion-icon name="cart"></ion-icon>
-                  $50.00
-            </button>
-          </ion-item>
-
-        </ion-card>
-              
-      </ion-col>
-      
-    </ion-row>    
-    
   </div>
 </ion-content>
