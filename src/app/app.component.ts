@@ -28,7 +28,7 @@ import { TermsPage } from '../pages/terms/terms';
 
 import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 
-import { NewPasswordPage } from '../pages/new-password/new-password';
+import { NewPasswordPage } from '../pages/new-password/new-password'; 
 
 import { IndustryDoctorsPage } from '../pages/industry-doctors/industry-doctors';
 
@@ -44,7 +44,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage: any = TermsPage;
+  rootPage: any = StorefrontsPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(

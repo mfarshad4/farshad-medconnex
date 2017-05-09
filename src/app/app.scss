@@ -236,6 +236,10 @@ ion-buttons.borderForDriver {
 
 /* Storefronts */
 
+.toolBarIcons .toolbar-content.toolbar-content-md {
+    display: flex;
+    text-align: center;
+}
 .listingWrap > ion-row {
     position: relative;
 }
