@@ -131,7 +131,9 @@ ion-toolbar ion-icon.icon.icon-md.ion-logo-usd {
 .margin-bottom{
     margin-bottom:15px;
 }
-
+.toolBarIcons .toolbar-content.toolbar-content-md > ion-buttons {
+    width: 20%;
+}
 .toolbar-title-md {
     font-size: 1.7rem;
     font-weight: 400;
@@ -444,3 +446,18 @@ ion-list.sideMenu.list.list-md {
     height:50px!important;
     border:0;
 }
+
+
+//Reservation Page
+
+.reservationBody ion-title div {
+    font-size: $font-normal;
+    padding-left: 0;
+}
+.reservationBody ion-title + p {
+    font-size: $font-small;    
+}
+.reservationBody ion-title + div {
+    font-size: $font-small;
+}
+

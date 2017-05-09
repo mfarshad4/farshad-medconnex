@@ -3,63 +3,62 @@
         <button ion-button menuToggle no-margin>
             <ion-icon name="menu"></ion-icon>
         </button>
-
-
+        
+        
         <ion-title text-center>Profile</ion-title>
-
+        
         <ion-buttons right>
             <button ion-button icon-only>
                 <ion-icon name="bookmark"></ion-icon>
             </button>
         </ion-buttons>
     </ion-navbar>
-
+    
     <ion-toolbar color="darkGreen" class="toolBarIcons">
-
-        <ion-buttons left padding-horizontal>
-            <button ion-button icon-only (click)="notifications()" class="notificationsBtn">
-                <ion-icon name="ios-notifications-outline"></ion-icon>
-                <ion-badge class="notificationNumb" color="pink" item-right>2</ion-badge>
-            </button>
-        </ion-buttons>
-
-        <ion-buttons left padding-horizontal>
-            <button ion-button icon-only>
-                <ion-icon name="ios-cart-outline"></ion-icon>
-            </button>
-        </ion-buttons>
-
-        <ion-buttons left padding-horizontal class="borderForDriver">
-            <button ion-button icon-only (click)="drivers()">
-                <ion-icon name="ios-car-outline"></ion-icon>
-            </button>
-        </ion-buttons>
-
-        <ion-buttons left padding-horizontal>
-            <button ion-button icon-only (click)="favorites()">
-                <ion-icon name="ios-heart-outline"></ion-icon>
-            </button>
-        </ion-buttons>
-
-        <ion-buttons left padding-horizontal>
-            <button ion-button icon-only (click)="referral()">
-                <ion-icon name="logo-usd"></ion-icon>
-            </button>
-        </ion-buttons>
-
+        
+            <ion-buttons> 
+                <button ion-button icon-only (click)="notifications()" class="notificationsBtn">
+                    <ion-icon name="ios-notifications-outline"></ion-icon>
+                    <ion-badge class="notificationNumb" color="pink" item-right>2</ion-badge>
+                </button>
+            </ion-buttons>
+        
+            <ion-buttons>
+                <button ion-button icon-only>
+                    <ion-icon name="ios-cart-outline"></ion-icon>
+                </button>
+            </ion-buttons>
+               
+            <ion-buttons class="borderForDriver">
+                <button ion-button icon-only (click)="drivers()">
+                    <ion-icon name="ios-car-outline"></ion-icon>
+                </button>
+            </ion-buttons>
+        
+            <ion-buttons>
+                <button ion-button icon-only (click)="favorites()">
+                    <ion-icon name="ios-heart-outline"></ion-icon>
+                </button>
+            </ion-buttons>
+        
+        
+            <ion-buttons>
+                <button ion-button icon-only (click)="referral()">
+                    <ion-icon name="logo-usd"></ion-icon>
+                </button>
+            </ion-buttons>
+       
+        
     </ion-toolbar>
-
-
-
 </ion-header>
 
 <ion-content>
 
     <ion-row>
-        <ion-col col-4 padding>
+        <ion-col width-33 padding>
             <ion-img class="prifile-pic-img" width="100" height="100" src="assets/wesley.png"></ion-img>
         </ion-col>
-        <ion-col col-8 padding class="profileDetails">
+        <ion-col width-60 padding class="profileDetails">
             <p class="profile-name">Rasvi</p>
             <p>Profile Views : <strong>12,345</strong></p>
 
@@ -70,7 +69,7 @@
                         <div>Online</div>
                     </button>
                 </ion-col>
-                <ion-col col-6 class="remove-padding-top">
+                <ion-col col-6 class="remove-padding-top remove-padding-left">
                     <button ion-button icon-left color="pink" round small (click)="editProfile()">
                         <ion-icon name="create"></ion-icon>
                         <div>Edit</div>
