@@ -257,6 +257,9 @@ ion-buttons.borderForDriver {
 
 /* Storefronts */
 
+.toolBarIcons .toolbar-content > ion-col {
+    padding: 0;
+}
 .toolBarIcons .toolbar-content.toolbar-content-md {
     display: flex;
     text-align: center;
