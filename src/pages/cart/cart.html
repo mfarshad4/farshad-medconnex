@@ -1,272 +1,221 @@
 <ion-header>
-  <ion-navbar>
+    <ion-navbar color="header">
+        <button ion-button menuToggle no-margin>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        
+        
+        <ion-title text-center>Order / Cart</ion-title>
+        
+        <ion-buttons right>
+            <button ion-button icon-only>
+                <ion-icon name="bookmark"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
     
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-  
     
-    <ion-title text-center>Order / Cart</ion-title>
-    
-    <ion-buttons right>
-      <button ion-button icon-only>
-        <ion-icon name="options"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    
-    
-  </ion-navbar>
-  
-  <ion-toolbar>
-  
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="notifications"></ion-icon>
-        <ion-badge item-right>2</ion-badge>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="cart"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="car"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="heart"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="cash"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-  </ion-toolbar>
-  
-  
-  
 </ion-header>
 
 <ion-content>
-  
-  <ion-grid>
-      <ion-row>
-          <ion-col width-50 text-center>ITEMS</ion-col>
-          <ion-col width-25 text-center>QUANTITY</ion-col>
-          <ion-col width-25 text-center>PRICE</ion-col>
-      </ion-row>
-      
-      <ion-row>
-          <ion-col width-50>
-              <button ion-button color="dark" clear icon-only>
-                  <ion-icon name='trash' is-active="false"></ion-icon>
-              </button>
-              Gorilla Glue
-              
-          </ion-col>
-          
-          <ion-col width-25>
-            
-            <button ion-button color="primary" item-left clear icon-only>
-                <ion-icon name='remove' ></ion-icon>
-            </button>
-                
-                <ion-input type="text" value="1" item-left></ion-input>
-                
-            <button ion-button color="primary" item-right clear icon-only>
-                <ion-icon name='add' ></ion-icon>
-            </button>
-            
-          </ion-col>
-          
-          <ion-col width-25>
-            $5.35
-          </ion-col>
-      </ion-row>
-      
-      
-      <ion-row>
-          <ion-col width-50>
-              <button ion-button color="dark" clear icon-only>
-                  <ion-icon name='trash' is-active="false"></ion-icon>
-              </button>
-              Marijuana Choc
-              
-          </ion-col>
-          
-          <ion-col width-25>
-            
-            <button ion-button color="primary" item-left clear icon-only>
-                <ion-icon name='remove' ></ion-icon>
-            </button>
-                
-                <ion-input type="text" value="1" item-left></ion-input>
-                
-            <button ion-button color="primary" item-right clear icon-only>
-                <ion-icon name='add' ></ion-icon>
-            </button>
-            
-          </ion-col>
-          
-          <ion-col width-25>
-            $5.35
-          </ion-col>
-      </ion-row>
-      
-      
-      <ion-row>
-          <ion-col width-50>
-              <button ion-button color="dark" clear icon-only>
-                  <ion-icon name='trash' is-active="false"></ion-icon>
-              </button>
-              Purple Cross
-              
-          </ion-col>
-          
-          <ion-col width-25>
-            
-            <button ion-button color="primary" item-left clear icon-only>
-                <ion-icon name='remove' ></ion-icon>
-            </button>
-                
-                <ion-input type="text" value="1" item-left></ion-input>
-                
-            <button ion-button color="primary" item-right clear icon-only>
-                <ion-icon name='add' ></ion-icon>
-            </button>
-            
-          </ion-col>
-          
-          <ion-col width-25>
-            $5.35
-          </ion-col>
-      </ion-row>
-      
-      
-      <ion-row>
-          <ion-col width-50>
-              <button ion-button color="dark" clear icon-only>
-                  <ion-icon name='trash' is-active="false"></ion-icon>
-              </button>
-              Bloody Kush
-              
-          </ion-col>
-          
-          <ion-col width-25>
-            
-            <button ion-button color="primary" item-left clear icon-only>
-                <ion-icon name='remove' ></ion-icon>
-            </button>
-                
-                <ion-input type="text" value="1" item-left></ion-input>
-                
-            <button ion-button color="primary" item-right clear icon-only>
-                <ion-icon name='add' ></ion-icon>
-            </button>
-            
-          </ion-col>
-          
-          <ion-col width-25>
-            $5.35
-          </ion-col>
-      </ion-row>
-      
-      <ion-row>
-          
-          <ion-col offset-25>
-          Coins:
-          </ion-col>
-          
-          <ion-col width-25>
-            
-            <button ion-button color="primary" item-left clear icon-only>
-                <ion-icon name='remove' ></ion-icon>
-            </button>
-                
-                <ion-input type="text" value="1" item-left></ion-input>
-                
-            <button ion-button color="primary" item-right clear icon-only>
-                <ion-icon name='add' ></ion-icon>
-            </button>
-            
-          </ion-col>
-          
-          <ion-col width-25>
-            89
-          </ion-col>
-      </ion-row>
-      
-      <ion-row>
-          
-          <ion-col offset-25>
-          Gratuity:
-          </ion-col>
-          
-          <ion-col width-25>
-            
-            <button ion-button color="primary" item-left clear icon-only>
-                <ion-icon name='remove' ></ion-icon>
-            </button>
-                
-                <ion-input type="text" value="1" item-left></ion-input>
-                
-            <button ion-button color="primary" item-right clear icon-only>
-                <ion-icon name='add' ></ion-icon>
-            </button>
-            
-          </ion-col>
-          
-          <ion-col width-25>
-            $2
-          </ion-col>
-      </ion-row>
-      
-      
-      <ion-row>
-          
-          <ion-col width-25 offset-50>
-            Total Amount:
-            
-          </ion-col>
-          
-          <ion-col width-25>
-            $35.17
-          </ion-col>
-      </ion-row>
-      
-      
-  </ion-grid>
-  
-  
-  <p text-center>
-    <button ion-button color="primary" round large>
-     Delivery
-    </button>
     
-    OR
+    <ion-grid no-padding class="cartBody">
+        <ion-row class="font-regular bg-white">
+            <ion-col width-50 text-center>ITEMS</ion-col>
+            <ion-col class="width-30">QUANTITY</ion-col>
+            <ion-col class="width-20">PRICE</ion-col>
+        </ion-row>
+        
+        <ion-row>
+            <ion-col width-50 class="font-regular sectionOne">
+                <button ion-button color="dark" clear icon-only>
+                    <ion-icon name='trash' is-active="false" class="font-normal"></ion-icon>
+                </button>
+                Gorilla Glue
+            </ion-col>
+            
+            <ion-col text-center width-25 class="orderQuantity  font-regular remove-padding-left">
+                <button ion-button color="primary" item-left clear icon-only>
+                    <ion-icon name='remove' class="font-regular"></ion-icon>
+                </button>
+                <ion-input type="text" text-center value="1" item-left></ion-input>
+                <button ion-button color="primary" item-right clear icon-only>
+                    <ion-icon name='add' class="font-regular"></ion-icon>
+                </button>
+            </ion-col>
+            
+            <ion-col width-25 class="orederPriceCol font-regular">
+                $5.35
+            </ion-col>
+        </ion-row>
+        
+        <ion-row>
+            <ion-col width-50 class="font-regular sectionOne">
+                <button ion-button color="dark" clear icon-only>
+                    <ion-icon name='trash' is-active="false" class="font-normal"></ion-icon>
+                </button>
+                Marijuana choc
+            </ion-col>
+            
+            <ion-col text-center width-25 class="orderQuantity font-regular remove-padding-left">
+                <button ion-button color="primary" item-left clear icon-only>
+                    <ion-icon name='remove' class="font-regular"></ion-icon>
+                </button>
+                <ion-input type="text" text-center value="1" item-left></ion-input>
+                <button ion-button color="primary" item-right clear icon-only>
+                    <ion-icon name='add' class="font-regular"></ion-icon>
+                </button>
+            </ion-col>
+            
+            <ion-col width-25 class="orederPriceCol font-regular">
+                $5.35
+            </ion-col>
+        </ion-row>
+        
+        <ion-row>
+            <ion-col width-50 class="font-regular sectionOne">
+                <button ion-button color="dark" clear icon-only>
+                    <ion-icon name='trash' is-active="false" class="font-normal"></ion-icon>
+                </button>
+                Bloodt Kush
+            </ion-col>
+            
+            <ion-col text-center width-25 class="orderQuantity font-regular remove-padding-left">
+                <button ion-button color="primary" item-left clear icon-only>
+                    <ion-icon name='remove' class="font-regular"></ion-icon>
+                </button>
+                <ion-input type="text" text-center value="1" item-left></ion-input>
+                <button ion-button color="primary" item-right clear icon-only>
+                    <ion-icon name='add' class="font-regular"></ion-icon>
+                </button>
+            </ion-col>
+            
+            <ion-col width-25 class=" orederPriceCol font-regular">
+                $5.35
+            </ion-col>
+        </ion-row>
+        
+        <ion-row>
+            <ion-col width-50 class="font-regular sectionOne">
+                <button ion-button color="dark" clear icon-only>
+                    <ion-icon name='trash' is-active="false" class="font-normal"></ion-icon>
+                </button>
+                Purple Cross
+            </ion-col>
+            
+            <ion-col text-center width-25 class="orderQuantity font-regular remove-padding-left">
+                <button ion-button color="primary" item-left clear icon-only>
+                    <ion-icon name='remove' class="font-regular"></ion-icon>
+                </button>
+                <ion-input type="text" text-center value="1" item-left></ion-input>
+                <button ion-button color="primary" item-right clear icon-only>
+                    <ion-icon name='add' class="font-regular"></ion-icon>
+                </button>
+            </ion-col>
+            
+            <ion-col width-25 class="orederPriceCol font-regular">
+                $5.35
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col width-50 class="font-regular sectionOne">
+                <button ion-button color="dark" clear icon-only>
+                    <ion-icon name='trash' is-active="false" class="font-normal"></ion-icon>
+                </button>
+                Gorilla Glue Cross
+            </ion-col>
+            
+            <ion-col text-center width-25 class="orderQuantity font-regular remove-padding-left">
+                <button ion-button color="primary" item-left clear icon-only>
+                    <ion-icon name='remove' class="font-regular"></ion-icon>
+                </button>
+                <ion-input type="text" text-center value="1" item-left></ion-input>
+                <button ion-button color="primary" item-right clear icon-only>
+                    <ion-icon name='add' class="font-regular"></ion-icon>
+                </button>
+            </ion-col>
+            
+            <ion-col width-25 class="orederPriceCol font-regular">
+                $5.35
+            </ion-col>
+        </ion-row>
+        
+        <ion-row class="border-none">
+            <ion-col width-50 text-right  class="font-normal sectionOne sectionTwo">
+                <span color="gray">Coins:</span>
+            </ion-col>
+            
+            <ion-col text-center width-25 class="orderQuantity font-regular remove-padding-left">
+                <button ion-button color="primary" item-left clear icon-only>
+                    <ion-icon name='remove' class="font-regular"></ion-icon>
+                </button>
+                <ion-input type="text" text-center value="89" item-left></ion-input>
+                <button ion-button color="primary" item-right clear icon-only>
+                    <ion-icon name='add' class="font-regular"></ion-icon>
+                </button>
+            </ion-col>
+            
+            <ion-col width-25 class=" orederPriceCol font-normal">
+                <span color="gray">89</span>
+            </ion-col>
+        </ion-row>
+        
+        <ion-row class="border-none">
+            <ion-col width-50 text-right  class="font-normal sectionOne sectionTwo">
+                <span color="gray">Gratuity:</span>
+            </ion-col>
+            
+            <ion-col text-center width-25 class="orderQuantity font-regular remove-padding-left">
+                <button ion-button color="primary" item-left clear icon-only>
+                    <ion-icon name='remove' class="font-regular"></ion-icon>
+                </button>
+                <ion-input type="text" text-center value="1" item-left></ion-input>
+                <button ion-button color="primary" item-right clear icon-only>
+                    <ion-icon name='add' class="font-regular"></ion-icon>
+                </button>
+            </ion-col>
+            
+            <ion-col width-25 class="orederPriceCol font-normal">
+                <span color="gray">$2.00</span>
+            </ion-col>
+        </ion-row>
+        
+        <ion-row padding-bottom>
+            <ion-col width-50 text-right  class="font-normal sectionOne sectionTwo">
+                <span color="gray">Total Amount:</span>
+            </ion-col>
+            
+            <ion-col text-center width-25 class="orderQuantity font-regular remove-padding-left">
+                
+            </ion-col>
+            
+            <ion-col width-25 class=" orederPriceCol font-normal">
+                <span color="gray">$1175.40</span>
+            </ion-col>
+        </ion-row>
+        
+    </ion-grid>
     
-    <button ion-button color="primary" round large>
-      Pickup
-    </button>
-  </p>
     
-  
-  <p text-center>Add Promo Code</p>
-  
-  <p text-center>
-      <button ion-button color="danger" round large>
-           Checkout
-      </button>
-  </p>
-  
+    <p text-center margin-top padding-top class="deliveryPickup">
+        <button ion-button color="darkGreen" round small>
+            Delivery
+        </button>
+        
+        <span color="gray" class="font-regular">OR</span>
+        
+        <button ion-button color="darkGreen" round small>
+            Pickup
+        </button>
+    </p>
+    
+    
+    <p text-center margin-top color="gray" class="font-regular text-underline">Add Promo Code</p>
+    
+    <p text-center>
+        <button ion-button color="pink" round small class="font-large margin-bottom-15">
+            Checkout
+        </button>
+    </p>
+    
 </ion-content>
