@@ -338,6 +338,7 @@ ion-buttons.borderForDriver {
 .onlineWrapper ion-card{
     border-radius: 0px;
     box-shadow: 0px 0px 0px;
+       background: none;
 }
 .onlinePageWrap + ion-card-content + a  {
     text-decoration:none;
@@ -348,6 +349,12 @@ ion-buttons.borderForDriver {
 .postActions.row {
     margin: 5px 0px;
     border-bottom: 1px solid #bebebe;
+}
+.postIndividualWrap .myProfileDetails {
+    background: none;
+}
+ion-row.postActions {
+    border-bottom: 1px solid #ececec;
 }
 
 /* forgot password */
