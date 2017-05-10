@@ -1,102 +1,226 @@
 <ion-header>
-  <ion-navbar>
+    <ion-navbar color="header">
+        <button ion-button menuToggle no-margin>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        
+        
+        <ion-title text-center>Reviews & Ratings</ion-title>
+        
+        <ion-buttons right>
+            <button ion-button icon-only>
+                <ion-icon name="bookmark"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
     
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-  
     
-    <ion-title text-center>Ratings and Reviews</ion-title>
-    
-    <ion-buttons right>
-      <button ion-button icon-only>
-        <ion-icon name="options"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    
-    
-  </ion-navbar>
-  
-  <ion-toolbar>
-  
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="notifications"></ion-icon>
-        <ion-badge item-right>2</ion-badge>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="cart"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="car"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="heart"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="cash"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-  </ion-toolbar>
-  
-  
-  
 </ion-header>
 
-<ion-content>
-
-
-    <div padding>
-      <ion-segment [(ngModel)]="rate">
-        <ion-segment-button value="reviews">
-          Reviews
-        </ion-segment-button>
-        <ion-segment-button value="ratings">
-          Ratings
-        </ion-segment-button>
-        <ion-segment-button value="quality">
-          Quality
-        </ion-segment-button>
-      </ion-segment>
+<ion-content class="storefrontsWrap" padding>
+    <ion-row padding class="remove-padding-top remove-padding-bottom">
+        <ion-segment [(ngModel)]="rate">
+            <ion-segment-button value="reviews">Reviews</ion-segment-button>
+            <ion-segment-button value="ratings">Ratings</ion-segment-button>
+            <ion-segment-button value="quality">Quality</ion-segment-button>
+        </ion-segment>
+    </ion-row>
+    
+    <div [ngSwitch]="rate" class="reviewsPage">
+        <ion-card *ngSwitchCase="'reviews'">
+            <p text-center margin-bottom color="gray">Reviews / 55</p>
+            <div class="reviews">
+                <ion-row>
+                    <ion-col width-40 padding-top class="ratingStars remove-padding-left">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon color="gray" name="star"></ion-icon>
+                    </ion-col>
+                    <ion-col class="authorName" width-65><p class="font-small" color="gray">by jessie</p></ion-col>
+                    
+                </ion-row>
+                <ion-row>
+                    <ion-col width-100 no-padding><p class="font-small" color="gray">Pellentesque metus urna, laoreet non con vallisqis sollicitudin nec massa. </p></ion-col>
+                </ion-row>
+            </div>
+            <div class="reviews">
+                <ion-row>
+                    <ion-col width-40 padding-top class="ratingStars remove-padding-left">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </ion-col>
+                    <ion-col width-65 class="authorName"><p class="font-small" color="gray">by jessie</p></ion-col>
+                    
+                </ion-row>
+                <ion-row>
+                    <ion-col width-100 no-padding><p class="font-small" color="gray">Pellentesque metus urna, laoreet non con vallisqis sollicitudin nec massa. </p></ion-col>
+                </ion-row>
+            </div>
+            <div class="reviews">
+                <ion-row>
+                    <ion-col width-40 padding-top class="ratingStars remove-padding-left">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star" class="gray"></ion-icon>
+                        <ion-icon name="star" class="gray"></ion-icon>
+                    </ion-col>
+                    <ion-col width-65  class="authorName"><p class="font-small" color="gray">by jessie</p></ion-col>
+                    
+                </ion-row>
+                <ion-row>
+                    <ion-col width-100 no-padding><p class="font-small" color="gray">Pellentesque metus urna, laoreet non con vallisqis sollicitudin nec massa. </p></ion-col>
+                </ion-row>
+            </div>
+            <div class="reviews">
+                <ion-row>
+                    <ion-col width-40 padding-top class="ratingStars remove-padding-left">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star" class="gray"></ion-icon>
+                    </ion-col>
+                    <ion-col width-65 class="authorName"><p class="font-small" color="gray">by jessie</p></ion-col>
+                    
+                </ion-row>
+                <ion-row>
+                    <ion-col width-100 no-padding><p class="font-small" color="gray">Pellentesque metus urna, laoreet non con vallisqis sollicitudin nec massa. </p></ion-col>
+                </ion-row>
+            </div>
+            <div class="reviews">
+                <ion-row>
+                    <ion-col width-40 padding-top class="ratingStars remove-padding-left">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </ion-col>
+                    <ion-col width-65 class="authorName"><p class="font-small" color="gray">by jessie</p></ion-col>
+                    
+                </ion-row>
+                <ion-row>
+                    <ion-col width-100 no-padding><p class="font-small" color="gray">Pellentesque metus urna, laoreet non con vallisqis sollicitudin nec massa. </p></ion-col>
+                </ion-row>
+            </div>
+            <div class="reviews">
+                <ion-row>
+                    <ion-col width-40 padding-top class="ratingStars remove-padding-left">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </ion-col>
+                    <ion-col width-65 class="authorName"><p class="font-small" color="gray">by jessie</p></ion-col>
+                    
+                </ion-row>
+                <ion-row>
+                    <ion-col width-100 no-padding><p class="font-small" color="gray">Pellentesque metus urna, laoreet non con vallisqis sollicitudin nec massa. </p></ion-col>
+                </ion-row>
+            </div>
+            <div class="reviews">
+                <ion-row>
+                    <ion-col width-40 padding-top class="ratingStars remove-padding-left">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </ion-col>
+                    <ion-col width-65 class="authorName"><p class="font-small" color="gray">by jessie</p></ion-col>
+                    
+                </ion-row>
+                <ion-row>
+                    <ion-col width-100 no-padding><p class="font-small" color="gray">Pellentesque metus urna, laoreet non con vallisqis sollicitudin nec massa. </p></ion-col>
+                </ion-row>
+            </div>
+            <div class="reviews">
+                <ion-row>
+                    <ion-col width-40 padding-top class="ratingStars remove-padding-left">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </ion-col>
+                    <ion-col width-65 class="authorName"><p class="font-small" color="gray">by jessie</p></ion-col>
+                    
+                </ion-row>
+                <ion-row>
+                    <ion-col width-100 no-padding><p class="font-small" color="gray">Pellentesque metus urna, laoreet non con vallisqis sollicitudin nec massa. </p></ion-col>
+                </ion-row>
+            </div>
+            <div class="reviews">
+                <ion-row>
+                    <ion-col width-40 class="ratingStars remove-padding-left">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star" class="gray"></ion-icon>
+                    </ion-col>
+                    <ion-col width-65 class="authorName"><p class="font-small" color="gray">by jessie</p></ion-col>
+                    
+                </ion-row>
+                <ion-row>
+                    <ion-col width-100 no-padding><p class="font-small" color="gray">Pellentesque metus urna, laoreet non con vallisqis sollicitudin nec massa. </p></ion-col>
+                </ion-row>
+            </div>
+            
+            <ion-col width-15 class="btnRightSide" text-center margin-top>
+                <button class="item-bottom"  ion-button icon-left round color="pink" small padding>
+                    <ion-icon name="star"></ion-icon> Rate Now
+                </button>
+            </ion-col>
+            <ion-col no-padding margin-top>
+                <img src="assets/adbanner.png"/>
+            </ion-col>
+        </ion-card>
+        
+        
+        <ion-card *ngSwitchCase="'ratings'">
+            <ion-row>
+                <ion-col width-25></ion-col>
+                <ion-col width-33 padding-top class="ratingStars remove-padding-left">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon class="gray" name="star"></ion-icon>
+                    <ion-icon class="gray" name="star"></ion-icon>
+                </ion-col>
+                <ion-col class="authorName" width-33><p class="font-small" color="gray">220</p></ion-col>
+                <ion-col width-25></ion-col>
+            </ion-row>
+            
+            <ion-col width-15 class="btnRightSide" text-center margin-top>
+                <button class="item-bottom"  ion-button icon-left round color="pink" small padding>
+                    <ion-icon name="star"></ion-icon> Rate Now
+                </button>
+            </ion-col>
+            <ion-col no-padding margin-top>
+                <img src="assets/adbanner.png"/>
+            </ion-col>
+        </ion-card>
+        
+        <ion-card *ngSwitchCase="'quality'">
+            <p text-center margin-bottom color="gray">Quality 100%</p>
+            <ion-col width-15 class="btnRightSide" text-center margin-top>
+                <button class="item-bottom"  ion-button icon-left round color="pink" small padding>
+                    <ion-icon name="star"></ion-icon> Rate Now
+                </button>
+            </ion-col>
+            <ion-col no-padding margin-top>
+                <img src="assets/adbanner.png"/>
+            </ion-col>
+        </ion-card>
     </div>
     
-    <div [ngSwitch]="rate">
-      
-      <ion-card *ngSwitchCase="'reviews'">
-
-        
-
-      </ion-card>
-      
-      
-      <ion-card *ngSwitchCase="'ratings'">
-
-        
-
-      </ion-card>
-      
-      <ion-card *ngSwitchCase="'quality'">
-
-        
-
-      </ion-card>
-      
-      
-    </div>
     
-
 </ion-content>

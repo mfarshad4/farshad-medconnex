@@ -61,6 +61,21 @@ $font-normal: 16px;
 $font-large: 18px;
 $font-big: 20px;
 
+.font-small {
+    font-size: $font-small!important;
+}
+.font-medium {
+    font-size: $font-small!important;
+}
+.font-normal {
+    font-size: $font-normal!important;
+}
+.font-large {
+    font-size: $font-large!important;
+}
+.font-big {
+    font-size: $font-big!important;
+}
 
 /*Font weights*/
 
@@ -75,7 +90,11 @@ $text-color: (
     gray: #5f5f5f,
     black: #000,
     darkGrey: #333,
+    lightGray: #b2b2b2,
 );
+.gray{
+    color: color($text-color, lightGray)!important;
+}
 ion-toolbar ion-icon.icon.icon-md.ion-logo-usd {
     border: 1px solid white;
     border-radius: 100%;
@@ -435,16 +454,29 @@ ion-list.sideMenu.list.list-md {
     padding-left:0;
         background: rgba(255, 255, 255, 0);
 }
+
 .favorites-page .card-subtitle {
-    position: absolute;
-    bottom: 0.5em!important;
-    top:initial!important;
-    left: 1.2em!important;
+    font-size: 1.0em;
+    margin-top: -4.5em;
+    margin-left: 16px;
+    position: relative!important;
+    margin-bottom: 8px;
 }
 .favorites-page .card-subtitle ion-img {
     width:50px!important;
     height:50px!important;
     border:0;
+}
+.favorites-page .card-title {
+    font-size: 2.0em;
+    font-weight: bold;
+    text-align: right;
+    float: right;
+    margin-top: -2.2em;
+    margin-right: 14px;
+    position: relative!important;
+    top: 0!important;
+    left: 0!important;
 }
 
 
@@ -461,3 +493,20 @@ ion-list.sideMenu.list.list-md {
     font-size: $font-small;
 }
 
+//Reviews and Raating
+
+.reviewsPage > ion-card {
+    background: none;
+    border: none;
+    box-shadow: 0px 0px 0px;
+}
+.reviewsPage > ion-card .ratingStars {
+    padding-top: 6px;
+}
+.reviews {
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 5px;
+}
+.authorName {
+    padding-top: 8px;
+}

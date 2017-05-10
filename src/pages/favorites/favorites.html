@@ -1,105 +1,82 @@
 <ion-header>
-  <ion-navbar>
+    <ion-navbar color="header">
+        <button ion-button menuToggle no-margin>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        
+        
+        <ion-title text-center>Favorites</ion-title>
+        
+        <ion-buttons right>
+            <button ion-button icon-only>
+                <ion-icon name="bookmark"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
     
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-  
-    
-    <ion-title text-center>Favorites</ion-title>
-    
-    <ion-buttons right>
-      <button ion-button icon-only>
-        <ion-icon name="options"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    
-    
-  </ion-navbar>
-  
-  <ion-toolbar>
-  
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="notifications"></ion-icon>
-        <ion-badge item-right>2</ion-badge>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="cart"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="car"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="heart"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="cash"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-  </ion-toolbar>
-  
-  
-  
+    <ion-toolbar color="darkGreen" class="toolBarIcons">
+        
+            <ion-buttons> 
+                <button ion-button icon-only (click)="notifications()" class="notificationsBtn">
+                    <ion-icon name="ios-notifications-outline"></ion-icon>
+                    <ion-badge class="notificationNumb" color="pink" item-right>2</ion-badge>
+                </button>
+            </ion-buttons>
+        
+            <ion-buttons>
+                <button ion-button icon-only>
+                    <ion-icon name="ios-cart-outline"></ion-icon>
+                </button>
+            </ion-buttons>
+              
+            <ion-buttons class="borderForDriver">
+                <button ion-button icon-only (click)="drivers()">
+                    <ion-icon name="ios-car-outline"></ion-icon>
+                </button>
+            </ion-buttons>
+        
+            <ion-buttons>
+                <button ion-button icon-only (click)="favorites()">
+                    <ion-icon name="ios-heart-outline"></ion-icon>
+                </button>
+            </ion-buttons>
+        
+            <ion-buttons>
+                <button ion-button icon-only (click)="referral()">
+                    <ion-icon name="logo-usd"></ion-icon>
+                </button>
+            </ion-buttons>
+        
+    </ion-toolbar>
 </ion-header>
 
 <ion-content class="favorites-page">
+    <ion-card>
+        <img src="assets/wesley.png" />
+        <div class="card-title">
+            <button ion-button icon-left small round color="pink">
+                <ion-icon name="create"></ion-icon>
+                <div class="text-underline">Edit</div>
+            </button>
+        </div>
+        <div class="card-subtitle" text-left>
+            <ion-img class="prifile-pic-img" width="120" height="120" src="assets/wesley.png"></ion-img>
+        </div>
+    </ion-card>
+    <ion-slides pager slidesPerView="1" style="max-height: 275px;">
+        <ion-slide>
+            <img src="assets/dank.jpg" class="slide-image">
+        </ion-slide>
 
-  <ion-card>
-    <img src="assets/rasvi.jpg"/>
-    <div class="card-title">
-    
-      <button ion-button icon-left small color="danger">
-        <ion-icon name="create"></ion-icon>Edit
-      </button>
-          
+        <ion-slide>
+            <img src="assets/dank2.jpg" class="slide-image">
+        </ion-slide>
+
+        <ion-slide>
+            <img src="assets/BlueMagoo.jpg" class="slide-image">
+        </ion-slide>
+    </ion-slides>
+    <div no-margin>
+        <img src="assets/adbanner.png" />
     </div>
-    
-    <div class="card-subtitle" text-left>
-      
-      <ion-img src="assets/rasvi.jpg" width="50" height="50"></ion-img>
-      
-    </div>
-    
-  </ion-card>
-    
-   
-  <ion-slides pager slidesPerView="2">
-
-  <ion-slide>
-    <img src="assets/dank.jpg" class="slide-image">
-  </ion-slide>
-
-  <ion-slide>
-    <img src="assets/dank2.jpg" class="slide-image">
-  </ion-slide>
-
-  <ion-slide>
-    <img src="assets/BlueMagoo.jpg" class="slide-image">
-  </ion-slide>
-
-  </ion-slides>
-   
-  
-  
-  <ion-card>
-    
-    <img src="assets/adbanner.png"/>
-    
-  </ion-card>
-
 </ion-content>
