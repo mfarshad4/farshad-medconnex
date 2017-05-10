@@ -17,8 +17,8 @@
     
 </ion-header>
 
-<ion-content class="storefrontsWrap" padding>
-    <ion-row padding class="remove-padding-top remove-padding-bottom">
+<ion-content class="storefrontsWrap" >
+    <ion-row padding class="remove-padding-bottom" >
         <ion-segment [(ngModel)]="rate">
             <ion-segment-button value="reviews">Reviews</ion-segment-button>
             <ion-segment-button value="ratings">Ratings</ion-segment-button>
@@ -31,7 +31,7 @@
             <p text-center margin-bottom color="gray">Reviews / 55</p>
             <div class="reviews">
                 <ion-row>
-                    <ion-col width-40 padding-top class="ratingStars remove-padding-left">
+                    <ion-col width-33 padding-top class="ratingStars remove-padding-left">
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
@@ -47,7 +47,7 @@
             </div>
             <div class="reviews">
                 <ion-row>
-                    <ion-col width-40 padding-top class="ratingStars remove-padding-left">
+                    <ion-col width-33 padding-top class="ratingStars remove-padding-left">
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
@@ -63,7 +63,7 @@
             </div>
             <div class="reviews">
                 <ion-row>
-                    <ion-col width-40 padding-top class="ratingStars remove-padding-left">
+                    <ion-col width-33 padding-top class="ratingStars remove-padding-left">
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
@@ -79,7 +79,7 @@
             </div>
             <div class="reviews">
                 <ion-row>
-                    <ion-col width-40 padding-top class="ratingStars remove-padding-left">
+                    <ion-col width-33 padding-top class="ratingStars remove-padding-left">
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
@@ -95,7 +95,7 @@
             </div>
             <div class="reviews">
                 <ion-row>
-                    <ion-col width-40 padding-top class="ratingStars remove-padding-left">
+                    <ion-col width-33 padding-top class="ratingStars remove-padding-left">
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
@@ -111,7 +111,7 @@
             </div>
             <div class="reviews">
                 <ion-row>
-                    <ion-col width-40 padding-top class="ratingStars remove-padding-left">
+                    <ion-col width-33 padding-top class="ratingStars remove-padding-left">
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
@@ -127,7 +127,7 @@
             </div>
             <div class="reviews">
                 <ion-row>
-                    <ion-col width-40 padding-top class="ratingStars remove-padding-left">
+                    <ion-col width-33 padding-top class="ratingStars remove-padding-left">
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
@@ -143,7 +143,7 @@
             </div>
             <div class="reviews">
                 <ion-row>
-                    <ion-col width-40 padding-top class="ratingStars remove-padding-left">
+                    <ion-col width-33 padding-top class="ratingStars remove-padding-left">
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
@@ -159,7 +159,7 @@
             </div>
             <div class="reviews">
                 <ion-row>
-                    <ion-col width-40 class="ratingStars remove-padding-left">
+                    <ion-col width-33 class="ratingStars remove-padding-left">
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
@@ -187,7 +187,7 @@
         
         <ion-card *ngSwitchCase="'ratings'">
             <ion-row>
-                <ion-col width-25></ion-col>
+                <ion-col width-33></ion-col>
                 <ion-col width-33 padding-top class="ratingStars remove-padding-left">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -196,7 +196,53 @@
                     <ion-icon class="gray" name="star"></ion-icon>
                 </ion-col>
                 <ion-col class="authorName" width-33><p class="font-small" color="gray">220</p></ion-col>
-                <ion-col width-25></ion-col>
+                
+            </ion-row>
+            
+            <ion-row class="margin-top-5">
+                <ion-col text-center class="width-15 font-small">5 Star</ion-col>
+                <ion-col width-70 class="progressBarWrap">
+                    <div class="meter orange nostripes">
+                        <span style="width: 95%"></span>
+                    </div> 
+                </ion-col>
+                <ion-col class="width-15 font-medium">110</ion-col>
+            </ion-row>
+            <ion-row class="margin-top-5">
+                <ion-col text-center class="width-15 font-small">4 Star</ion-col>
+                <ion-col width-70 class="progressBarWrap">
+                    <div class="meter orange nostripes">
+                        <span style="width: 60%"></span>
+                    </div> 
+                </ion-col>
+                <ion-col class="width-15 font-medium">60</ion-col>
+            </ion-row>
+            <ion-row class="margin-top-5">
+                <ion-col text-center class="width-15 font-small">3 Star</ion-col>
+                <ion-col width-70 class="progressBarWrap">
+                    <div class="meter orange nostripes">
+                        <span style="width: 30%"></span>
+                    </div> 
+                </ion-col>
+                <ion-col class="width-15 font-medium">30</ion-col>
+            </ion-row>
+            <ion-row class="margin-top-5">
+                <ion-col text-center class="width-15 font-small">2 Star</ion-col>
+                <ion-col width-70 class="progressBarWrap">
+                    <div class="meter orange nostripes">
+                        <span style="width: 20%"></span>
+                    </div> 
+                </ion-col>
+                <ion-col class="width-15 font-medium">10</ion-col>
+            </ion-row>
+            <ion-row class="margin-top-5">
+                <ion-col text-center class="width-15 font-small">1 Star</ion-col>
+                <ion-col width-70 class="progressBarWrap">
+                    <div class="meter orange nostripes">
+                        <span style="width: 0%"></span>
+                    </div> 
+                </ion-col>
+                <ion-col class="width-15 font-medium">0</ion-col>
             </ion-row>
             
             <ion-col width-15 class="btnRightSide" text-center margin-top>

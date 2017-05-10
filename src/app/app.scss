@@ -31,6 +31,14 @@ input:-ms-input-placeholder { /* IE10+ */
   color: color($colors, gray);
 }
 
+//Width
+
+.width-15 {
+-webkit-flex: 0 0 15%;
+    -ms-flex: 0 0 15%;
+    flex: 0 0 15%;
+    max-width: 15%;
+}
 
 ion-content {
     background: url(../assets/layoutBG.png) no-repeat center center fixed;
@@ -137,6 +145,9 @@ ion-toolbar ion-icon.icon.icon-md.ion-logo-usd {
 }
 .profileDetails > p:nth-child(2) {
     font-size:12px;
+}
+.margin-top-5 {
+    margin-top: 5px;
 }
 .profileTwoBtn div {
     font-size: 11px;
@@ -260,7 +271,7 @@ ion-buttons.borderForDriver {
 .toolBarIcons .toolbar-content > ion-col {
     padding: 0;
 }
-.toolBarIcons .toolbar-content.toolbar-content-md {
+.toolBarIcons .toolbar-content {
     display: flex;
     text-align: center;
 }
@@ -520,3 +531,53 @@ ion-list.sideMenu.list.list-md {
 .authorName {
     padding-top: 8px;
 }
+
+.progressBarWrap {
+    width: 100%;
+}
+.meter {
+    height: 10px;
+    position: relative;
+    background: #d2d2d2;
+    border-radius: 25px;
+    padding: 6px;
+}
+.meter > span {
+    display: block;
+    height: 100%;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+    -moz-border-radius-topright: 8px;
+    -moz-border-radius-bottomright: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    -webkit-border-top-left-radius: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+    -moz-border-radius-topleft: 20px;
+    -moz-border-radius-bottomleft: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgb(43,194,83);
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(43,194,83)),
+        color-stop(1, rgb(84,240,84))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(43,194,83) 37%,
+        rgb(84,240,84) 69%
+    );
+    position: relative;
+    overflow: hidden;
+}
+.orange > span {
+    background-color: #ffb328;
+    height: 12px;
+    margin-top: -6px;
+    margin-left: -7px;
+}
+		
+
