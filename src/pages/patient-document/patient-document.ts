@@ -6,31 +6,29 @@ declare var cordova: any;
 
 @Component({
   template: `
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Upload Verification Documents
-    </ion-title>
-    <ion-buttons start>
-      <button ion-button (click)="dismiss()">
-        <span ion-text color="primary" showWhen="ios">Cancel</span>
-        <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
-        <ion-icon name="md-close"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          Upload Verification Documents
+        </ion-title>
+        <ion-buttons start>
+          <button ion-button (click)="dismiss()">
+            <span ion-text color="primary" showWhen="ios">Cancel</span>
+            <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
 <ion-content>
-  
   <div>
   
-      <ion-buttons>
-      <button ion-button icon-left (click)="presentActionSheet()">
-        <ion-icon name="camera"></ion-icon>Select Image
-      </button>
-      <button ion-button icon-left (click)="uploadImage()">
-        <ion-icon name="cloud-upload"></ion-icon>Upload
-      </button>
+      <ion-buttons padding center text-center>
+          <button class="width-50" color="darkGreen" ion-button icon-left (click)="presentActionSheet()">
+            <ion-icon name="camera"></ion-icon>Select Image
+          </button>
+          <button class="width-50" color="pink" ion-button icon-left (click)="uploadImage()">
+            <ion-icon name="cloud-upload"></ion-icon>Upload
+          </button>
     </ion-buttons>     
   
   </div>

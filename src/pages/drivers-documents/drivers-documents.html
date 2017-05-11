@@ -1,180 +1,190 @@
 <ion-header>
-  <ion-navbar>
+    <ion-navbar color="header">
+        <button ion-button menuToggle no-margin>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        
+        
+        <ion-title text-center>Driver's Documents</ion-title>
+        
+        <ion-buttons right>
+            <button ion-button icon-only>
+                <ion-icon name="bookmark"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
     
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-  
-    
-    <ion-title text-center>Driver's Documents</ion-title>
-    
-    <ion-buttons right>
-      <button ion-button icon-only>
-        <ion-icon name="options"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    
-    
-  </ion-navbar>
-  
-  <ion-toolbar>
-  
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="notifications"></ion-icon>
-        <ion-badge item-right>2</ion-badge>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="cart"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="car"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="heart"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-    <ion-buttons left padding-horizontal>
-      <button ion-button icon-only>
-        <ion-icon name="cash"></ion-icon>
-      </button>
-    </ion-buttons>
-    
-  </ion-toolbar>
-  
-  
-  
+    <ion-toolbar color="darkGreen" class="toolBarIcons">
+       
+            <ion-buttons> 
+                <button ion-button icon-only (click)="notifications()" class="notificationsBtn">
+                    <ion-icon name="ios-notifications-outline"></ion-icon>
+                    <ion-badge class="notificationNumb" color="pink" item-right>2</ion-badge>
+                </button>
+            </ion-buttons>
+        
+            <ion-buttons>
+                <button ion-button icon-only>
+                    <ion-icon name="ios-cart-outline"></ion-icon>
+                </button>
+            </ion-buttons>
+              
+            <ion-buttons class="borderForDriver">
+                <button ion-button icon-only (click)="drivers()">
+                    <ion-icon name="ios-car-outline"></ion-icon>
+                </button>
+            </ion-buttons>
+        
+            <ion-buttons>
+                <button ion-button icon-only (click)="favorites()">
+                    <ion-icon name="ios-heart-outline"></ion-icon>
+                </button>
+            </ion-buttons>
+        
+            <ion-buttons>
+                <button ion-button icon-only (click)="referral()">
+                    <ion-icon name="logo-usd"></ion-icon>
+                </button>
+            </ion-buttons>
+        
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
-    
-    <div padding>
-      <ion-segment [(ngModel)]="drivers_documents">
-        <ion-segment-button value="upload">
-          Upload 
-        </ion-segment-button>
-        <ion-segment-button value="documents">
-          Documents
-        </ion-segment-button>
-      </ion-segment>
-    </div>
+<ion-content class="storefrontsWrap">
+    <ion-row padding class="remove-padding-top remove-padding-bottom">
+        <ion-segment [(ngModel)]="drivers_documents" padding>
+            <ion-segment-button col-4 value="upload">Upload</ion-segment-button>
+            <ion-segment-button col-4 value="documents">Documents</ion-segment-button>
+        </ion-segment>
+    </ion-row>
     
     
     <div [ngSwitch]="drivers_documents">
-      
-      <div *ngSwitchCase="'upload'">
-
-        <ion-title text-center>Upload Documents</ion-title>
+        
+        <div *ngSwitchCase="'upload'" padding>
+            <ion-title text-center>Upload Documents</ion-title>
+            <ion-list class="registerForm" margin-top>
+                <ion-item no-padding>
+                    <ion-input type="file" class="font-medium" placeholder="Full Name" name="full_name" required></ion-input>
+                </ion-item>
+                <ion-item no-padding>
+                    <ion-input type="file"></ion-input>
+                </ion-item>
+            </ion-list>
+        </div>
+        
+        <div *ngSwitchCase="'documents'" class="margin-bottom-15" padding-bottom>
+            <ion-row center>
+                <ion-col width-33>
+                    <ion-thumbnail item-left class="confirmationProfileWrap">
+                        <ion-img class="confirmationProfile" width="100" height="100" src="assets/wesley.png"></ion-img>
+                    </ion-thumbnail>
+                </ion-col>
+                <ion-col width-33>
+                    <div class="font-regular">Driver's License</div>
+                    <div class="font-regular">1 Week ago</div>
+                </ion-col>
+                <ion-col width-33>
+                    <button class="font-regular" ion-button icon-left outline color="darkGreen">
+                        <ion-icon name="trash"></ion-icon>
+                        Delete
+                    </button>
+                </ion-col>
+            </ion-row>
             
-            <div>
-              
-              
-              <ion-grid>
-                  <ion-row>
-                      <ion-col>
-                          <ion-input type="file" placeholder="Full Name"></ion-input>
-                      </ion-col>
-                      <ion-col>
-                          <ion-input type="file"></ion-input>
-                      </ion-col>
-                  </ion-row>
-                  
-              </ion-grid>
-              
-              
-          </div>
-        
-      </div>
-      
-      
-      
-      <div *ngSwitchCase="'documents'">
-        
-          <ion-row center>
-          <ion-col width-33>
-                <ion-img width="100" height="100" src="assets/rasvi.jpg"></ion-img>
-
-          </ion-col>
-          <ion-col width-50>
-              <div>Driver's License</div>
-              <div>1 Week ago</div>
-              <div>
-                  <button ion-button icon-left outline>
-                      <ion-icon name="trash"></ion-icon>
-                      Delete
-                  </button>
-              </div>
-                          
+            <ion-row center>
+                <ion-col width-33>
+                    <ion-thumbnail item-left class="confirmationProfileWrap">
+                        <ion-img class="confirmationProfile" width="100" height="100" src="assets/wesley.png"></ion-img>
+                    </ion-thumbnail>
+                </ion-col>
+                <ion-col width-33>
+                    <div class="font-regular">Driver's License</div>
+                    <div class="font-regular">1 Week ago</div>
+                </ion-col>
+                <ion-col width-33>
+                    <button class="font-regular" ion-button icon-left outline color="darkGreen">
+                        <ion-icon name="trash"></ion-icon>
+                        Delete
+                    </button>
+                </ion-col>
+            </ion-row>
             
-          </ion-col>
-          
-        </ion-row>
-
-        
-        <ion-row center>
-          <ion-col width-33>
-                <ion-img width="100" height="100" src="assets/rasvi.jpg"></ion-img>
-
-          </ion-col>
-          <ion-col width-50>
-              <div>Driver's License</div>
-              <div>1 Week ago</div>
-              <div>
-                  <button ion-button icon-left outline>
-                      <ion-icon name="trash"></ion-icon>
-                      Delete
-                  </button>
-              </div>
-                          
+            <ion-row center>
+                <ion-col width-33>
+                    <ion-thumbnail item-left class="confirmationProfileWrap">
+                        <ion-img class="confirmationProfile" width="100" height="100" src="assets/wesley.png"></ion-img>
+                    </ion-thumbnail>
+                </ion-col>
+                <ion-col width-33>
+                    <div class="font-regular">Driver's License</div>
+                    <div class="font-regular">1 Week ago</div>
+                </ion-col>
+                <ion-col width-33>
+                    <button class="font-regular" ion-button icon-left outline color="darkGreen">
+                        <ion-icon name="trash"></ion-icon>
+                        Delete
+                    </button>
+                </ion-col>
+            </ion-row>
+                
+            <ion-row center>
+                <ion-col width-33>
+                    <ion-thumbnail item-left class="confirmationProfileWrap">
+                        <ion-img class="confirmationProfile" width="100" height="100" src="assets/wesley.png"></ion-img>
+                    </ion-thumbnail>
+                </ion-col>
+                <ion-col width-33>
+                    <div class="font-regular">Driver's License</div>
+                    <div class="font-regular">1 Week ago</div>
+                </ion-col>
+                <ion-col width-33>
+                    <button class="font-regular" ion-button icon-left outline color="darkGreen">
+                        <ion-icon name="trash"></ion-icon>
+                        Delete
+                    </button>
+                </ion-col>
+            </ion-row>
             
-          </ion-col>
-          
-        </ion-row>
-        
-        
-        <ion-row center>
-          <ion-col width-33>
-                <ion-img width="100" height="100" src="assets/rasvi.jpg"></ion-img>
-
-          </ion-col>
-          <ion-col width-50>
-              <div>Driver's License</div>
-              <div>1 Week ago</div>
-              <div>
-                  <button ion-button icon-left outline>
-                      <ion-icon name="trash"></ion-icon>
-                      Delete
-                  </button>
-              </div>
-                          
+            <ion-row center>
+                <ion-col width-33>
+                    <ion-thumbnail item-left class="confirmationProfileWrap">
+                        <ion-img class="confirmationProfile" width="100" height="100" src="assets/wesley.png"></ion-img>
+                    </ion-thumbnail>
+                </ion-col>
+                <ion-col width-33>
+                    <div class="font-regular">Driver's License</div>
+                    <div class="font-regular">1 Week ago</div>
+                </ion-col>
+                <ion-col width-33>
+                    <button class="font-regular" ion-button icon-left outline color="darkGreen">
+                        <ion-icon name="trash"></ion-icon>
+                        Delete
+                    </button>
+                </ion-col>
+            </ion-row>
             
-          </ion-col>
-          
-        </ion-row>
-
-      </div>
-      
-      
-      
+            <ion-row center>
+                <ion-col width-33>
+                    <ion-thumbnail item-left class="confirmationProfileWrap">
+                        <ion-img class="confirmationProfile" width="100" height="100" src="assets/wesley.png"></ion-img>
+                    </ion-thumbnail>
+                </ion-col>
+                <ion-col width-33>
+                    <div class="font-regular">Driver's License</div>
+                    <div class="font-regular">1 Week ago</div>
+                </ion-col>
+                <ion-col width-33>
+                    <button class="font-regular" ion-button icon-left outline color="darkGreen">
+                        <ion-icon name="trash"></ion-icon>
+                        Delete
+                    </button>
+                </ion-col>
+            </ion-row>
+        </div>
     </div>
     
-    
     <ion-card>
-    
         <img src="assets/adbanner.png"/>
-    
     </ion-card>
-
 </ion-content>
