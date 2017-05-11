@@ -190,7 +190,7 @@
             </ion-col>
             
             <ion-col width-25 class=" orederPriceCol font-normal">
-                <span color="gray">$1175.40</span>
+                <span color="darkGreen" class="font-bold">$1175.40</span>
             </ion-col>
         </ion-row>
         
@@ -213,7 +213,7 @@
     <p text-center margin-top color="gray" class="font-regular text-underline">Add Promo Code</p>
     
     <p text-center>
-        <button ion-button color="pink" round small class="font-large margin-bottom-15">
+        <button (click)="goCheckout()" ion-button color="pink" round small class="font-large margin-bottom-15">
             Checkout
         </button>
     </p>

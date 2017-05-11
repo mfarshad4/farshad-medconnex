@@ -32,10 +32,7 @@ import { NewPasswordPage } from '../pages/new-password/new-password';
 
 import { IndustryDoctorsPage } from '../pages/industry-doctors/industry-doctors';
 
-
-
-
-
+import { CheckoutPage } from '../pages/checkout/checkout';
 
 
 @Component({
@@ -45,7 +42,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage: any = CartPage;
+  rootPage: any = CheckoutPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -67,7 +64,8 @@ export class MyApp {
       { title: 'Legal Docs', component: CartPage },
       { title: 'Drivers Documents', component: DriversDocumentsPage },
       { title: 'Login', component: LoginPage },
-      { title: 'Register', component: RegisterPage }   
+      { title: 'Register', component: RegisterPage },
+      { title: 'Checkout', component: CheckoutPage } 
     ];
 
   }

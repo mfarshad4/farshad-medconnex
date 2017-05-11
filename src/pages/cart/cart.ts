@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 
 import { Platform, MenuController, Nav, NavController, NavParams } from 'ionic-angular';
 
+import { CheckoutPage } from '../checkout/checkout';
+
 
 @Component({
   templateUrl: 'cart.html'
@@ -21,4 +23,9 @@ export class CartPage {
     //this.navCtrl.push(ProductInfoPage);
     
   }
+  
+  goCheckout() {
+      this.navCtrl.push(CheckoutPage);
+  }
+  
 }

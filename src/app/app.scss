@@ -108,6 +108,9 @@ $font-big: 20px;
 $weight-medium: 400;
 $weight-bold: 700;
 
+.font-bold {
+    font-weight: $weight-bold;
+}
 
 $text-color: (
     blue: #00a4e4,
@@ -647,4 +650,16 @@ background: color($colors, darkGreen);
 }
 .sectionTwo {
     padding: 15px 10px 0px 6px;
+}
+.checkoutPage > ion-row {
+    padding: 8px 3px 8px 3px;
+    color: #565656;
+}
+.checkoutBottom {
+    box-shadow: 0px 0px 0px;
+    background: #e4e4e4;
+    margin-top: 3em;
+    margin-bottom: 2em;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
