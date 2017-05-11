@@ -193,6 +193,9 @@ ion-toolbar ion-icon.icon.icon-md.ion-logo-usd {
 .margin-bottom-15 {
     margin-bottom:15px;
 }
+.margin-top-15 {
+    margin-top: 15px;
+}
 .toolBarIcons .toolbar-content.toolbar-content-md > ion-buttons {
     width: 20%;
 }
@@ -705,4 +708,26 @@ font-size: 11px!important;
 } 
 .cardDetails ion-item.expiryYear {
     padding-right: 20px;
+}
+
+//Confirmation Page
+
+.confirmationImg {
+    max-height: 200px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.confirmationMiddle {
+    background: rgba(220, 220, 220, 0.62);
+}  
+.postExperience ion-textarea {
+    background: white;
+    padding: 1px 5px 1px 5px;
+    font-size: 13px!important;
+}   
+ion-img.prifile-pic-img.confirmationProfile.img-loaded {
+    position: absolute;
+    left: 25px;
+    border: 3px solid #10a8a3;
+    top: 112px;
 }

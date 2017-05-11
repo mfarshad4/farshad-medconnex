@@ -16,5 +16,53 @@
 
 
 <ion-content padding>
-
+    <div text-center>
+        <p class="font-normal" color="darkGrey">Marijuana Dispensary</p>
+        <p class="font-small" color="gray">123, Calle Chingon, San Diego, Ca 91910</p>
+        <button ion-button color="pink" round small class="font-regular margin-bottom-15">
+            Change address
+        </button>
+    </div>  
+    <div class="confirmationImg">
+        <ion-thumbnail item-left>
+                    <ion-img class="prifile-pic-img confirmationProfile" width="70" height="70" src="assets/wesley.png"></ion-img>
+                </ion-thumbnail>
+        <img src="assets/dank2.jpg" />
+    </div>
+    
+    <div text-center class="confirmationMiddle" color="gray" padding margin-bottom>
+        <p class="font-normal" color="darkGreen">Confirmation</p>
+        <p class="font-small" color="gray">You will be notified when your order is ready.</p>
+    </div>
+    <div text-center class="postExperience margin-top-15" color="gray" padding-top>
+        <p class="font-large" color="darkGrey">Post Your Experience:</p>
+        <ion-textarea type="email" class="font-normal" value="I love to use this app. The service here was awesome! I love it!!!"></ion-textarea>
+    </div>
+    
+    <div text-center margin-top>
+        <button (click)="confirmation()" ion-button color="pink" round small class="font-large margin-bottom-15">
+            Post
+        </button>
+    </div>
+    <div class="loginBottomWrapper">
+            
+            <ion-row class="socialMediaIcons">
+                <ion-col col-2>
+                </ion-col>
+                <ion-col col-2 text-center >
+                    <img src="assets/icn-fb.png" class="" />
+                </ion-col>
+                <ion-col col-2 text-center >
+                    <img src="assets/icn-twitter.png" class="" />
+                </ion-col>
+                <ion-col col-2 text-center>
+                    <img src="assets/icn-google.png" class="" />
+                </ion-col>
+                <ion-col col-2 text-center>
+                    <img src="assets/icn-email.png" class="" />
+                </ion-col>
+                <ion-col col-2>
+                </ion-col>
+            </ion-row>
+        </div>
 </ion-content>
