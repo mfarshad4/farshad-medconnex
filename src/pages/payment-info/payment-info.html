@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar color="header">
+        <button ion-button menuToggle no-margin>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+
+        <ion-title text-center>Payment Info</ion-title>
+        
+        <ion-buttons right>
+            <button ion-button icon-only>
+                <ion-icon name="bookmark"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <p text-center color="darkGrey" class="font-normal">Fill up your Card Details</p>
+    <ion-list margin-top class="cardDetails">
+        <ion-item>
+            <ion-label class="font-medium" color="gray" stacked>Name on Card:</ion-label>
+            <ion-input class="font-normal" type="email" placeholder="Enter Card Name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="font-medium" color="gray" stacked>Card Number:</ion-label>
+            <ion-input type="email" class="font-normal" placeholder="Enter Card Number"></ion-input>
+        </ion-item>
+        <ion-row>
+            <ion-item class="width-70 border-none expiryYear">
+                <ion-label class="font-medium" color="gray" stacked>Expiry Date:</ion-label>
+                <ion-input color="gray" type="month"></ion-input>
+            </ion-item>
+            <ion-item class="width-30 border-none">
+                <ion-label class="font-medium" color="gray" stacked>CVV:</ion-label>
+                <ion-input class="font-normal" type="email" placeholder="Enter CVV"></ion-input>
+            </ion-item>
+        </ion-row>
+    </ion-list>
+    <div text-center margin-top padding-top>
+        <button (click)="confirmation()" ion-button color="pink" round small class="font-large margin-bottom-15">
+            Pay Now
+        </button>
+        <div class="loginBottomWrapper">
+            <span color="gray" class="font-regular">or <span class="text-underline">Cancel</span></span>
+        </div>
+    </div>
+</ion-content>

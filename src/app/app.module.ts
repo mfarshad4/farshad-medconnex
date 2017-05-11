@@ -41,6 +41,8 @@ import { NewPasswordPage } from '../pages/new-password/new-password';
 import { AuthService } from '../providers/auth-service';
 import { CheckoutPage } from '../pages/checkout/checkout';
 import { PaymentPage } from '../pages/payment/payment';
+import { PaymentInfoPage } from '../pages/payment-info/payment-info';
+import { ConfirmationPage } from '../pages/confirmation/confirmation';
 
 // Import ionic2-rating module
 import { Ionic2RatingModule } from 'ionic2-rating';
@@ -81,7 +83,9 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     ResetPasswordPage,
     NewPasswordPage,
     CheckoutPage,
-    PaymentPage
+    PaymentPage,
+    PaymentInfoPage,
+    ConfirmationPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -124,7 +128,9 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     ResetPasswordPage,
     NewPasswordPage,
     CheckoutPage,
-    PaymentPage
+    PaymentPage,
+    PaymentInfoPage,
+    ConfirmationPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ConnectivityService, AuthService, Storage]
 })

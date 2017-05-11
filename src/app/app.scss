@@ -51,6 +51,12 @@ input:-ms-input-placeholder { /* IE10+ */
     flex: 0 0 30%;
     max-width: 30%;    
 }
+.width-70 {
+-webkit-flex: 0 0 70%;
+    -ms-flex: 0 0 70%;
+    flex: 0 0 70%;
+    max-width: 70%;    
+}
 
 ion-content {
     background: url(../assets/layoutBG.png) no-repeat center center fixed;
@@ -662,4 +668,41 @@ background: color($colors, darkGreen);
     margin-bottom: 2em;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+//Payment page
+
+.paymentTypo button {
+    padding: 0;
+}
+.radio-md .radio-checked {
+    border-color: #10b1ac;
+}
+.radio-md .radio-inner {
+    background-color: #10b1ac;
+}
+.item-radio-checked.item-md ion-label {
+    color: #10b1ac;
+}
+.paymentTypo .item-inner {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.55) !important;
+}
+.paymentTypo .item-md {
+    color: #6b6b6b;
+    background-color: rgba(226, 226, 226, 0.57);
+}
+
+//Payment info
+
+
+.cardDetails ion-item {
+    padding-left: 0;
+    background: none;
+}
+.cardDetails ion-item ion-input {
+font-size: 11px!important;
+    margin-top: 7px;
+} 
+.cardDetails ion-item.expiryYear {
+    padding-right: 20px;
 }
