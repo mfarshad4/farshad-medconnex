@@ -40,6 +40,7 @@ import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { NewPasswordPage } from '../pages/new-password/new-password';
 import { AuthService } from '../providers/auth-service';
 import { CheckoutPage } from '../pages/checkout/checkout';
+import { PaymentPage } from '../pages/payment/payment';
 
 // Import ionic2-rating module
 import { Ionic2RatingModule } from 'ionic2-rating';
@@ -79,7 +80,8 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     HybridPage,
     ResetPasswordPage,
     NewPasswordPage,
-    CheckoutPage
+    CheckoutPage,
+    PaymentPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -121,7 +123,8 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     HybridPage,
     ResetPasswordPage,
     NewPasswordPage,
-    CheckoutPage
+    CheckoutPage,
+    PaymentPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ConnectivityService, AuthService, Storage]
 })

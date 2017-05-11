@@ -13,41 +13,6 @@
             </button>
         </ion-buttons>
     </ion-navbar>
-    
-    <ion-toolbar color="darkGreen" class="toolBarIcons">
-       
-            <ion-buttons> 
-                <button ion-button icon-only (click)="notifications()" class="notificationsBtn">
-                    <ion-icon name="ios-notifications-outline"></ion-icon>
-                    <ion-badge class="notificationNumb" color="pink" item-right>2</ion-badge>
-                </button>
-            </ion-buttons>
-        
-            <ion-buttons>
-                <button ion-button icon-only>
-                    <ion-icon name="ios-cart-outline"></ion-icon>
-                </button>
-            </ion-buttons>
-               
-            <ion-buttons class="borderForDriver">
-                <button ion-button icon-only (click)="drivers()">
-                    <ion-icon name="ios-car-outline"></ion-icon>
-                </button>
-            </ion-buttons>
-        
-            <ion-buttons>
-                <button ion-button icon-only (click)="favorites()">
-                    <ion-icon name="ios-heart-outline"></ion-icon>
-                </button>
-            </ion-buttons>
-        
-            <ion-buttons>
-                <button ion-button icon-only (click)="referral()">
-                    <ion-icon name="logo-usd"></ion-icon>
-                </button>
-            </ion-buttons>
-
-    </ion-toolbar>
 </ion-header>
 
 <ion-content>
@@ -190,7 +155,7 @@
    
     
     <p text-center>
-        <button (click)="goCheckout()" ion-button color="pink" round small class="font-large margin-bottom-15">
+        <button (click)="goPayment()" ion-button color="pink" round small class="font-large margin-bottom-15">
             Pay Now
         </button>
     </p>
