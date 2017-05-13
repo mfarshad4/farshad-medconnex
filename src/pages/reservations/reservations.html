@@ -55,16 +55,14 @@
     <img src="assets/reservationBanner.png" />
     
     <ion-row padding class="remove-padding-top remove-padding-bottom">
-        <ion-segment [(ngModel)]="reservations" padding>
+        <ion-segment [(ngModel)]="reservations" margin class="tab-bg">
             <ion-segment-button col-4 value="schedule">Schedule</ion-segment-button>
             <ion-segment-button col-4 value="info">Info</ion-segment-button>
             <ion-img class="uploadIcn" width="32" height="22" src="assets/upload.png"></ion-img>
         </ion-segment>
     </ion-row>
     
-    
     <div [ngSwitch]="reservations">
-        
         <div *ngSwitchCase="'schedule'" class="reservationBody loginPageWrapper" padding>
             
             <ion-title padding-bottom padding-left>Schedule an Appointment</ion-title>
@@ -112,16 +110,10 @@
             </ion-list>
             
         </div>
-        
-        
-        
     </div>
     
-    
     <ion-card>
-        
         <img src="assets/adbanner.png"/>
-        
     </ion-card>
     
 </ion-content>

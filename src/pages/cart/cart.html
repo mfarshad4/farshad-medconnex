@@ -4,7 +4,6 @@
             <ion-icon name="menu"></ion-icon>
         </button>
         
-        
         <ion-title text-center>Order / Cart</ion-title>
         
         <ion-buttons right>
@@ -13,8 +12,6 @@
             </button>
         </ion-buttons>
     </ion-navbar>
-    
-    
 </ion-header>
 
 <ion-content>
@@ -196,19 +193,50 @@
         
     </ion-grid>
     
+    <ion-row padding class="remove-padding-top remove-padding-bottom">
+        <ion-segment [(ngModel)]="reservations" padding class="collectingBtnWrap">
+            <ion-segment-button col-4 value="schedule" class="text-capitalize">Delivery</ion-segment-button>
+            <span color="gray" class="font-small">OR</span>
+            <ion-segment-button col-4 value="info" class="text-capitalize">Pickup</ion-segment-button>
+        </ion-segment>
+    </ion-row>
     
-    <p text-center margin-top padding-top class="deliveryPickup">
-        <button ion-button color="darkGreen" round small>
-            Delivery
-        </button>
-        
-        <span color="gray" class="font-regular">OR</span>
-        
-        <button ion-button color="darkGreen" round small>
-            Pickup
-        </button>
-    </p>
-    
+    <div [ngSwitch]="reservations">
+        <div *ngSwitchCase="'schedule'" class="deliveryType reservationBody loginPageWrapper" padding>
+            
+            <ion-title padding-bottom padding-left>DELIVERY DETAILS</ion-title> 
+            <form> 
+                <ion-list class="registerForm">
+                    <ion-item>
+                        <ion-input type="text" placeholder="Name:" name="full_name" required></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-input type="number" placeholder="Moobile No:" name="phone_number" required></ion-input>
+                    </ion-item>
+                   
+                     <ion-item>
+                        <ion-input type="text" placeholder="Address:" name="address" required></ion-input>
+                    </ion-item>
+                     <ion-item>
+                        <ion-input type="email" placeholder="Email" name="email" required></ion-input>
+                    </ion-item>   
+                    
+                </ion-list>
+                <div text-left padding-left class="postExperience margin-top-15" color="gray" padding-top padding-bottom> 
+                    <p class="font-medium" color="gray">Special Instructions:</p>
+                    <ion-textarea type="email" class="font-normal" value="I love to use this app. The service here was awesome! I love it!!!"></ion-textarea>
+                </div>
+            </form>
+            <button margin-left ion-button round type="submit" small left class="margin-bottom" color="pink">Submit</button>
+        </div>
+        <div *ngSwitchCase="'info'" class="reservationBody pickUpTime" padding>
+            <ion-row text-center>
+                <ion-col width-33 color="gray" class="font-bold"><div>10 <br>Minutes</div></ion-col>
+                <ion-col width-33 color="gray" class="font-bold"><div>15 <br>Minutes</div></ion-col>
+                <ion-col width-33 color="gray" class="font-bold"><div>30 <br>Minutes</div></ion-col>
+            </ion-row>
+        </div>
+    </div>
     
     <p text-center margin-top color="gray" class="font-regular text-underline">Add Promo Code</p>
     

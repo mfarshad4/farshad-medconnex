@@ -57,11 +57,21 @@ input:-ms-input-placeholder { /* IE10+ */
     flex: 0 0 70%;
     max-width: 70%;    
 }
+.width-40 {
+-webkit-flex: 0 0 40%;
+    -ms-flex: 0 0 40%;
+    flex: 0 0 40%;
+    max-width: 40%;    
+}
 .width-50{
     -webkit-flex: 0 0 50%;
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%; 
+}
+.tab-bg {
+    background: #fff;
+    border-radius: 20px;
 }
 
 ion-content {
@@ -156,6 +166,8 @@ ion-toolbar ion-icon.icon.icon-md.ion-logo-usd {
     border-radius: 50%;
     border: 4px solid #10a8a3;
     overflow: hidden;
+    z-index: 12;
+    position: relative;
 }
 .prifile-pic-img img {
     width: 100%;
@@ -186,6 +198,9 @@ ion-toolbar ion-icon.icon.icon-md.ion-logo-usd {
 }
 .margin-top-5 {
     margin-top: 5px;
+}
+.remove-margin-bottom {
+    margin-bottom: 0!important;
 }
 .profileTwoBtn div {
     font-size: 11px;
@@ -819,4 +834,62 @@ ion-thumbnail.confirmationProfileWrap {
     height: 90px;
     width: 90px;
     object-fit: cover;
+}
+
+//Drivers Page
+
+.settingsBtn {
+    background: #10a8a3;
+    font-size: 6px;
+    height: 16px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 36px;
+    position: absolute;
+    left: 15.3em;
+    top: 3.5em;
+}
+.settingsBtn ion-icon {
+    padding-right: 0;
+}
+.phoneIcn {
+    font-size: 6px;
+    height: 16px;
+    border-radius: 20px;
+    width: 36px;
+}
+.refreshBtn {
+    font-size: 6px;
+    height: 16px;
+    border-radius: 20px;
+    padding: 0px 4px 0px 0px!important;
+    margin-left: 0;
+}
+.refreshBtn span > span{
+    font-size: 10px;
+}
+.btnSectionRight {
+    margin-top: 1em;
+    text-align: right;
+}
+.deliveryType ion-input input {
+    margin-left: 0;
+}
+.collectingBtnWrap >ion-segment-button {
+    background: #10a8a3!important;
+    opacity: 1!important;
+    border-radius: 50px;
+    color: white!important;
+    margin: 0px 7px;
+    font-size: 12px!important;
+}
+.collectingBtnWrap .segment-button.activated, .collectingBtnWrap .segment-button.segment-activated {
+    border-color: #8f8f8f;
+    opacity: 1;
+    background: #b3b3b3!important;
+}
+.pickUpTime ion-col div {
+    border: 2px solid #626262;
+    color: #626262;
+    padding: 16px 0px;
 }
