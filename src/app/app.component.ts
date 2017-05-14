@@ -40,6 +40,8 @@ import { PaymentInfoPage } from '../pages/payment-info/payment-info';
 
 import { ConfirmationPage } from '../pages/confirmation/confirmation';
 
+import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -48,7 +50,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage: any = CartPage;
+  rootPage: any = HelloIonicPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(

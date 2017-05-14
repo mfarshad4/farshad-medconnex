@@ -44,6 +44,7 @@ import { PaymentPage } from '../pages/payment/payment';
 import { PaymentInfoPage } from '../pages/payment-info/payment-info';
 import { ConfirmationPage } from '../pages/confirmation/confirmation';
 
+
 // Import ionic2-rating module
 import { Ionic2RatingModule } from 'ionic2-rating';
 
