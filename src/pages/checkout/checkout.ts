@@ -16,7 +16,12 @@ import { PaymentPage } from '../payment/payment';
 })
 export class CheckoutPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  cartInfo: any;
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.cartInfo = navParams.get('information');
+     
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CheckoutPage');

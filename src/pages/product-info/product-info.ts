@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform } from 'ionic-angular';
+import { NavController, ViewController } from 'ionic-angular';
 
 
 @Component({
@@ -8,11 +8,14 @@ import { Platform } from 'ionic-angular';
 })
 
 export class ProductInfoPage {
-  pet: string = "puppies";
-  isAndroid: boolean = false;
 
-  constructor(platform: Platform) {
-    this.isAndroid = platform.is('android');
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController) {
+    
+    
   }
+  
+  dismiss() {
+        this.viewCtrl.dismiss();
+      }
   
 }

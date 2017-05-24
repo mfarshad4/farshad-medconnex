@@ -19,13 +19,14 @@
             <ion-buttons> 
                 <button ion-button icon-only (click)="notifications()" class="notificationsBtn">
                     <ion-icon name="ios-notifications-outline"></ion-icon>
-                    <ion-badge class="notificationNumb" color="pink" item-right>2</ion-badge>
+                   
                 </button>
             </ion-buttons>
         
             <ion-buttons>
-                <button ion-button icon-only>
+                <button ion-button icon-only (click)="cart()">
                     <ion-icon name="ios-cart-outline"></ion-icon>
+                    <ion-badge class="notificationNumb" color="pink" item-right>{{itemsInCart}}</ion-badge>
                 </button>
             </ion-buttons>
               
@@ -62,33 +63,35 @@
         </ion-segment>
     </ion-row>
     
+    
     <div [ngSwitch]="reservations">
+        
         <div *ngSwitchCase="'schedule'" class="reservationBody loginPageWrapper" padding>
             
             <ion-title padding-bottom padding-left>Schedule an Appointment</ion-title>
             <p padding-bottom  padding-left>As soon as we receive your information, we'll be in touch to confirm your appointment</p>
             
-            <form> 
+            <form #reservationForm="ngForm"> 
                 <ion-list class="registerForm">
                     <ion-item>
-                        <ion-input type="text" placeholder="Full Name" name="full_name" required></ion-input>
+                        <ion-input type="text" placeholder="Full Name" name="full_name" [(ngModel)]="reservationCredentials.full_name" required></ion-input>
                     </ion-item>
                     <ion-item>
-                        <ion-input type="email" placeholder="Email" name="email" required></ion-input>
+                        <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="reservationCredentials.email" required></ion-input>
                     </ion-item>
                     <ion-item>
-                        <ion-input type="number" placeholder="Phone" name="phone_number" required></ion-input>
+                        <ion-input type="text" placeholder="Phone" name="phone" required [(ngModel)]="reservationCredentials.phone" required></ion-input>
                     </ion-item>
                     <ion-item>
-                        <ion-input color="gray" type="date" ></ion-input>
+                        <ion-input color="gray" type="date" name="date" [(ngModel)]="reservationCredentials.date" required></ion-input>
                     </ion-item>
                     <ion-item>
-                        <ion-input type="time"></ion-input>
+                        <ion-input type="time" name="time" [(ngModel)]="reservationCredentials.time" required></ion-input>
                     </ion-item>
                 </ion-list>
             </form>
             
-            <button ion-button round type="submit" full class="margin-bottom" color="pink">Request an Appointment</button>
+            <button ion-button round (click)="reservation()" type="submit" full class="margin-bottom" color="pink" [disabled]="!reservationForm.form.valid">Request an Appointment</button>
         </div>
         <div *ngSwitchCase="'info'" class="reservationBody loginPageWrapper" padding>
             <ion-title padding-left padding-right>Book your Reservation TODAY</ion-title>
@@ -110,10 +113,16 @@
             </ion-list>
             
         </div>
+        
+        
+        
     </div>
     
+    
     <ion-card>
+        
         <img src="assets/adbanner.png"/>
+        
     </ion-card>
     
 </ion-content>

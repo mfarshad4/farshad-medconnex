@@ -18,6 +18,7 @@ export class RegisterPage {
   public register() {
     this.auth.register(this.registerCredentials).subscribe(success => {
       if (success) {
+      console.log("Success:::" + success) ;
         this.createSuccess = true;
           this.showPopup("Success", "Account created.");
       } else {
@@ -38,7 +39,7 @@ export class RegisterPage {
          text: 'OK',
          handler: data => {
            if (this.createSuccess) {
-             this.nav.popToRoot();
+             this.nav.setRoot(LoginPage);
            }
          }
        }

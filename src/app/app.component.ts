@@ -4,6 +4,8 @@ import { Platform, MenuController, Nav  } from 'ionic-angular';
 
 import { StatusBar, Splashscreen } from 'ionic-native';
 
+import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
+
 import { ProductsPage } from '../pages/products/products';
 
 import { CartPage } from '../pages/cart/cart';
@@ -40,7 +42,6 @@ import { PaymentInfoPage } from '../pages/payment-info/payment-info';
 
 import { ConfirmationPage } from '../pages/confirmation/confirmation';
 
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 
 
 @Component({
@@ -50,7 +51,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage: any = HelloIonicPage;
+  rootPage: any = TermsPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -62,7 +63,7 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Providers', component: StorefrontsPage },
+      { title: 'Providers', component: HelloIonicPage },
       { title: 'Products', component: ProductsPage },
       { title: 'Industry Doctors', component: IndustryDoctorsPage },
       { title: 'Reservations', component: ReservationsPage },

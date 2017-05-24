@@ -19,13 +19,14 @@
             <ion-buttons> 
                 <button ion-button icon-only (click)="notifications()" class="notificationsBtn">
                     <ion-icon name="ios-notifications-outline"></ion-icon>
-                    <ion-badge class="notificationNumb" color="pink" item-right>2</ion-badge>
+                    
                 </button>
             </ion-buttons>
         
             <ion-buttons>
-                <button ion-button icon-only>
+                <button ion-button icon-only (click)="cart()">
                     <ion-icon name="ios-cart-outline"></ion-icon>
+                    <ion-badge class="notificationNumb" color="pink" item-right>{{itemsInCart}}</ion-badge>
                 </button>
             </ion-buttons>
                

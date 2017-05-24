@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
-import { Platform, MenuController, Nav, NavController, ModalController, NavParams, ViewController, LoadingController} from 'ionic-angular';
+import { Platform, MenuController, Nav, NavController, ModalController, NavParams, ViewController, LoadingController, PopoverController} from 'ionic-angular';
 
 import { ConnectivityService } from '../../providers/connectivity-service';
 import { Geolocation } from 'ionic-native';
@@ -13,6 +13,23 @@ import { DriversReviews } from '../drivers-reviews/drivers-reviews';
 import { ProductsPage } from '../products/products';
 
 import { ComplimentaryAdverts } from '../complimentary-adverts/complimentary-adverts';
+
+
+import { OnlinePage } from '../online/online';
+
+import { EditProfilePage } from '../edit-profile/edit-profile';
+
+import { ReferralPage } from '../referral/referral';
+
+//import { DriversPage } from '../drivers/drivers';
+
+import { CartPage } from '../cart/cart';
+
+import { FavoritesPage } from '../favorites/favorites';
+
+import { NotificationsPage } from '../notifications/notifications';
+
+import { Storage } from '@ionic/storage';
 
 declare var google;
 
@@ -32,12 +49,24 @@ export class DriversPage {
   map: any;
   mapInitialised: boolean = false;
   apiKey: any;
+  
+  itemsInCart: number = 0 ;
  
-  constructor(public navCtrl: NavController, public connectivityService: ConnectivityService, public http: Http, public modalCtrl: ModalController, public loadingCtrl: LoadingController) {
+  constructor(public storage: Storage, public navCtrl: NavController, public connectivityService: ConnectivityService, public http: Http, public modalCtrl: ModalController, public loadingCtrl: LoadingController,public popoverCtrl: PopoverController) {
     
     this.loadGoogleMaps();
     
     //this.getMarkers();
+    
+    this.storage.ready().then(() => {            
+            
+          this.storage.forEach( (value, key, index) => {
+            
+            this.itemsInCart = this.itemsInCart + 1 ;
+            
+          })   
+       
+     });
     
   }
   
@@ -193,7 +222,7 @@ export class DriversPage {
     
   getMarkers(){
       
-      this.http.get('http://localhost/server-backup/api/public/on-demand-drivers').map(res => res.json()).subscribe(data => {
+      this.http.get('http://api.medconnex.net/public/on-demand-drivers').map(res => res.json()).subscribe(data => {
         
         this.locs = data;
         console.log(this.locs);
@@ -268,7 +297,7 @@ export class DriversPage {
           infoWindow.open(this.map, marker);
       });
       
-      var openAd = new DriversPage(this.navCtrl, this.connectivityService, this.http, this.modalCtrl, this.loadingCtrl) ;
+      var openAd = new DriversPage(this.storage, this.navCtrl, this.connectivityService, this.http, this.modalCtrl, this.loadingCtrl, this.popoverCtrl) ;
       
       google.maps.event.addListener(infoWindow, 'domready', function () {
           var browseButton = document.getElementsByClassName("browse-button") ;
@@ -329,6 +358,39 @@ export class DriversPage {
           }
         });
       
+  }
+  
+  onlinePage() {
+    // close the menu when clicking a link from the menu
+    //this.menu.close();
+    // navigate to the new page if it is not the current page
+    this.navCtrl.push(OnlinePage);
+    
+  }
+  
+  editProfile() {
+    this.navCtrl.push(EditProfilePage);
+  }
+  
+  referral() { 
+    this.navCtrl.push(ReferralPage);
+  }
+  
+  cart() { 
+    this.navCtrl.push(CartPage);
+  }
+  
+  drivers() {
+    this.navCtrl.push(DriversPage);
+  }
+  
+  favorites() {
+    this.navCtrl.push(FavoritesPage);
+  }
+  
+  notifications() {
+    let popover = this.popoverCtrl.create(NotificationsPage);
+    popover.present();
   }
     
 }

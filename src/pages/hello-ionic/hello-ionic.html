@@ -1,18 +1,19 @@
 <ion-content padding>
     <div text-center>
-        <p class="font-normal" color="darkGrey" margin-bottom>Providers </p>
-        <ion-col class="margin-top-15" padding-top (click)="goDrivers()">
+        <p class="font-normal margin-top-15" color="darkGrey" margin-bottom>Providers </p>
+        <ion-col class="margin-top-15" padding-bottom (click)="goDoctor()">
+            <img src="assets/icn-doctor.png"  width="90" />     
+            <p class="font-regular">Doctors</p>
+        </ion-col>
+        <ion-col (click)="goDrivers()">
             <img src="assets/icn-drivers.png" width="90" />
             <p class="font-regular">Drivers</p>
         </ion-col>
-        <ion-col>
+        <ion-col class="margin-bottom-15" padding-bottom>
             <img src="assets/icn-storeFronts.png" width="90" (click)="goStorefronts()"/>      
             <p class="font-regular">Storefronts</p>
         </ion-col>
-        <ion-col class="margin-bottom-15" padding-bottom>
-            <img src="assets/icn-doctor.png"  width="90" (click)="goDoctor()"/>     
-            <p class="font-regular">Doctor's</p>
-        </ion-col>
+        
         <p margin-top class="font-small" color="fontGray">Med Connex Provides Technology Services Only</p> 
     </div>
 </ion-content>

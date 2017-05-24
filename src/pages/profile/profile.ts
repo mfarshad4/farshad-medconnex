@@ -12,7 +12,11 @@ import { DriversPage } from '../drivers/drivers';
 
 import { FavoritesPage } from '../favorites/favorites';
 
+import { CartPage } from '../cart/cart';
+
 import { NotificationsPage } from '../notifications/notifications';
+
+import { Storage } from '@ionic/storage';
 
 @Component({
   templateUrl: 'profile.html'
@@ -21,9 +25,21 @@ export class ProfilePage {
   isAndroid: boolean = false;
   @ViewChild(Nav) nav: Nav;
   online: string = "following";
+  
+  itemsInCart: number = 0 ;
 
-  constructor(platform: Platform, public menu: MenuController, public navCtrl: NavController,public popoverCtrl: PopoverController) {
+  constructor(public storage: Storage, platform: Platform, public menu: MenuController, public navCtrl: NavController,public popoverCtrl: PopoverController) {
     this.isAndroid = platform.is('android');
+    
+    this.storage.ready().then(() => {            
+            
+          this.storage.forEach( (value, key, index) => {
+            
+            this.itemsInCart = this.itemsInCart + 1 ;
+            
+          })   
+       
+     });
     
   }
   
@@ -45,6 +61,10 @@ export class ProfilePage {
   
   drivers() {
     this.navCtrl.push(DriversPage);
+  }
+  
+  cart() {
+    this.navCtrl.push(CartPage);
   }
   
   favorites() {

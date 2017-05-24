@@ -24,12 +24,11 @@ export class HelloIonicPage {
    }
   
    goStorefronts(){
-      this.navCtrl.push(StorefrontsPage)
+      this.navCtrl.setRoot(StorefrontsPage)
    }
    
    goDoctor(){
-      this.navCtrl.push(IndustryDoctorsPage)
+      this.navCtrl.setRoot(IndustryDoctorsPage)
    }
     
 }
-

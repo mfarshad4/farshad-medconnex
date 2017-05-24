@@ -11,7 +11,7 @@ declare var cordova: any;
         <ion-title>
           Upload Verification Documents
         </ion-title>
-        <ion-buttons start>
+         <ion-buttons start>
           <button ion-button (click)="dismiss()">
             <span ion-text color="primary" showWhen="ios">Cancel</span>
             <ion-icon name="md-close" showWhen="android, windows"></ion-icon>

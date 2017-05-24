@@ -4,13 +4,13 @@
         
         <form (ngSubmit)="login()" #registerForm="ngForm">
             <ion-list>
-                <ion-item>
-                    <ion-label floating>Phone</ion-label>
+                <ion-item class="btn-email">
+                    <ion-label floating><img src="assets/icn-input-2.png"/> Phone</ion-label>
                     <ion-input type="text" name="phone" [(ngModel)]="registerCredentials.phone" required></ion-input>
                 </ion-item>
                 
-                <ion-item>
-                    <ion-label floating>Password</ion-label>
+                <ion-item class="btn-password">
+                    <ion-label floating><img src="assets/icn-input-3.png"/> Password</ion-label>
                     <ion-input type="password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
                 </ion-item>
             </ion-list>

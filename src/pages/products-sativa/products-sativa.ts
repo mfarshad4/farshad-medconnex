@@ -1,12 +1,17 @@
 import { Component} from '@angular/core';
 
-import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { NavController, NavParams, ModalController, PopoverController, AlertController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { ProductsPage } from '../products/products';
 import { ProductInfoPage } from '../product-info/product-info';
 
+import { FriendslistPage } from '../friends-list/friends-list';
 
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+
+import { AuthService } from '../../providers/auth-service';
 
 @Component({
   templateUrl: 'products-sativa.html'
@@ -15,9 +20,12 @@ export class SativaPage {
   
   sativa_products: string = "flowers";
   
-  thedata : any;
+  createSuccess = false;
 
-  constructor(public storage: Storage, public navCtrl: NavController, public modalCtrl: ModalController) {
+  constructor(public storage: Storage, public navCtrl: NavController, public modalCtrl: ModalController, public http: Http, public popoverCtrl: PopoverController, private auth: AuthService, private alertCtrl: AlertController) {
+      
+      //here I will want to look into the database for the actual products that exist on the system as well as
+      //check if any oth this products have been already marked as favorite .. 
       
   }
   
@@ -35,8 +43,7 @@ export class SativaPage {
       this.storage.ready().then(() => {
         
         this.storage.length().then(result =>{
-                this.thedata = result;
-                console.log('LENGTH::: '+ this.thedata);
+                console.log('LENGTH::: '+ result);
             });
             
             
@@ -49,7 +56,7 @@ export class SativaPage {
         
         
        // set a key/value
-       //this.storage.set(id , id);
+       this.storage.set(id , id);
 
        // Or to get a key/value pair
        this.storage.get(id).then((val) => {
@@ -59,6 +66,50 @@ export class SativaPage {
        
      });
       
+  }
+  
+   //when a product is clicked from the favorites carousel , assume that user wants to share the product with their friends.
+  shareWithFriends(id){
+      let modal = this.modalCtrl.create(FriendslistPage, {product_id : id});
+      modal.present();
+  }
+  
+  
+  //when a product is clicked from the favorites carousel , assume that user wants to share the product with their friends.
+  addToFavorites(id){
+      
+    this.auth.addToFavorites({ product_id : id }).subscribe(success => {
+      if (success) {
+        this.createSuccess = true;
+          this.showPopup("Success", "Item has been saved to favorites.");
+      } else {
+        this.showPopup("Error", "Please check your details and try again");
+      }
+    },
+    error => {
+      this.showPopup("Error", error);
+    });
+ 
+  
+  }
+  
+  
+  showPopup(title, text) {
+    let alert = this.alertCtrl.create({
+      title: title,
+      subTitle: text,
+      buttons: [
+       {
+         text: 'OK',
+         handler: data => {
+           if (this.createSuccess) {
+             //this.navCtrl.setRoot(ProductsPage);
+           }
+         }
+       }
+     ]
+    });
+    alert.present();
   }
   
 }

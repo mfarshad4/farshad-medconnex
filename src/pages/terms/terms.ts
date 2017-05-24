@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 
 import { Platform, MenuController, Nav, NavController} from 'ionic-angular';
 
-import { LoginPage } from '../login/login';
+//import { StorefrontsPage } from '../storefronts/storefronts';
+
+import { HelloIonicPage } from '../hello-ionic/hello-ionic';
 
 @Component({
   templateUrl: 'terms.html'
@@ -15,7 +17,7 @@ export class TermsPage {
   }
   
   loginPage(){
-  	this.navCtrl.push(LoginPage);
+  	this.navCtrl.setRoot(HelloIonicPage);
   }
     
 }

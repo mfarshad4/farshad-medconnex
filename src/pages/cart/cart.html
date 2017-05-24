@@ -4,6 +4,7 @@
             <ion-icon name="menu"></ion-icon>
         </button>
         
+        
         <ion-title text-center>Order / Cart</ion-title>
         
         <ion-buttons right>
@@ -12,6 +13,8 @@
             </button>
         </ion-buttons>
     </ion-navbar>
+    
+    
 </ion-header>
 
 <ion-content>
@@ -23,20 +26,22 @@
             <ion-col class="width-20">PRICE</ion-col>
         </ion-row>
         
-        <ion-row>
+        <ion-row *ngFor="let i of idens">
             <ion-col width-50 class="font-regular sectionOne">
-                <button ion-button color="dark" clear icon-only>
+                <button ion-button color="dark" clear icon-only (click)="removeItem(i)">
                     <ion-icon name='trash' is-active="false" class="font-normal"></ion-icon>
                 </button>
-                Gorilla Glue
+                Product with ID : {{i.product}} , Index is :: {{i.id}} , Amount is :: {{i.amount}}
             </ion-col>
             
             <ion-col text-center width-25 class="orderQuantity  font-regular remove-padding-left">
-                <button ion-button color="primary" item-left clear icon-only>
+                <button ion-button color="primary" item-left clear icon-only (click)="decreaseItem(i.product)">
                     <ion-icon name='remove' class="font-regular"></ion-icon>
                 </button>
-                <ion-input type="text" text-center value="1" item-left></ion-input>
-                <button ion-button color="primary" item-right clear icon-only>
+                
+                <ion-input type="text" text-center item-left [(ngModel)]="i.amount"></ion-input>
+                
+                <button ion-button color="primary" item-right clear icon-only (click)="increaseItem(i.product)">
                     <ion-icon name='add' class="font-regular"></ion-icon>
                 </button>
             </ion-col>
@@ -46,96 +51,7 @@
             </ion-col>
         </ion-row>
         
-        <ion-row>
-            <ion-col width-50 class="font-regular sectionOne">
-                <button ion-button color="dark" clear icon-only>
-                    <ion-icon name='trash' is-active="false" class="font-normal"></ion-icon>
-                </button>
-                Marijuana choc
-            </ion-col>
-            
-            <ion-col text-center width-25 class="orderQuantity font-regular remove-padding-left">
-                <button ion-button color="primary" item-left clear icon-only>
-                    <ion-icon name='remove' class="font-regular"></ion-icon>
-                </button>
-                <ion-input type="text" text-center value="1" item-left></ion-input>
-                <button ion-button color="primary" item-right clear icon-only>
-                    <ion-icon name='add' class="font-regular"></ion-icon>
-                </button>
-            </ion-col>
-            
-            <ion-col width-25 class="orederPriceCol font-regular">
-                $5.35
-            </ion-col>
-        </ion-row>
         
-        <ion-row>
-            <ion-col width-50 class="font-regular sectionOne">
-                <button ion-button color="dark" clear icon-only>
-                    <ion-icon name='trash' is-active="false" class="font-normal"></ion-icon>
-                </button>
-                Bloodt Kush
-            </ion-col>
-            
-            <ion-col text-center width-25 class="orderQuantity font-regular remove-padding-left">
-                <button ion-button color="primary" item-left clear icon-only>
-                    <ion-icon name='remove' class="font-regular"></ion-icon>
-                </button>
-                <ion-input type="text" text-center value="1" item-left></ion-input>
-                <button ion-button color="primary" item-right clear icon-only>
-                    <ion-icon name='add' class="font-regular"></ion-icon>
-                </button>
-            </ion-col>
-            
-            <ion-col width-25 class=" orederPriceCol font-regular">
-                $5.35
-            </ion-col>
-        </ion-row>
-        
-        <ion-row>
-            <ion-col width-50 class="font-regular sectionOne">
-                <button ion-button color="dark" clear icon-only>
-                    <ion-icon name='trash' is-active="false" class="font-normal"></ion-icon>
-                </button>
-                Purple Cross
-            </ion-col>
-            
-            <ion-col text-center width-25 class="orderQuantity font-regular remove-padding-left">
-                <button ion-button color="primary" item-left clear icon-only>
-                    <ion-icon name='remove' class="font-regular"></ion-icon>
-                </button>
-                <ion-input type="text" text-center value="1" item-left></ion-input>
-                <button ion-button color="primary" item-right clear icon-only>
-                    <ion-icon name='add' class="font-regular"></ion-icon>
-                </button>
-            </ion-col>
-            
-            <ion-col width-25 class="orederPriceCol font-regular">
-                $5.35
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col width-50 class="font-regular sectionOne">
-                <button ion-button color="dark" clear icon-only>
-                    <ion-icon name='trash' is-active="false" class="font-normal"></ion-icon>
-                </button>
-                Gorilla Glue Cross
-            </ion-col>
-            
-            <ion-col text-center width-25 class="orderQuantity font-regular remove-padding-left">
-                <button ion-button color="primary" item-left clear icon-only>
-                    <ion-icon name='remove' class="font-regular"></ion-icon>
-                </button>
-                <ion-input type="text" text-center value="1" item-left></ion-input>
-                <button ion-button color="primary" item-right clear icon-only>
-                    <ion-icon name='add' class="font-regular"></ion-icon>
-                </button>
-            </ion-col>
-            
-            <ion-col width-25 class="orederPriceCol font-regular">
-                $5.35
-            </ion-col>
-        </ion-row>
         
         <ion-row class="border-none">
             <ion-col width-50 text-right  class="font-normal sectionOne sectionTwo">
@@ -193,6 +109,7 @@
         
     </ion-grid>
     
+    
     <ion-row padding class="remove-padding-top remove-padding-bottom">
         <ion-segment [(ngModel)]="reservations" padding class="collectingBtnWrap">
             <ion-segment-button col-4 value="schedule" class="text-capitalize">Delivery</ion-segment-button>
@@ -205,43 +122,43 @@
         <div *ngSwitchCase="'schedule'" class="deliveryType reservationBody loginPageWrapper" padding>
             
             <ion-title padding-bottom padding-left>DELIVERY DETAILS</ion-title> 
-            <form> 
+            <form (ngSubmit)="checkout()" #deliveryForm="ngForm"> 
                 <ion-list class="registerForm">
                     <ion-item>
-                        <ion-input type="text" placeholder="Name:" name="full_name" required></ion-input>
+                        <ion-input type="text" placeholder="Name:" name="full_name" [(ngModel)]="information.full_name" required></ion-input>
                     </ion-item>
                     <ion-item>
-                        <ion-input type="number" placeholder="Moobile No:" name="phone_number" required></ion-input>
+                        <ion-input type="number" placeholder="Mobile No:" name="phone" [(ngModel)]="information.phone" required></ion-input>
                     </ion-item>
                    
                      <ion-item>
-                        <ion-input type="text" placeholder="Address:" name="address" required></ion-input>
+                        <ion-input type="text" placeholder="Address:" name="address" [(ngModel)]="information.address" required></ion-input>
                     </ion-item>
                      <ion-item>
-                        <ion-input type="email" placeholder="Email" name="email" required></ion-input>
+                        <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="information.email" required></ion-input>
                     </ion-item>   
                     
                 </ion-list>
                 <div text-left padding-left class="postExperience margin-top-15" color="gray" padding-top padding-bottom> 
                     <p class="font-medium" color="gray">Special Instructions:</p>
-                    <ion-textarea type="email" class="font-normal" value="I love to use this app. The service here was awesome! I love it!!!"></ion-textarea>
+                    <ion-textarea class="font-normal" name="special_instructions" [(ngModel)]="information.special_instructions" value="I love to use this app. The service here was awesome! I love it!!!"></ion-textarea>
                 </div>
             </form>
-            <button margin-left ion-button round type="submit" small left class="margin-bottom" color="pink">Submit</button>
+            
         </div>
         <div *ngSwitchCase="'info'" class="reservationBody pickUpTime" padding>
             <ion-row text-center>
-                <ion-col width-33 color="gray" class="font-bold"><div>10 <br>Minutes</div></ion-col>
-                <ion-col width-33 color="gray" class="font-bold"><div>15 <br>Minutes</div></ion-col>
-                <ion-col width-33 color="gray" class="font-bold"><div>30 <br>Minutes</div></ion-col>
+                <ion-col width-33 color="gray" class="font-bold"><div><button (click)="pickUp(10)">10 <br>Minutes</button></div></ion-col>
+                <ion-col width-33 color="gray" class="font-bold"><div><button (click)="pickUp(15)">15 <br>Minutes</button></div></ion-col>
+                <ion-col width-33 color="gray" class="font-bold"><div><button (click)="pickUp(30)">30 <br>Minutes</button></div></ion-col>
             </ion-row>
         </div>
     </div>
     
-    <p text-center margin-top color="gray" class="font-regular text-underline">Add Promo Code</p>
+    <p text-center margin-top color="gray" class="font-regular text-underline" (click)="addPromoCode()">Add Promo Code</p>
     
     <p text-center>
-        <button (click)="goCheckout()" ion-button color="pink" round small class="font-large margin-bottom-15">
+        <button (click)="checkout()" ion-button color="pink" round small class="font-large margin-bottom-15">
             Checkout
         </button>
     </p>

@@ -1,11 +1,27 @@
 import { Component} from '@angular/core';
 
-import { NavController, LoadingController} from 'ionic-angular';
+import { NavController, LoadingController, PopoverController} from 'ionic-angular';
 
 import { ReservationsPage } from '../reservations/reservations';
 
+import { OnlinePage } from '../online/online';
+
+import { EditProfilePage } from '../edit-profile/edit-profile';
+
+import { ReferralPage } from '../referral/referral';
+
+import { DriversPage } from '../drivers/drivers';
+
+import { CartPage } from '../cart/cart';
+
+import { FavoritesPage } from '../favorites/favorites';
+
+import { NotificationsPage } from '../notifications/notifications';
+
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+
+import { Storage } from '@ionic/storage';
 
 @Component({
   templateUrl: 'industry-doctors.html'
@@ -15,13 +31,25 @@ export class IndustryDoctorsPage {
   
   doctors: any ;
   
-  constructor(public navCtrl: NavController, public http: Http, public loadingCtrl: LoadingController) {
-      this.listDoctors() ; 
+  itemsInCart: number = 0 ;
+ 
+  constructor(public storage: Storage, public navCtrl: NavController, public http: Http, public loadingCtrl: LoadingController, public popoverCtrl: PopoverController) {
+      this.listDoctors() ;
+      
+      this.storage.ready().then(() => {            
+            
+          this.storage.forEach( (value, key, index) => {
+            
+            this.itemsInCart = this.itemsInCart + 1 ;
+            
+          })   
+       
+     });
   }
   
   //List all the industry doctors that have been approved
   listDoctors() {
-      this.http.get('http://localhost/server-backup/api/public/industry-doctors').map(res => res.json()).subscribe(data => {
+      this.http.get('http://api.medconnex.net/public/industry-doctors').map(res => res.json()).subscribe(data => {
         
         this.doctors = data.data;
         console.log(data);
@@ -55,6 +83,37 @@ export class IndustryDoctorsPage {
   }
   
  
+  onlinePage() {
+    // close the menu when clicking a link from the menu
+    //this.menu.close();
+    // navigate to the new page if it is not the current page
+    this.navCtrl.push(OnlinePage);
+    
+  }
   
+  editProfile() {
+    this.navCtrl.push(EditProfilePage);
+  }
+  
+  referral() { 
+    this.navCtrl.push(ReferralPage);
+  }
+  
+  cart() { 
+    this.navCtrl.push(CartPage);
+  }
+  
+  drivers() {
+    this.navCtrl.push(DriversPage);
+  }
+  
+  favorites() {
+    this.navCtrl.push(FavoritesPage);
+  }
+  
+  notifications() {
+    let popover = this.popoverCtrl.create(NotificationsPage);
+    popover.present();
+  }
     
 }

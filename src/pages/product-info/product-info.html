@@ -1,57 +1,20 @@
 <ion-header>
-    <ion-navbar color="header">
-        <button ion-button menuToggle no-margin>
-            <ion-icon name="menu"></ion-icon>
-        </button>
-        
-        
-        <ion-title text-center>Product Info</ion-title>
-        
-        <ion-buttons right>
-            <button ion-button icon-only>
-                <ion-icon name="bookmark"></ion-icon>
-            </button>
+      <ion-toolbar>
+        <ion-title>
+          Product Info
+        </ion-title>
+         <ion-buttons start>
+          <button ion-button (click)="dismiss()">
+            <span ion-text color="primary" showWhen="ios">Cancel</span>
+            <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+          </button>
         </ion-buttons>
-    </ion-navbar>
+      </ion-toolbar>
+    </ion-header>
+<ion-content>
     
-    <ion-toolbar color="darkGreen" class="toolBarIcons">
-       
-            <ion-buttons> 
-                <button ion-button icon-only (click)="notifications()" class="notificationsBtn">
-                    <ion-icon name="ios-notifications-outline"></ion-icon>
-                    <ion-badge class="notificationNumb" color="pink" item-right>2</ion-badge>
-                </button>
-            </ion-buttons>
-        
-            <ion-buttons>
-                <button ion-button icon-only>
-                    <ion-icon name="ios-cart-outline"></ion-icon>
-                </button>
-            </ion-buttons>
-              
-            <ion-buttons class="borderForDriver">
-                <button ion-button icon-only (click)="drivers()">
-                    <ion-icon name="ios-car-outline"></ion-icon>
-                </button>
-            </ion-buttons>
-        
-            <ion-buttons>
-                <button ion-button icon-only (click)="favorites()">
-                    <ion-icon name="ios-heart-outline"></ion-icon>
-                </button>
-            </ion-buttons>
-        
-            <ion-buttons>
-                <button ion-button icon-only (click)="referral()">
-                    <ion-icon name="logo-usd"></ion-icon>
-                </button>
-            </ion-buttons>
-        
-    </ion-toolbar>
-</ion-header>
-
-<ion-content>              
     <ion-card class="background-none">
+      
         <img class="productInfoImg" src="assets/dank1.jpg"/>
         <ion-card-content no-padding class="productInfoDetails">
             <ion-title no-padding class="font-medium">Bloody Kush</ion-title>

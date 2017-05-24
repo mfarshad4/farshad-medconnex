@@ -24,13 +24,13 @@
             <ion-col class="width-25" text-center>PRICE</ion-col>
         </ion-row>
         
-        <ion-row>
+        <ion-row *ngFor ="let c of cartInfo">
             <ion-col width-50 class="font-regular sectionOne" padding-left>
-                Gorilla Glue
+                Product with ID {{c.product}}
             </ion-col>
             
             <ion-col text-center width-25 class="font-regular">
-                <span>1</span>
+                <span>{{c.amount}}</span>
             </ion-col>
             
             <ion-col text-center width-25 class="font-regular">
@@ -38,61 +38,6 @@
             </ion-col>
         </ion-row>
         
-        <ion-row>
-            <ion-col width-50 class="font-regular sectionOne" padding-left>
-                Bloody Kush
-            </ion-col>
-            
-            <ion-col text-center width-25 class="font-regular">
-                <span>4</span>
-            </ion-col>
-            
-            <ion-col text-center width-25 class="font-regular">
-                $5.35
-            </ion-col>
-        </ion-row>
-        
-        <ion-row>
-            <ion-col width-50 class="font-regular sectionOne" padding-left>
-                Purple Cross
-            </ion-col>
-            
-            <ion-col text-center width-25 class="font-regular">
-                <span>3</span>
-            </ion-col>
-            
-            <ion-col text-center width-25 class="font-regular">
-                $5.35
-            </ion-col>
-        </ion-row>
-        
-        <ion-row>
-            <ion-col width-50 class="font-regular sectionOne" padding-left>
-                Beers and Salad
-            </ion-col>
-            
-            <ion-col text-center width-25 class="font-regular">
-                <span>1</span>
-            </ion-col>
-            
-            <ion-col text-center width-25 class="font-regular">
-                $5.35
-            </ion-col>
-        </ion-row>
-        
-        <ion-row>
-            <ion-col width-50 class="font-regular sectionOne" padding-left>
-                Marijuana Choc
-            </ion-col>
-            
-            <ion-col text-center width-25 class="font-regular">
-                <span>1</span>
-            </ion-col>
-            
-            <ion-col text-center width-25 class="font-regular">
-                $5.35
-            </ion-col>
-        </ion-row>
         
         <ion-card margin-top margin-bottom class="checkoutBottom">
         <ion-row class="border-none">

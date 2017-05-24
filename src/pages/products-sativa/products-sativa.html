@@ -27,15 +27,16 @@
                             </p>
                             <div class="productDetailsLeft">
                                 <div class="productInnerLeft">
-                                    <button color="lightGray" ion-button icon-left clear item-left no-padding>
+                                    <button color="lightGray" ion-button icon-left clear item-left no-padding (click)="addToFavorites(15)">
                                         <ion-icon name="heart"></ion-icon>
                                     </button>
-                                    <button color="darkGrey" ion-button icon-left clear item-left no-padding>
+                                    <button color="darkGrey" (click)="shareWithFriends(15)" ion-button icon-left clear item-left no-padding>
                                         <ion-icon name="share-alt"></ion-icon>
                                     </button>
+                                    
                                 </div>
                                 <div class="productInnerRight">
-                                    <button ion-button icon-left clear item-right no-padding>
+                                    <button ion-button icon-left clear item-right no-padding (click)="addToCart('15')">
                                         <ion-icon name="cart"></ion-icon>
                                         $35.00
                                     </button>
@@ -57,7 +58,7 @@
                                     <button color="lightGray" ion-button icon-left clear item-left no-padding class="liked">
                                         <ion-icon name="heart"></ion-icon>
                                     </button>
-                                    <button color="darkGrey" ion-button icon-left clear item-left no-padding>
+                                    <button color="darkGrey" (click)="shareWithFriends(10)" ion-button icon-left clear item-left no-padding>
                                         <ion-icon name="share-alt"></ion-icon>
                                     </button>
                                 </div>
@@ -85,7 +86,7 @@
                                     <button color="lightGray" ion-button icon-left clear item-left no-padding class="liked">
                                         <ion-icon name="heart"></ion-icon>
                                     </button>
-                                    <button color="darkGrey" ion-button icon-left clear item-left no-padding>
+                                    <button color="darkGrey" (click)="shareWithFriends(11)" ion-button icon-left clear item-left no-padding>
                                         <ion-icon name="share-alt"></ion-icon>
                                     </button>
                                 </div>
@@ -112,7 +113,7 @@
                                     <button color="lightGray" ion-button icon-left clear item-left no-padding class="liked">
                                         <ion-icon name="heart"></ion-icon>
                                     </button>
-                                    <button color="darkGrey" ion-button icon-left clear item-left no-padding>
+                                    <button color="darkGrey" (click)="shareWithFriends(12)" ion-button icon-left clear item-left no-padding>
                                         <ion-icon name="share-alt"></ion-icon>
                                     </button>
                                 </div>

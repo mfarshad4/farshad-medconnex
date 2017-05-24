@@ -32,7 +32,7 @@ export class AuthService {
     } else {
       return Observable.create(observer => {
         // At this point make a request to your backend to make a real check!
-        var link = 'http://localhost/server-backup/api/public/app/login';
+        var link = 'http://api.medconnex.net/public/app/login';
         var data = JSON.stringify({phone:credentials.phone, password:credentials.password});
         
         this.http.post(link, data)
@@ -60,13 +60,13 @@ export class AuthService {
       return Observable.throw("Please insert credentials");
     } else {
       // At this point store the credentials to your backend!
-        var link = 'http://localhost/server-backup/api/public/app/register';
+        var link = 'http://api.medconnex.net/public/app/register';
         var data = JSON.stringify({full_name: credentials.full_name, phone:credentials.phone, password:credentials.password, password_c: credentials.password_c, zip_code:credentials.zip_code});
         
-        this.http.post(link, data)
-        .subscribe(data => {
-           console.log(data.json().success);
-        if(data.json().success){
+        this.http.post(link, data).subscribe(result => {
+           console.log(result);
+        
+        if(result.json().success){
            
            
           
@@ -95,4 +95,156 @@ export class AuthService {
       observer.complete();
     });
   }
+  
+  
+  //continue using this service with other post requests so as to ease validating on the controller tier
+  
+  public reservation(credentials) {
+    if (credentials.full_name === null || credentials.email === null || credentials.phone === null || credentials.date === null || credentials.time === null) {
+      return Observable.throw("Please fill out all the fields");
+    } else {
+      // At this point store the credentials to your backend!
+        var link = 'http://api.medconnex.net/public/app/reservation';
+        var data = JSON.stringify({full_name: credentials.full_name, email:credentials.email, phone:credentials.phone, date:credentials.date, time : credentials.time});
+        
+        this.http.post(link, data)
+        .subscribe(data => {
+           console.log(data.json().success);
+        if(data.json().success){
+           
+           
+          
+        }
+          
+        }, error => {
+            console.log("Oooops!");
+        });
+      
+      return Observable.create(observer => {
+              observer.next(true);
+              observer.complete();
+          });
+      
+    }
+  }
+  
+  
+  public updateProfile(credentials) {
+    if (credentials.full_name === null || credentials.email === null || credentials.phone === null || credentials.about === null || credentials.gender === null || credentials.zip_code === null || credentials.city === null ) {
+      return Observable.throw("Please fill out all the fields");
+    } else {
+      // At this point store the credentials to your backend!
+        var link = 'http://api.medconnex.net/public/app/update-profile';
+        var data = JSON.stringify({full_name: credentials.full_name, email:credentials.email, phone:credentials.phone, about:credentials.about, gender: credentials.gender, zip_code: credentials.zip_code, city: credentials.city});
+        
+        this.http.post(link, data)
+        .subscribe(data => {
+           console.log(data.json().success);
+        if(data.json().success){
+      
+          
+        }
+          
+        }, error => {
+            console.log("Oooops!");
+        });
+      
+      return Observable.create(observer => {
+              observer.next(true);
+              observer.complete();
+          });
+      
+    }
+  }
+  
+  
+  
+  public checkout(credentials) {
+    if (credentials.full_name === null || credentials.email === null || credentials.phone === null || credentials.address === null || credentials.special_instructions === null || credentials.product_info === null ) {
+      return Observable.throw("Please fill out all the fields");
+    } else {
+      // At this point store the credentials to your backend!
+        var link = 'http://api.medconnex.net/public/app/product-cart';
+        var data = JSON.stringify({full_name: credentials.full_name, email:credentials.email, phone:credentials.phone, address:credentials.address, special_instructions: credentials.special_instructions, product_info: credentials.product_info});
+        
+        this.http.post(link, data)
+        .subscribe(data => {
+           console.log(data.json().success);
+        if(data.json().success){
+      
+          
+        }
+          
+        }, error => {
+            console.log("Oooops!");
+        });
+      
+      return Observable.create(observer => {
+              observer.next(true);
+              observer.complete();
+          });
+      
+    }
+  }
+  
+  
+  public shareProduct(credentials) {
+    if (credentials === null) {
+      return Observable.throw("You have not selected any friend");
+    } else {
+      // At this point store the credentials to your backend!
+        var link = 'http://api.medconnex.net/public/app/share/product';
+        var data = JSON.stringify(credentials);
+        
+        this.http.post(link, data)
+        .subscribe(data => {
+           console.log(data);
+        if(data.json().success){
+           
+           
+          
+        }
+          
+        }, error => {
+            console.log("Oooops!");
+        });
+      
+      return Observable.create(observer => {
+              observer.next(true);
+              observer.complete();
+          });
+      
+    }
+  }
+  
+  
+  public addToFavorites(credentials) {
+    if (credentials === null) {
+      return Observable.throw("You have not selected any product");
+    } else {
+      // At this point store the credentials to your backend!
+        var link = 'http://api.medconnex.net/public/app/add/favorites';
+        var data = JSON.stringify(credentials);
+        
+        this.http.post(link, data)
+        .subscribe(data => {
+           console.log(data);
+        if(data.json().success){
+           
+           
+          
+        }
+          
+        }, error => {
+            console.log("Oooops!");
+        });
+      
+      return Observable.create(observer => {
+              observer.next(true);
+              observer.complete();
+          });
+      
+    }
+  }
+  
 }

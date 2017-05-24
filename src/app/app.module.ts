@@ -8,11 +8,15 @@ import { ListPage } from '../pages/list/list';
 import { ProductsPage } from '../pages/products/products';
 import { ProductInfoPage } from '../pages/product-info/product-info';
 import { CartPage } from '../pages/cart/cart';
+import { PromoCodePage } from '../pages/promo-code/promo-code';
+import { MobileUsersPage } from '../pages/mobile-users/mobile-users';
+import { MobileProvidersPage } from '../pages/mobile-providers/mobile-providers';
 import { OnlinePage } from '../pages/online/online';
 import { ProfilePage } from '../pages/profile/profile';
 import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 import { ReferralPage } from '../pages/referral/referral';
 import { DriversPage } from '../pages/drivers/drivers';
+import { DriversMapPage } from '../pages/drivers-map/drivers-map';
 import { FavoritesPage } from '../pages/favorites/favorites';
 import { NotificationsPage } from '../pages/notifications/notifications';
 import { StorefrontsPage } from '../pages/storefronts/storefronts';
@@ -24,6 +28,7 @@ import { RegisterPage } from '../pages/register/register';
 import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 import { TermsPage } from '../pages/terms/terms';
 import { RatingsPage } from '../pages/ratings/ratings';
+import { FriendslistPage } from '../pages/friends-list/friends-list';
 
 import { SativaPage } from '../pages/products-sativa/products-sativa';
 import { IndicaPage } from '../pages/products-indica/products-indica';
@@ -44,7 +49,6 @@ import { PaymentPage } from '../pages/payment/payment';
 import { PaymentInfoPage } from '../pages/payment-info/payment-info';
 import { ConfirmationPage } from '../pages/confirmation/confirmation';
 
-
 // Import ionic2-rating module
 import { Ionic2RatingModule } from 'ionic2-rating';
 
@@ -58,11 +62,15 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     ProductsPage,
     ProductInfoPage,
     CartPage,
+    PromoCodePage,
+    MobileUsersPage,
+    MobileProvidersPage,
     OnlinePage,
     ProfilePage,
     EditProfilePage,
     ReferralPage,
     DriversPage,
+    DriversMapPage,
     FavoritesPage,
     NotificationsPage,
     StorefrontsPage,
@@ -86,11 +94,11 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     CheckoutPage,
     PaymentPage,
     PaymentInfoPage,
-    ConfirmationPage
+    ConfirmationPage,
+    FriendslistPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    IonicModule.forRoot(MyApp,{tabsPlacement: 'top'}),
     Ionic2RatingModule 
     
   ],
@@ -103,11 +111,15 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     ProductsPage,
     ProductInfoPage,
     CartPage,
+    PromoCodePage,
+    MobileUsersPage,
+    MobileProvidersPage,
     OnlinePage,
     ProfilePage,
     EditProfilePage,
     ReferralPage,
     DriversPage,
+    DriversMapPage,
     FavoritesPage,
     NotificationsPage,
     StorefrontsPage,
@@ -131,7 +143,8 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     CheckoutPage,
     PaymentPage,
     PaymentInfoPage,
-    ConfirmationPage
+    ConfirmationPage,
+    FriendslistPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ConnectivityService, AuthService, Storage]
 })

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Share Product {{product_id}} With Friends
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    
+    <ion-list-header>
+        <button (click)="selectAll()" ion-button color="secondary" round small class="">
+            Select all
+        </button>
+        
+        <button (click)="send()" ion-button color="pink" round small class="">
+            Send
+        </button>
+        
+        <button (click)="addFriends()" ion-button color="green" round small class="">
+            Add Friends
+        </button>
+        
+        <button (click)="close()" ion-button color="dark" round small class="">
+            Close
+        </button>
+        
+        
+    </ion-list-header>
+    
+    <ion-item *ngFor="let f of friends; let i=index">
+      <ion-avatar item-left>
+      <img src="assets/wesley.png">
+      </ion-avatar>
+      <ion-label>User with ID :: {{f.friend}}</ion-label>
+      <ion-checkbox color="secondary" [(ngModel)]="checkedItems[i]"></ion-checkbox>
+    </ion-item>
+
+
+  </ion-list>
+
+</ion-content>

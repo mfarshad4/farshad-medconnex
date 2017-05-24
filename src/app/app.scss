@@ -255,7 +255,11 @@ ion-buttons.borderForDriver {
 
 /*Login Page*/
 
-
+.btn-email img, .btn-password img, .iconPhone img {
+    float: left;
+    width: 20px;
+        margin: 0px 8px 5px 0px;
+}
 .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
     box-shadow: inset 0 -1px 0 0 #f53d3d!important;
 }
@@ -280,7 +284,9 @@ ion-buttons.borderForDriver {
 }
 .loginPageWrapper .list-md .item-block .item-inner ion-label{
     margin-top: 10px;
-    color:  color($text-color, gray)
+    color:  color($text-color, gray);
+        display: flex;
+    align-items: center;
 }
 .loginPageWrapper ion-list ion-item:last-child{
     border-bottom:0!important;

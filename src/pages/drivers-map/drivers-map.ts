@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
-import { Platform, MenuController, Nav, NavController, ModalController, NavParams, ViewController, LoadingController, PopoverController} from 'ionic-angular';
+import { Platform, MenuController, Nav, NavController, ModalController, NavParams, ViewController, LoadingController} from 'ionic-angular';
 
 import { ConnectivityService } from '../../providers/connectivity-service';
 import { Geolocation } from 'ionic-native';
@@ -8,39 +8,20 @@ import { Geolocation } from 'ionic-native';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-import { StoresReviews } from '../stores-reviews/stores-reviews';
+import { DriversReviews } from '../drivers-reviews/drivers-reviews';
 
 import { ProductsPage } from '../products/products';
 
-import { RatingsPage } from '../ratings/ratings';
-
 import { ComplimentaryAdverts } from '../complimentary-adverts/complimentary-adverts';
-
-
-import { OnlinePage } from '../online/online';
-
-import { EditProfilePage } from '../edit-profile/edit-profile';
-
-import { ReferralPage } from '../referral/referral';
-
-import { DriversPage } from '../drivers/drivers';
-
-import { CartPage } from '../cart/cart';
-
-import { FavoritesPage } from '../favorites/favorites';
-
-import { NotificationsPage } from '../notifications/notifications';
-
-import { Storage } from '@ionic/storage';
 
 declare var google;
 
 @Component({
-  templateUrl: 'storefronts.html'
+  template:`<div #map id="map"></div>`
 })
-export class StorefrontsPage {
-  isAndroid: boolean = false;
-  storefronts: string = "listings";
+
+export class DriversMapPage {
+  isAndroid: boolean = false;  
   
   locs: any;
   
@@ -51,39 +32,29 @@ export class StorefrontsPage {
   map: any;
   mapInitialised: boolean = false;
   apiKey: any;
-  
-  itemsInCart: number = 0 ;
  
-  constructor(public storage: Storage, public navCtrl: NavController,  public connectivityService: ConnectivityService, public http: Http, public modalCtrl: ModalController, public loadingCtrl: LoadingController, public popoverCtrl: PopoverController) {
+  constructor(public navCtrl: NavController, public connectivityService: ConnectivityService, public http: Http, public modalCtrl: ModalController, public loadingCtrl: LoadingController) {
     
     this.loadGoogleMaps();
     
-    this.storage.ready().then(() => {            
-            
-          this.storage.forEach( (value, key, index) => {
-            
-            this.itemsInCart = this.itemsInCart + 1 ;
-            
-          })   
-       
-     });
+    //this.getMarkers();
+    
   }
   
-  
-  //open ratings and reviews page for storefronts
-  openRatings(store) {
-    // navigate to the ratings page
-    this.navCtrl.push(RatingsPage,{store:store}) ;
+  //open ratings and reviews modal for driver
+  openModal(driver) {
 
+    let modal = this.modalCtrl.create(DriversReviews, driver);
+    modal.present();
   }
   
-  //open complimetary advert modal for storefront
+  //open complimetary advert modal for driver
   openAdvert(record) {
       let modal = this.modalCtrl.create(ComplimentaryAdverts,{advert:record});
         modal.present();    
   }
   
-  //open complimetary advert modal for storefront
+  //open complimetary advert modal for driver
   openLoadingAdvert() {
       let loading = this.loadingCtrl.create({
         spinner: 'hide',
@@ -108,7 +79,6 @@ export class StorefrontsPage {
       loading.present();    
   }
   
-  
   loadGoogleMaps(){
  
     this.addConnectivityListeners();
@@ -125,6 +95,7 @@ export class StorefrontsPage {
       window['mapInit'] = () => {
         this.initMap();
         this.enableMap();
+        //this.getMarkers();
       }
  
       let script = document.createElement("script");
@@ -146,6 +117,7 @@ export class StorefrontsPage {
       console.log("showing map");
       this.initMap();
       this.enableMap();
+      //this.getMarkers();
     }
     else {
       console.log("disabling map");
@@ -153,7 +125,7 @@ export class StorefrontsPage {
     }
  
   }
- 
+     
   }
  
   initMap(){
@@ -163,7 +135,8 @@ export class StorefrontsPage {
     Geolocation.getCurrentPosition().then((position) => {
  
       let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
- 
+      
+      
       let mapOptions = {
         center: latLng,
         zoom: 10,
@@ -171,13 +144,13 @@ export class StorefrontsPage {
       }
  
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-      
-      this.getMarkers();
- 
+       
+       this.getMarkers();
+       
     });
- 
+    
+  
   }
-
  
   disableMap(){
     console.log("disable map");
@@ -217,10 +190,10 @@ export class StorefrontsPage {
     
     }
     
-  
+    
   getMarkers(){
       
-      this.http.get('http://api.medconnex.net/public/storefronts').map(res => res.json()).subscribe(data => {
+      this.http.get('http://api.medconnex.net/public/on-demand-drivers').map(res => res.json()).subscribe(data => {
         
         this.locs = data;
         console.log(this.locs);
@@ -229,8 +202,9 @@ export class StorefrontsPage {
       });
       
       
+      
   }
-  
+    
   loadMarkers(markers){
       
       Geolocation.getCurrentPosition().then((position) => {
@@ -263,7 +237,7 @@ export class StorefrontsPage {
           var marker = new google.maps.Marker({
               map: this.map,
               animation: google.maps.Animation.DROP,
-              icon: "../../assets/storefronts.png",
+              icon: "../../assets/loc.png",
               position: markerPos
           });
           
@@ -294,7 +268,7 @@ export class StorefrontsPage {
           infoWindow.open(this.map, marker);
       });
       
-      var openAd = new StorefrontsPage(this.storage, this.navCtrl, this.connectivityService, this.http, this.modalCtrl, this.loadingCtrl, this.popoverCtrl) ;
+      var openAd = new DriversMapPage(this.navCtrl, this.connectivityService, this.http, this.modalCtrl, this.loadingCtrl) ;
       
       google.maps.event.addListener(infoWindow, 'domready', function () {
           var browseButton = document.getElementsByClassName("browse-button") ;
@@ -355,40 +329,6 @@ export class StorefrontsPage {
           }
         });
       
-  }
-  
-  
-  onlinePage() {
-    // close the menu when clicking a link from the menu
-    //this.menu.close();
-    // navigate to the new page if it is not the current page
-    this.navCtrl.push(OnlinePage);
-    
-  }
-  
-  editProfile() {
-    this.navCtrl.push(EditProfilePage);
-  }
-  
-  referral() { 
-    this.navCtrl.push(ReferralPage);
-  }
-  
-  cart() { 
-    this.navCtrl.push(CartPage);
-  }
-  
-  drivers() {
-    this.navCtrl.push(DriversPage);
-  }
-  
-  favorites() {
-    this.navCtrl.push(FavoritesPage);
-  }
-  
-  notifications() {
-    let popover = this.popoverCtrl.create(NotificationsPage);
-    popover.present();
   }
     
 }
