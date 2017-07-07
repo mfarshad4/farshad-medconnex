@@ -16,7 +16,7 @@
 // automatically applied to the <body> element in the app.
 
 
-body, h1, h2, h3, h4, p, span, input, label, div {
+body, h1, h2, h3, h4, p, span, input, label, div, button, textarea {
     text-shadow: 0px 0px 0px;
     font-family: Century Gothic!important;
 }
@@ -164,7 +164,7 @@ ion-toolbar ion-icon.icon.icon-md.ion-logo-usd {
 /*My Profile*/
 .prifile-pic-img  {
     border-radius: 50%;
-    border: 4px solid #10a8a3;
+    border: 4px solid #10b1ac;
     overflow: hidden;
     z-index: 12;
     position: relative;
@@ -226,6 +226,10 @@ ion-toolbar ion-icon.icon.icon-md.ion-logo-usd {
 .toolbar-title-md {
     font-size: 1.7rem;
     font-weight: 400;
+        padding-right: 52px!important;
+}
+.toolbar-title {
+    padding-right: 52px!important;
 }
 .notificationNumb {
     width: 14px;
@@ -269,11 +273,16 @@ ion-buttons.borderForDriver {
     box-shadow: 0px 0px 0px;
 }   
 .loginPageWrapper > img {
-    padding-left: 32%;
-    padding-right: 32%;
+    padding-left: 26%;
+    padding-right: 26%;
     padding-top: 10%;
 }
-
+.loginPageWrapper {
+    padding-left: 3.5em!important;
+    padding-right: 3.5em!important;
+    display: table-cell;
+    vertical-align: middle;
+}
 .loginPageWrapper ion-list ion-item{
     background-color: rgba(255, 255, 255, 0);
 }
@@ -502,7 +511,7 @@ ion-list.sideMenu.list.list-md {
     padding-right: 5px;
 }
 .productInnerRight button {
-    color: #10a8a3;
+    color: #10b1ac;
 }
 .productInnerLeft {
     float: left;
@@ -576,7 +585,7 @@ ion-list.sideMenu.list.list-md {
 /*  Terms and conditions page */
 
 .termsPageWrapper {
-    font-size: $font-medium;
+    font-size: 13px;
     color: color($colors, gray);
 }
 .termsPageWrapper p {
@@ -726,7 +735,7 @@ ion-list.sideMenu.list.list-md {
 background: color($colors, darkGreen);
     color: white;
     margin: 10px 0px 0px 0px;
-    height: 19px;    background: #10a8a3;
+    height: 19px;    background: #10b1ac;
     color: white;
     margin: 10px 0px 0px 0px;
     height: 19px;
@@ -820,7 +829,7 @@ font-size: 11px!important;
 ion-img.prifile-pic-img.confirmationProfile.img-loaded {
     position: absolute;
     left: 25px;
-    border: 3px solid #10a8a3;
+    border: 3px solid #10b1ac;
     top: 112px;
 }
 .background-none {
@@ -848,7 +857,7 @@ ion-thumbnail.confirmationProfileWrap {
 //Drivers Page
 
 .settingsBtn {
-    background: #10a8a3;
+    background: #10b1ac;
     font-size: 6px;
     height: 16px;
     border-bottom-right-radius: 20px;
@@ -885,7 +894,7 @@ ion-thumbnail.confirmationProfileWrap {
     margin-left: 0;
 }
 .collectingBtnWrap >ion-segment-button {
-    background: #10a8a3!important;
+    background: #10b1ac!important;
     opacity: 1!important;
     border-radius: 50px;
     color: white!important;
@@ -901,4 +910,29 @@ ion-thumbnail.confirmationProfileWrap {
     border: 2px solid #626262;
     color: #626262;
     padding: 16px 0px;
+}
+.loginPageWrapper .item-md {
+    padding-left: 0px;
+}
+.forgotPasswordWrap.loginPageWrapper > img {
+    padding-left: 31%;
+    padding-right: 31%;
+}
+.button {
+    box-shadow: none!important;
+}
+.button-md {
+    height: 3.8rem;
+    letter-spacing: 1.1px!important;
+    font-size: 1.7rem;
+    font-weight: 100;
+}
+.loginPageMasterWrapper {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.termsPageWrapper .button-round-md {
+    padding: 0 3.8rem;
 }

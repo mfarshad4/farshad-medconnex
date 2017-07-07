@@ -1,0 +1,93 @@
+<ion-header>
+    <ion-navbar color="header">
+        <button ion-button menuToggle no-margin>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        
+        
+        <ion-title text-center>Drivers</ion-title>
+        
+<!--
+        <ion-buttons right>
+            <button ion-button icon-only>
+                <ion-icon name="bookmark"></ion-icon>
+            </button>
+        </ion-buttons>
+-->
+    </ion-navbar>
+    
+    <ion-toolbar color="darkGreen" class="toolBarIcons">
+        
+        <ion-buttons> 
+            <button ion-button icon-only (click)="notifications()" class="notificationsBtn">
+                <ion-icon name="ios-notifications-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+        
+        <ion-buttons>
+            <button ion-button icon-only (click)="cart()">
+                <ion-icon name="ios-cart-outline"></ion-icon>
+                <ion-badge class="notificationNumb" color="pink" item-right>{{itemsInCart}}</ion-badge>
+            </button>
+        </ion-buttons>
+        
+        <ion-buttons class="borderForDriver">
+            <button ion-button icon-only (click)="drivers()">
+                <ion-icon name="ios-car-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+        
+        <ion-buttons>
+            <button ion-button icon-only (click)="favorites()">
+                <ion-icon name="ios-heart-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+        
+        <ion-buttons>
+            <button ion-button icon-only (click)="referral()">
+                <ion-icon name="logo-usd"></ion-icon>
+            </button>
+        </ion-buttons>
+        
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="storefrontsWrap">
+    <ion-row padding class="remove-padding-top remove-padding-bottom text-center">
+        <ion-col margin class="tab-bg remove-margin-bottom" no-padding width-100>
+            <button width-50 class="buttonDrivers" no-margin ion-button round color="pink" (click) = 'drivers()'>Drivers</button>
+            <button width-50 class="buttonListings" no-margin ion-button round (click) = 'listings()'>Listings</button>
+            <ion-img class="uploadIcn" width="32" height="22" src="assets/upload.png"></ion-img>
+        </ion-col>
+    </ion-row>
+    
+    
+    
+    <ion-content>
+        <ion-card class="background-none">
+            <ion-row>
+                <ion-col class="width-40" style="position: relative;">
+                    <ion-img class="prifile-pic-img" width="100" height="100" src="assets/wesley.png"></ion-img>
+                    <button class="settingsBtn" ion-button icon-only (click)="referral()">
+                        <ion-icon name="settings"></ion-icon>
+                    </button>
+                </ion-col>
+                <ion-col width-20></ion-col> 
+                <ion-col class="width-40 btnSectionRight" style="position: relative;">
+                    <button color="darkGreen" class="phoneIcn"  ion-button icon-only (click)="referral()">
+                        <ion-icon name="settings"></ion-icon>
+                    </button>
+                    <button color="pink" class="refreshBtn"  ion-button icon-only (click)="referral()">
+                        <ion-icon name="refresh"></ion-icon>
+                        <span>Refresh</span>
+                    </button>
+                </ion-col>
+                
+            </ion-row>          
+        </ion-card>
+        
+        <div #map id="map" class="driverPageMap"></div>
+        
+        
+    </ion-content>
+</ion-content>

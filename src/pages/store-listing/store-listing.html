@@ -52,20 +52,18 @@
         
     </ion-toolbar>
 </ion-header>
-
+    
 <ion-content class="storefrontsWrap">
-    <ion-row padding class="remove-padding-top remove-padding-bottom">
-      <ion-segment [(ngModel)]="storefronts" margin class="tab-bg">
-        <ion-segment-button col-4 value="listings">Listings</ion-segment-button>
-        <ion-segment-button col-4 value="map">Map</ion-segment-button>
-        <ion-img class="uploadIcn" width="32" height="22" src="assets/upload.png"></ion-img>
-      </ion-segment>
+    <ion-row padding class="remove-padding-top remove-padding-bottom text-center margin-bottom-15">
+        <ion-col margin class="tab-bg remove-margin-bottom" no-padding width-100>
+            <button width-50 class="buttonDrivers" no-margin ion-button round color="pink" (click) = 'listings()'>Listings</button>
+            <button width-50 class="buttonListings" no-margin ion-button round (click) = 'store()'>Map</button>
+            <ion-img class="uploadIcn" width="32" height="22" src="assets/upload.png"></ion-img>
+        </ion-col>
     </ion-row>
     
     
-    
-    <ion-content [ngSwitch]="storefronts">
-      <ion-card *ngSwitchCase="'listings'" class="listingWrap">
+    <ion-card class="listingWrap">
         <ion-row class="margin-bottom">
           <ion-col width-33>
                 <ion-img src="assets/listing/location-1.png"></ion-img>
@@ -219,23 +217,7 @@
 
       </ion-card>
       
-      <div #map id="map"></div>
       
-      <ion-card *ngSwitchCase="'map'">
-        
-        <ion-content>
-          <ion-row>
-              <ion-col>
-                  <img src="assets/listing/location-1.png">
-              </ion-col>
-          </ion-row>
-          
-        </ion-content>
-        
-
-      </ion-card>
-      
-    </ion-content>
     
 
 </ion-content>
