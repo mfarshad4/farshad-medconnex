@@ -174,7 +174,7 @@ export class PatientDocument {
         // Use the FileTransfer to upload the image
         fileTransfer.upload(targetPath, url, options).then(data => {
           this.loading.dismissAll()
-          this.presentToast('Image succesful uploaded.');
+          this.presentToast('Image succesfully uploaded.');
         }, err => {
           this.loading.dismissAll()
           this.presentToast('Error while uploading file.');

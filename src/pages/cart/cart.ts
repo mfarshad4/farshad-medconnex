@@ -22,25 +22,37 @@ export class CartPage {
   itemsInCart: number = 0 ;
   
   createSuccess = false;
+  
+  itemExists = false ;
+  
   information = {phone: '', email: '', address: '', special_instructions: '', full_name: '', product_info: this.idens};
   
   constructor(public storage: Storage, public navCtrl: NavController, public navParams: NavParams, public http: Http, public popoverCtrl: PopoverController, public modalCtrl: ModalController, private auth: AuthService, private alertCtrl: AlertController) {
     
         
         
-      this.storage.ready().then(() => {            
-            
-          this.storage.forEach( (value, key, index) => {
-            
-            this.idens.push({ id:index , product: value, amount: 1 });
-            
-	          console.log("This is the value", value)
-	          console.log("from the key", key)
-	          console.log("Index is", index)
-            
-            this.itemsInCart = this.itemsInCart + 1 ;
-            
-          })   
+      this.storage.ready().then(() => {
+      
+          this.storage.get("cart").then((val)=>{
+              
+              var itemsArray = JSON.parse(val);
+              
+              if(itemsArray != null){
+                for(var i=0; i < itemsArray.length; i++ ){
+                  
+                  this.idens.push({ id:i , product: itemsArray[i], amount: 1 });
+                  
+                  this.itemsInCart = this.itemsInCart + 1 ;
+                  
+                }
+              
+              }
+              
+              if(this.itemsInCart > 0){
+                  this.itemExists = true ;
+              }
+          
+          });   
         
         console.log("IN Shopping cart : " + this.idens);
        
@@ -118,8 +130,29 @@ export class CartPage {
   
   removeItem(productId) {
       
-      this.storage.remove(productId) ;
-      this.navCtrl.setRoot(this.navCtrl.getActive().component);
+      this.storage.get("cart").then((val)=>{
+          
+          var parsedVal = JSON.parse(val);
+          
+          var culprit = parsedVal.indexOf(productId);
+          
+          if (culprit > -1) {
+            parsedVal.splice(culprit, 1);
+          }
+          
+          var unParsedVal = JSON.stringify(parsedVal);
+          
+          //if all the elements in the array have already been removed , then remove the entire cart .. 
+          if(parsedVal.length == 0){
+              this.storage.remove('cart');
+          }else{
+          
+              this.storage.set("cart", unParsedVal);
+          }
+          this.navCtrl.setRoot(this.navCtrl.getActive().component);
+      });
+      
+      
   }
   
   

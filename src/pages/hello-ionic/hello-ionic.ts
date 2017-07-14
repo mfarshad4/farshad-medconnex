@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 import { Platform, MenuController, Nav, NavController} from 'ionic-angular';
 
-import { DriversPage } from '../drivers/drivers';
+import { DriversMapPage } from '../drivers-map/drivers-map';
 
-import { StorefrontsPage } from '../storefronts/storefronts';
+import { StoreListingPage } from '../store-listing/store-listing';
 
 import { IndustryDoctorsPage } from '../industry-doctors/industry-doctors';
 
@@ -20,15 +20,15 @@ export class HelloIonicPage {
   
    
    goDrivers(){
-  	  this.navCtrl.push(DriversPage)
+  	  this.navCtrl.setRoot(DriversMapPage);
    }
   
    goStorefronts(){
-      this.navCtrl.setRoot(StorefrontsPage)
+      this.navCtrl.setRoot(StoreListingPage);
    }
    
    goDoctor(){
-      this.navCtrl.setRoot(IndustryDoctorsPage)
+      this.navCtrl.setRoot(IndustryDoctorsPage);
    }
     
 }

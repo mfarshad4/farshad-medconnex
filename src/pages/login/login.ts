@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { NavController, AlertController, LoadingController, Loading} from 'ionic-angular';
 
+import { Storage } from '@ionic/storage';
+
 import { AuthService } from '../../providers/auth-service';
 import { RegisterPage } from '../register/register';
 import { TermsPage } from '../terms/terms';
@@ -15,7 +17,7 @@ export class LoginPage {
   loading: Loading;
   registerCredentials = {phone: '', password: ''};
  
-  constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController, private loadingCtrl: LoadingController) {}
+  constructor(public storage: Storage, private nav: NavController, private auth: AuthService, private alertCtrl: AlertController, private loadingCtrl: LoadingController) {}
  
   public createAccount() {
     this.nav.push(RegisterPage);
@@ -26,11 +28,12 @@ export class LoginPage {
     this.auth.login(this.registerCredentials).subscribe(allowed => {
       if (allowed) {
         setTimeout(() => {
+        this.storage.set('user',true);
         this.loading.dismiss();
         this.nav.setRoot(TermsPage)
         });
       } else {
-        this.showError("Access Denied");
+        this.showError("Invalid phone number or passsword");
       }
     },
     error => {
@@ -44,7 +47,7 @@ export class LoginPage {
     
   showLoading() {
     this.loading = this.loadingCtrl.create({
-      content: 'Please wait...'
+      content: 'Authenticating...'
     });
     this.loading.present();
   }

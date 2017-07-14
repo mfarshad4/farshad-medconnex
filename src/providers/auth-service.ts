@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { Http } from '@angular/http';
+
+import { Storage } from '@ionic/storage';
  
 export class User {
   name: string;
@@ -18,7 +20,7 @@ export class User {
 @Injectable()
 export class AuthService {
 
-    constructor(private http: Http) {
+    constructor(public storage: Storage, private http: Http) {
         
     }
     
@@ -37,10 +39,21 @@ export class AuthService {
         
         this.http.post(link, data)
         .subscribe(data => {
-          
+        
            let access = data.json().success;
            
-            this.currentUser = new User('Simon', '606-190-2345', '50009');
+           //get this users info object from the login
+           let full_name = data.json().name ;
+           let phone = data.json().phone ;
+           let zip_code = data.json().zip_code ;
+           
+            this.currentUser = new User(full_name, phone, zip_code);
+            
+            //save the current user object in local storage..
+            this.storage.set('user_name', full_name) ;
+            this.storage.set('phone', phone) ;
+            this.storage.set('zip_code', zip_code) ;
+            
             observer.next(access);
             observer.complete();
           

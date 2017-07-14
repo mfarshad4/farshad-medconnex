@@ -1,49 +1,48 @@
-<ion-content>         
-    <div class="loginPageMasterWrapper">
-        <div padding text-center class="loginPageWrapper">
-            <img src="assets/medconnex-logo.png" />
-            
-            <form (ngSubmit)="login()" #registerForm="ngForm">
-                <ion-list>
-                    <ion-item class="btn-email">
-                        <ion-label floating><img src="assets/icn-input-2.png"/> Phone</ion-label>
-                        <ion-input type="text" name="phone" [(ngModel)]="registerCredentials.phone" required></ion-input>
-                    </ion-item>
-                    
-                    <ion-item class="btn-password">
-                        <ion-label floating><img src="assets/icn-input-3.png"/> Password</ion-label>
-                        <ion-input type="password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
-                    </ion-item>
-                </ion-list>
+<ion-content>            
+    <div padding text-center class="loginPageWrapper">
+        <img src="assets/medconnex-logo.png" />
+        
+        <form (ngSubmit)="login()" #registerForm="ngForm">
+            <ion-list>
+                <ion-item class="btn-email">
+                    <ion-label floating><img src="assets/icn-input-2.png"/> Phone</ion-label>
+                    <ion-input type="text" name="phone" [(ngModel)]="registerCredentials.phone" required></ion-input>
+                </ion-item>
                 
-                <button ion-button round full class="margin-bottom" color="pink" [disabled]="!registerForm.form.valid">
-                    Signin
-                </button>
-            </form>
+                <ion-item class="btn-password">
+                    <ion-label floating><img src="assets/icn-input-3.png"/> Password</ion-label>
+                    <ion-input type="password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+                </ion-item>
+            </ion-list>
             
-            <div class="loginBottomWrapper">
-                <p color="gray" padding-top (click)="forgotPassword()">Forgot Password?</p>
-                <p color="gray">Don't have an account, <span color="pink" (click)="createAccount()">Sign Up?</span></p>
-                <p padding-top>or Login with</p>
-                <ion-row class="socialMediaIcons">
-                    <ion-col col-2>
-                    </ion-col>
-                    <ion-col col-2>
-                        <img src="assets/icn-fb.png" class="" />
-                    </ion-col>
-                    <ion-col col-2>
-                        <img src="assets/icn-twitter.png" class="" />
-                    </ion-col>
-                    <ion-col col-2>
-                        <img src="assets/icn-google.png" class="" />
-                    </ion-col>
-                    <ion-col col-2>
-                        <img src="assets/icn-email.png" class="" />
-                    </ion-col>
-                    <ion-col col-2>
-                    </ion-col>
-                </ion-row>
-            </div>
+            <button ion-button round full class="margin-bottom" color="pink" [disabled]="!registerForm.form.valid">
+                Signin
+            </button>
+        </form>
+        
+        <div class="loginBottomWrapper">
+            <p color="gray" padding-top (click)="forgotPassword()">Forgot Password?</p>
+            <p color="gray">Don't have an account, <span color="pink" (click)="createAccount()">Sign Up?</span></p>
+            <p padding-top>or Login with</p>
+            <ion-row class="socialMediaIcons">
+                <ion-col col-2>
+                </ion-col>
+                <ion-col col-2>
+                    <img src="assets/icn-fb.png" class="" />
+                </ion-col>
+                <ion-col col-2>
+                    <img src="assets/icn-twitter.png" class="" />
+                </ion-col>
+                <ion-col col-2>
+                    <img src="assets/icn-google.png" class="" />
+                </ion-col>
+                <ion-col col-2>
+                    <img src="assets/icn-email.png" class="" />
+                </ion-col> 
+                <ion-col col-2>
+                </ion-col>
+            </ion-row>
         </div>
+        
     </div>
 </ion-content>

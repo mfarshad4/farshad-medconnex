@@ -41,6 +41,34 @@ export class SativaPage {
   addToCart(id){
       
       this.storage.ready().then(() => {
+          
+        //this.storage.clear();
+          
+        this.storage.get('cart').then((val) => {
+            
+            if(val != null){
+                var itemsInArray = JSON.parse(val);
+            
+                itemsInArray.push(id);
+                
+                var parsedItem = JSON.stringify(itemsInArray);
+                
+  //if this item does not already exist in the cart ..... Maybe allowing users to add a product severally to cart is not a bad idea afterall
+                //if(itemsInArray.indexOf(id) < 0){
+                    this.storage.set("cart",parsedItem);
+                //}
+                
+            }else{
+                //create a new cart array ... 
+                var itemation = [] ;
+                itemation.push(id);
+                
+                var parsedItemation = JSON.stringify(itemation);
+                
+                this.storage.set("cart", parsedItemation) ;
+            }
+        });
+          
         
         this.storage.length().then(result =>{
                 console.log('LENGTH::: '+ result);
@@ -56,7 +84,7 @@ export class SativaPage {
         
         
        // set a key/value
-       this.storage.set(id , id);
+      // this.storage.set(id , id);
 
        // Or to get a key/value pair
        this.storage.get(id).then((val) => {

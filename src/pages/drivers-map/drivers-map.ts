@@ -1,9 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
-import { Platform, MenuController, Nav, NavController, ModalController, NavParams, ViewController, LoadingController} from 'ionic-angular';
+import { Platform, MenuController, Nav, NavController, ModalController, NavParams, ViewController, LoadingController, PopoverController} from 'ionic-angular';
 
 import { ConnectivityService } from '../../providers/connectivity-service';
-import { Geolocation } from 'ionic-native';
+
+import { Geolocation } from '@ionic-native/geolocation';
 
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -14,14 +15,31 @@ import { ProductsPage } from '../products/products';
 
 import { ComplimentaryAdverts } from '../complimentary-adverts/complimentary-adverts';
 
+
+import { OnlinePage } from '../online/online';
+
+import { EditProfilePage } from '../edit-profile/edit-profile';
+
+import { ReferralPage } from '../referral/referral';
+
+import { DriversListingPage } from '../drivers-listing/drivers-listing';
+
+import { CartPage } from '../cart/cart';
+
+import { FavoritesPage } from '../favorites/favorites';
+
+import { NotificationsPage } from '../notifications/notifications';
+
+import { Storage } from '@ionic/storage';
+
 declare var google;
 
 @Component({
-  template:`<div #map id="map"></div>`
+  templateUrl: 'drivers-map.html'
 })
-
 export class DriversMapPage {
-  isAndroid: boolean = false;  
+  isAndroid: boolean = false;
+  onDemand: string = "drivers";
   
   locs: any;
   
@@ -31,15 +49,41 @@ export class DriversMapPage {
  
   map: any;
   mapInitialised: boolean = false;
-  apiKey: any;
+  apiKey: any ;
+  
+  loadingMap: any ;
+  
+  itemsInCart: number = 0 ;
  
-  constructor(public navCtrl: NavController, public connectivityService: ConnectivityService, public http: Http, public modalCtrl: ModalController, public loadingCtrl: LoadingController) {
+  constructor(private geolocation: Geolocation, public platform: Platform, public storage: Storage, public navCtrl: NavController, public connectivityService: ConnectivityService, public http: Http, public modalCtrl: ModalController, public loadingCtrl: LoadingController,public popoverCtrl: PopoverController) {
     
-    this.loadGoogleMaps();
-    
-    //this.getMarkers();
+    this.storage.ready().then(() => {            
+            
+          this.storage.get("cart").then((val)=>{
+              
+              var itemsArray = JSON.parse(val);
+              
+              if(itemsArray != null){
+                for(var i=0; i < itemsArray.length; i++ ){
+                  
+                  this.itemsInCart = this.itemsInCart + 1 ;
+                  
+                }
+              
+              }
+          
+          });    
+       
+     });
     
   }
+  
+  ionViewDidLoad(){
+      
+      this.loadGoogleMaps();
+  
+  }
+  
   
   //open ratings and reviews modal for driver
   openModal(driver) {
@@ -79,7 +123,23 @@ export class DriversMapPage {
       loading.present();    
   }
   
+  mapIsLoading(){
+      
+      this.loadingMap = this.loadingCtrl.create({
+        content: `
+                    
+                    <div>
+                    <p>Map is Loading. Please wait ...</p>
+                    </div>
+                  `
+      });
+      
+      this.loadingMap.present();
+  }
+  
   loadGoogleMaps(){
+   
+    this.mapIsLoading() ; 
  
     this.addConnectivityListeners();
  
@@ -93,7 +153,9 @@ export class DriversMapPage {
  
       //Load the SDK
       window['mapInit'] = () => {
+      
         this.initMap();
+
         this.enableMap();
         //this.getMarkers();
       }
@@ -102,9 +164,9 @@ export class DriversMapPage {
       script.id = "googleMaps";
  
       if(this.apiKey){
-        script.src = 'http://maps.google.com/maps/api/js?key=' + this.apiKey + '&callback=mapInit';
+        script.src = 'https://maps.google.com/maps/api/js?key=' + this.apiKey + '&callback=mapInit';
       } else {
-        script.src = 'http://maps.google.com/maps/api/js?callback=mapInit';       
+        script.src = 'https://maps.google.com/maps/api/js?callback=mapInit';       
       }
       
       document.body.appendChild(script);  
@@ -129,27 +191,37 @@ export class DriversMapPage {
   }
  
   initMap(){
- 
-    this.mapInitialised = true;
+    this.platform.ready().then(() => {
+     this.mapInitialised = true;
+     
+     var options = {
+      enableHighAccuracy: true
+    };
     
-    Geolocation.getCurrentPosition().then((position) => {
+    
+    this.geolocation.getCurrentPosition(options).then((position) => {
  
       let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
       
-      
       let mapOptions = {
         center: latLng,
-        zoom: 10,
+        zoom: 8,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
  
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
        
        this.getMarkers();
+      
+      //dismiss loader after map has been fully initialized 
+      this.loadingMap.dismiss();
        
+    }).catch(function(error){
+        console.log("Error ::"+ error);
     });
     
-  
+    
+    });
   }
  
   disableMap(){
@@ -201,13 +273,13 @@ export class DriversMapPage {
         this.loadMarkers(data);
       });
       
-      
-      
   }
     
   loadMarkers(markers){
+    
+    this.platform.ready().then(() => {
       
-      Geolocation.getCurrentPosition().then((position) => {
+      this.geolocation.getCurrentPosition().then((position) => {
        
         var destination = {lat: position.coords.latitude, lng: position.coords.longitude } ;
         
@@ -256,6 +328,8 @@ export class DriversMapPage {
       
       });
       
+    });//end platform ready  
+      
   }
   
   addInfoWindow(marker, message, record) {
@@ -268,14 +342,13 @@ export class DriversMapPage {
           infoWindow.open(this.map, marker);
       });
       
-      var openAd = new DriversMapPage(this.navCtrl, this.connectivityService, this.http, this.modalCtrl, this.loadingCtrl) ;
+      var openAd = new DriversMapPage(this.geolocation, this.platform, this.storage, this.navCtrl, this.connectivityService, this.http, this.modalCtrl, this.loadingCtrl, this.popoverCtrl) ;
       
       google.maps.event.addListener(infoWindow, 'domready', function () {
           var browseButton = document.getElementsByClassName("browse-button") ;
           for(var i=0; i < browseButton.length ; i++){
             browseButton[i].addEventListener('click', function(e) {
                 e.stopPropagation();
-                console.log("Button Clicked");
                 openAd.openLoadingAdvert();
             });
           }
@@ -329,6 +402,43 @@ export class DriversMapPage {
           }
         });
       
+  }
+  
+  onlinePage() {
+    // close the menu when clicking a link from the menu
+    //this.menu.close();
+    // navigate to the new page if it is not the current page
+    this.navCtrl.push(OnlinePage);
+    
+  }
+  
+  editProfile() {
+    this.navCtrl.push(EditProfilePage);
+  }
+  
+  referral() { 
+    this.navCtrl.push(ReferralPage);
+  }
+  
+  cart() { 
+    this.navCtrl.push(CartPage);
+  }
+  
+  drivers() {
+    this.navCtrl.push(DriversMapPage);
+  }
+  
+  listings() {
+    this.navCtrl.push(DriversListingPage);
+  }
+  
+  favorites() {
+    this.navCtrl.push(FavoritesPage);
+  }
+  
+  notifications() {
+    let popover = this.popoverCtrl.create(NotificationsPage);
+    popover.present();
   }
     
 }

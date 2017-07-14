@@ -6,7 +6,7 @@ import { OnlinePage } from '../online/online';
 
 import { ReferralPage } from '../referral/referral';
 
-import { DriversPage } from '../drivers/drivers';
+import { DriversMapPage } from '../drivers-map/drivers-map';
 
 import { CartPage } from '../cart/cart';
 
@@ -120,7 +120,7 @@ export class EditProfilePage {
   }
   
   drivers() {
-    this.navCtrl.push(DriversPage);
+    this.navCtrl.push(DriversMapPage);
   }
   
   favorites() {

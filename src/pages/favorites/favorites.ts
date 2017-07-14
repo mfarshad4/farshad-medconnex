@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
-import { Platform, MenuController, Nav, NavController, PopoverController, ModalController} from 'ionic-angular';
+import { NavController, PopoverController, ModalController} from 'ionic-angular';
 
 
 import { OnlinePage } from '../online/online';
@@ -9,7 +9,7 @@ import { EditProfilePage } from '../edit-profile/edit-profile';
 
 import { ReferralPage } from '../referral/referral';
 
-import { DriversPage } from '../drivers/drivers';
+import { DriversMapPage } from '../drivers-map/drivers-map';
 
 import { CartPage } from '../cart/cart';
 
@@ -34,11 +34,20 @@ export class FavoritesPage {
     
     this.storage.ready().then(() => {            
             
-          this.storage.forEach( (value, key, index) => {
-            
-            this.itemsInCart = this.itemsInCart + 1 ;
-            
-          })   
+          this.storage.get("cart").then((val)=>{
+              
+              var itemsArray = JSON.parse(val);
+              
+              if(itemsArray != null){
+                for(var i=0; i < itemsArray.length; i++ ){
+                  
+                  this.itemsInCart = this.itemsInCart + 1 ;
+                  
+                }
+              
+              }
+          
+          });   
        
      });
     
@@ -67,7 +76,7 @@ export class FavoritesPage {
   }
   
   drivers() {
-    this.navCtrl.push(DriversPage);
+    this.navCtrl.push(DriversMapPage);
   }
   
   favorites() {

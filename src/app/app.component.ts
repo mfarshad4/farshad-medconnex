@@ -1,8 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { Platform, MenuController, Nav  } from 'ionic-angular';
+import { Platform, MenuController, Nav, LoadingController  } from 'ionic-angular';
 
 import { StatusBar, Splashscreen } from 'ionic-native';
+
+import { Storage } from '@ionic/storage';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 
@@ -14,8 +16,6 @@ import { OnlinePage } from '../pages/online/online';
 
 import { ProfilePage } from '../pages/profile/profile';
 
-import { StorefrontsPage } from '../pages/storefronts/storefronts';
-
 import { ReservationsPage } from '../pages/reservations/reservations';
 
 import { DriversDocumentsPage } from '../pages/drivers-documents/drivers-documents';
@@ -24,13 +24,8 @@ import { LoginPage } from '../pages/login/login';
 
 import { RegisterPage } from '../pages/register/register';
 
-import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 
 import { TermsPage } from '../pages/terms/terms';
-
-import { ResetPasswordPage } from '../pages/reset-password/reset-password';
-
-import { NewPasswordPage } from '../pages/new-password/new-password'; 
 
 import { IndustryDoctorsPage } from '../pages/industry-doctors/industry-doctors';
 
@@ -42,23 +37,54 @@ import { PaymentInfoPage } from '../pages/payment-info/payment-info';
 
 import { ConfirmationPage } from '../pages/confirmation/confirmation';
 
-
-
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
+  
+  loading: any;
+  userName: any;
+  phone: any;
+  zipCode: any;
+  
 
   // make HelloIonicPage the root (or first) page
-  rootPage: any = TermsPage;
+  rootPage: any = LoginPage ;
   pages: Array<{title: string, component: any}>;
 
-  constructor(
-    public platform: Platform,
-    public menu: MenuController,
-
-  ) {
+  constructor(public platform: Platform, public menu: MenuController, public storage: Storage, private loadingCtrl: LoadingController) {
+    
+    //get this users full name.
+    this.storage.get('user_name').then((val)=> {
+        this.userName = val ;
+    });
+    
+    //get this users phone.
+    this.storage.get('phone').then((val)=> {
+        this.phone = val ;
+    });
+    
+    //get this users zip code.
+    this.storage.get('zip_code').then((val)=> {
+        this.zipCode = val ;
+    });
+    
+    this.showLoading();
+    
+    //check if this user is logged in.
+    this.storage.get('user').then((val)=> {
+        if(val){
+            this.rootPage = TermsPage ;
+            
+        }else{
+            this.rootPage = LoginPage ;
+        }
+        
+        this.loading.dismiss();
+    });
+    
+  
     this.initializeApp();
 
     // set our app's pages
@@ -89,6 +115,14 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
+  }
+  
+  
+  showLoading() {
+    this.loading = this.loadingCtrl.create({
+      content: 'Authenticating...'
+    });
+    this.loading.present();
   }
 
   openPage(page) {

@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { Platform, MenuController, Nav, NavController, NavParams } from 'ionic-angular';
+import {MenuController, Nav, NavController, NavParams } from 'ionic-angular';
 
 
 @Component({
@@ -11,8 +11,7 @@ export class ReferralPage {
   @ViewChild(Nav) nav: Nav;
   referral: string = "referrals";
 
-  constructor(platform: Platform, public menu: MenuController, public navCtrl: NavController) {
-    this.isAndroid = platform.is('android');
+  constructor(public menu: MenuController, public navCtrl: NavController) {
     
   }
   

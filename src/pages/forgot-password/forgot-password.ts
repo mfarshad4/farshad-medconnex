@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform, MenuController, Nav, NavController} from 'ionic-angular';
+import {NavController} from 'ionic-angular';
 
 import { ResetPasswordPage } from '../reset-password/reset-password';
 

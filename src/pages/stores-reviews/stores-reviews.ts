@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform, MenuController, Nav, NavController, ModalController, NavParams, ViewController} from 'ionic-angular';
+import { NavController, NavParams, ViewController} from 'ionic-angular';
 
 @Component({
   template: `
@@ -55,7 +55,7 @@ export class StoresReviews {
   
   stores ;
 
-  constructor(public platform: Platform, public params: NavParams, public viewCtrl: ViewController)
+  constructor(public params: NavParams, public viewCtrl: ViewController)
   {
     
     this.stores = this.params.get('store');

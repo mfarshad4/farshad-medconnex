@@ -1,6 +1,9 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { Geolocation } from '@ionic-native/geolocation';
+import { Transfer } from '@ionic-native/transfer';
+import { File } from '@ionic-native/file';
 import { MyApp } from './app.component';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
@@ -15,11 +18,16 @@ import { OnlinePage } from '../pages/online/online';
 import { ProfilePage } from '../pages/profile/profile';
 import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 import { ReferralPage } from '../pages/referral/referral';
-import { DriversPage } from '../pages/drivers/drivers';
+
 import { DriversMapPage } from '../pages/drivers-map/drivers-map';
+import { DriversListingPage } from '../pages/drivers-listing/drivers-listing';
+
 import { FavoritesPage } from '../pages/favorites/favorites';
 import { NotificationsPage } from '../pages/notifications/notifications';
-import { StorefrontsPage } from '../pages/storefronts/storefronts';
+
+import { StoreMapPage } from '../pages/store-map/store-map';
+import { StoreListingPage } from '../pages/store-listing/store-listing';
+
 import { IndustryDoctorsPage } from '../pages/industry-doctors/industry-doctors';
 import { ReservationsPage } from '../pages/reservations/reservations';
 import { DriversDocumentsPage } from '../pages/drivers-documents/drivers-documents';
@@ -69,11 +77,12 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     ProfilePage,
     EditProfilePage,
     ReferralPage,
-    DriversPage,
     DriversMapPage,
+    DriversListingPage,
     FavoritesPage,
     NotificationsPage,
-    StorefrontsPage,
+    StoreMapPage,
+    StoreListingPage,
     IndustryDoctorsPage,
     ReservationsPage,
     DriversDocumentsPage,
@@ -99,7 +108,7 @@ import { Ionic2RatingModule } from 'ionic2-rating';
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    Ionic2RatingModule 
+    Ionic2RatingModule
     
   ],
   bootstrap: [IonicApp],
@@ -118,11 +127,12 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     ProfilePage,
     EditProfilePage,
     ReferralPage,
-    DriversPage,
     DriversMapPage,
+    DriversListingPage,
     FavoritesPage,
     NotificationsPage,
-    StorefrontsPage,
+    StoreMapPage,
+    StoreListingPage,
     IndustryDoctorsPage,
     ReservationsPage,
     DriversDocumentsPage,
@@ -146,6 +156,6 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     ConfirmationPage,
     FriendslistPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ConnectivityService, AuthService, Storage]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ConnectivityService, AuthService, Storage, Geolocation]
 })
 export class AppModule {}

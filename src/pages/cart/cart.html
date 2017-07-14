@@ -19,7 +19,7 @@
     
 </ion-header>
 
-<ion-content>
+<ion-content [hidden]="!itemExists">
     
     <ion-grid no-padding class="cartBody">
         <ion-row class="font-regular bg-white">
@@ -30,7 +30,7 @@
         
         <ion-row *ngFor="let i of idens">
             <ion-col width-50 class="font-regular sectionOne">
-                <button ion-button color="dark" clear icon-only (click)="removeItem(i)">
+                <button ion-button color="dark" clear icon-only (click)="removeItem(i.product)">
                     <ion-icon name='trash' is-active="false" class="font-normal"></ion-icon>
                 </button>
                 Product with ID : {{i.product}} , Index is :: {{i.id}} , Amount is :: {{i.amount}}
@@ -165,4 +165,10 @@
         </button>
     </p>
     
+</ion-content>
+
+<ion-content [hidden]="itemExists">
+  <ion-grid padding class="cartBody">
+    <p text-center>You have not added any items to your cart.</p>
+  </ion-grid>
 </ion-content>

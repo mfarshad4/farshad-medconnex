@@ -1,12 +1,13 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
-import {NavController, ModalController, NavParams, ViewController, LoadingController, PopoverController} from 'ionic-angular';
+import {Platform, NavController, ModalController, NavParams, ViewController, LoadingController, PopoverController} from 'ionic-angular';
 
 import { ConnectivityService } from '../../providers/connectivity-service';
-import { Geolocation } from 'ionic-native';
 
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+
+import { Geolocation } from '@ionic-native/geolocation';
 
 import { StoresReviews } from '../stores-reviews/stores-reviews';
 
@@ -56,7 +57,7 @@ export class StoreMapPage {
   
   itemsInCart: number = 0 ;
  
-  constructor(public storage: Storage, public navCtrl: NavController,  public connectivityService: ConnectivityService, public http: Http, public modalCtrl: ModalController, public loadingCtrl: LoadingController, public popoverCtrl: PopoverController) {
+  constructor(private geolocation: Geolocation, public platform: Platform, public storage: Storage, public navCtrl: NavController,  public connectivityService: ConnectivityService, public http: Http, public modalCtrl: ModalController, public loadingCtrl: LoadingController, public popoverCtrl: PopoverController) {
     
     this.storage.ready().then(() => {            
             
@@ -186,10 +187,14 @@ export class StoreMapPage {
   }
  
   initMap(){
- 
+   this.platform.ready().then(() => {
     this.mapInitialised = true;
     
-    Geolocation.getCurrentPosition().then((position) => {
+    var options = {
+      enableHighAccuracy: true
+    };
+    
+    this.geolocation.getCurrentPosition(options).then((position) => {
  
       let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
  
@@ -209,7 +214,11 @@ export class StoreMapPage {
             this.loadingMap.dismiss();
         //});
  
+    }).catch(function(error){
+        console.log("Error ::"+ error);
     });
+    
+    });//end platform ready
  
   }
 
@@ -268,7 +277,7 @@ export class StoreMapPage {
   
   loadMarkers(markers){
       
-      Geolocation.getCurrentPosition().then((position) => {
+      this.geolocation.getCurrentPosition().then((position) => {
        
         var destination = {lat: position.coords.latitude, lng: position.coords.longitude } ;
         
@@ -329,7 +338,7 @@ export class StoreMapPage {
           infoWindow.open(this.map, marker);
       });
       
-      var openAd = new StoreMapPage(this.storage, this.navCtrl, this.connectivityService, this.http, this.modalCtrl, this.loadingCtrl, this.popoverCtrl) ;
+      var openAd = new StoreMapPage(this.geolocation, this.platform, this.storage, this.navCtrl, this.connectivityService, this.http, this.modalCtrl, this.loadingCtrl, this.popoverCtrl) ;
       
       google.maps.event.addListener(infoWindow, 'domready', function () {
           var browseButton = document.getElementsByClassName("browse-button") ;

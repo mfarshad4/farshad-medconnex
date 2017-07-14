@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform, MenuController, Nav, NavController} from 'ionic-angular';
-
-//import { StorefrontsPage } from '../storefronts/storefronts';
+import { NavController} from 'ionic-angular';
 
 import { HelloIonicPage } from '../hello-ionic/hello-ionic';
 

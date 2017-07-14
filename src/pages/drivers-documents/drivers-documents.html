@@ -21,7 +21,7 @@
             <ion-buttons> 
                 <button ion-button icon-only (click)="notifications()" class="notificationsBtn">
                     <ion-icon name="ios-notifications-outline"></ion-icon>
-                    <ion-badge class="notificationNumb" color="pink" item-right>2</ion-badge>
+                    <ion-badge class="notificationNumb" color="pink" item-right>{{itemsInCart}}</ion-badge>
                 </button>
             </ion-buttons>
         
@@ -54,7 +54,7 @@
 
 <ion-content class="storefrontsWrap">
     <ion-row padding class="remove-padding-top remove-padding-bottom">
-        <ion-segment [(ngModel)]="drivers_documents"  margin class="tab-bg">
+        <ion-segment [(ngModel)]="drivers_documents"  margin class="tab-bg margin-left-3 margin-right-3">
             <ion-segment-button col-4 value="upload">Upload</ion-segment-button>
             <ion-segment-button col-4 value="documents">Documents</ion-segment-button>
         </ion-segment>
@@ -66,12 +66,35 @@
         <div *ngSwitchCase="'upload'" padding>
             <ion-title text-center>Upload Documents</ion-title>
             <ion-list class="registerForm" margin-top>
-                <ion-item no-padding>
-                    <ion-input type="file" class="font-medium" placeholder="Full Name" name="full_name" required></ion-input>
-                </ion-item>
-                <ion-item no-padding>
-                    <ion-input type="file"></ion-input>
-                </ion-item>
+                <div class="font-regular">Driver's License</div>
+                <button class="width-50" color="darkGreen" ion-button icon-left (click)="presentActionSheet()">
+                    <ion-icon name="camera"></ion-icon>Upload
+                </button>
+                
+                <div class="font-regular">Driver's Insurance</div>
+                <button class="width-50" color="pink" ion-button icon-left (click)="presentActionSheet()">
+                    <ion-icon name="cloud-upload"></ion-icon>Upload
+                </button>
+                
+                <div class="font-regular">Vehicle Reigtration</div>
+                <button class="width-50" color="darkGreen" ion-button icon-left (click)="presentActionSheet()">
+                    <ion-icon name="camera"></ion-icon>Upload
+                </button>
+                
+                <div class="font-regular">Vehicle Insurance</div>
+                <button class="width-50" color="pink" ion-button icon-left (click)="presentActionSheet()">
+                    <ion-icon name="cloud-upload"></ion-icon>Upload
+                </button>
+                
+                <div class="font-regular">Vehicle Inspection</div>
+                <button class="width-50" color="darkGreen" ion-button icon-left (click)="presentActionSheet()">
+                    <ion-icon name="camera"></ion-icon>Upload
+                </button>
+                
+                <div class="font-regular">Recommendation & State ID</div>
+                <button class="width-50" color="pink" ion-button icon-left (click)="presentActionSheet()">
+                    <ion-icon name="cloud-upload"></ion-icon>Upload
+                </button>
             </ion-list>
         </div>
         
