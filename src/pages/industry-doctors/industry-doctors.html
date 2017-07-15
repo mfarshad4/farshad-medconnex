@@ -54,36 +54,27 @@
 </ion-header>
 
 <ion-content>
-
-    
     <div>
       
-      <ion-card>
+      <ion-card class="background-none">
         
         <ion-row center *ngFor="let doctor of doctors">
           
-          <ion-col width-33>
-                <ion-img width="100" height="100" src="assets/rasvi.jpg"></ion-img>
+          <ion-col class="width-30">
+                <ion-img class="industryDocImg" width="90" height="90" src="assets/wesley.png"></ion-img>
 
           </ion-col>
           
-          <ion-col width-50>
+          <ion-col class="width-40">
               <div>{{doctor.address}}</div>
               
           </ion-col>
-          
-           <ion-col>
-              <div>
-                <button ion-button icon-only (click)="openLoadingAdvert(doctor.id)">
-                  <ion-icon name="navigate"></ion-icon></button>
-              </div>
-              
-              <div>
-                <button ion-button icon-left color="danger" small >
-                    <ion-icon name="star"></ion-icon> Review
+            
+          <ion-col width-15 class="btnRightSideDoc ">
+                <img class="item-top-right" src="assets/locationIcon.png" (click)="openLoadingAdvert(doctor.id)"/>
+                <button class="item-bottom-right"  ion-button icon-left round color="pink" small no-padding padding-left padding-right>
+                    Review
                 </button>
-              </div>
-              
           </ion-col>
           
         </ion-row>
