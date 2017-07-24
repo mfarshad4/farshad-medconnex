@@ -1,28 +1,28 @@
 <ion-content>
     <div padding text-center class="loginPageWrapper">
-        <img src="assets/medconnex-logo.png" />
+        <img src="assets/medconnex-logo.png" style="padding: 6% 23% 0 23%"/>
         
         <form (ngSubmit)="register()" #registerForm="ngForm">  
             <ion-list class="registerForm">
                 <ion-item class="iconPhone">
-                    <ion-label floating><img src="assets/icn-input-3.png"/>Full Name</ion-label>
-                    <ion-input type="text" placeholder="" name="full_name" [(ngModel)]="registerCredentials.full_name" required></ion-input>
+                    <ion-label><img src="assets/icn-input-1.png"/></ion-label>
+                    <ion-input type="text" placeholder="Full Name" name="full_name" [(ngModel)]="registerCredentials.full_name" clearInput required></ion-input>
                 </ion-item>
                 <ion-item class="iconPhone">
-                    <ion-label floating><img src="assets/icn-input-2.png"/>Phone</ion-label>
-                    <ion-input type="text" placeholder="" name="phone" [(ngModel)]="registerCredentials.phone" required></ion-input>
+                    <ion-label><img src="assets/icn-input-2.png"/></ion-label>
+                    <ion-input type="text" placeholder="Phone" name="phone" [(ngModel)]="registerCredentials.phone" clearInput required></ion-input>
                 </ion-item>
                 <ion-item class="iconPhone">
-                    <ion-label floating><img src="assets/icn-input-2.png"/>Zip Code</ion-label>
-                    <ion-input type="text" placeholder="" name="zip_code" [(ngModel)]="registerCredentials.zip_code" required></ion-input>
+                    <ion-label><img src="assets/icn-input-4.png"/></ion-label>
+                    <ion-input type="text" placeholder="Zip Code" name="zip_code" [(ngModel)]="registerCredentials.zip_code" clearInput required></ion-input>
                 </ion-item>
                 <ion-item class="iconPhone">
-                    <ion-label floating><img src="assets/icn-input-3.png"/>New Password</ion-label>
-                    <ion-input type="password" placeholder="" name="new_p" [(ngModel)]="registerCredentials.password" required></ion-input>
+                    <ion-label><img src="assets/icn-input-3.png"/></ion-label>
+                    <ion-input type="password" placeholder="New Password" name="new_p" [(ngModel)]="registerCredentials.password" clearInput required></ion-input>
                 </ion-item>
                 <ion-item class="iconPhone">
-                    <ion-label floating><img src="assets/icn-input-3.png"/>Confirm Password</ion-label>
-                    <ion-input type="password" placeholder="" name="confirm_p" [(ngModel)]="registerCredentials.password_c" required></ion-input>
+                    <ion-label><img src="assets/icn-input-3.png"/></ion-label>
+                    <ion-input type="password" placeholder="Confirm Password" name="confirm_p" [(ngModel)]="registerCredentials.password_c" clearInput required></ion-input>
                 </ion-item>
             </ion-list>
           
@@ -30,24 +30,24 @@
             
         </form>
         <div class="loginBottomWrapper">
-            <p color="gray" padding-top>Already have an Account, <span color="pink" (click)="goToLogin()">Sign In?</span></p>
-            <p padding-top>or Login with</p>
-            <ion-row class="socialMediaIcons">
-                <ion-col col-2>
+            <p color="gray" padding-top>Already have an Account, <span color="pink" (click)="goToLogin()" class="text-underline">Sign In?</span></p>
+            <p padding-top class="font-normal">Or Login With</p>
+            <ion-row class="socialMediaIcons margin-top-5">
+                <ion-col col-2 no-padding>
                 </ion-col>
-                <ion-col col-2>
+                <ion-col col-2 no-padding>
                     <img src="assets/icn-fb.png" class="" />
                 </ion-col>
-                <ion-col col-2>
+                <ion-col col-2 no-padding>
                     <img src="assets/icn-twitter.png" class="" />
                 </ion-col>
-                <ion-col col-2>
+                <ion-col col-2 no-padding>
                     <img src="assets/icn-google.png" class="" />
                 </ion-col>
-                <ion-col col-2>
+                <ion-col col-2 no-padding>
                     <img src="assets/icn-email.png" class="" />
-                </ion-col>
-                <ion-col col-2>
+                </ion-col> 
+                <ion-col col-2 no-padding>
                 </ion-col>
             </ion-row>
         </div>

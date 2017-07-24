@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar color="header">
         <button ion-button menuToggle no-margin>
-            <ion-icon name="menu"></ion-icon>
+            <img src="assets/menu-iconn.png" width="21"/>
         </button>
         
         
@@ -54,7 +54,7 @@
 
 <ion-content class="onlineWrapper storefrontsWrap">
     <ion-row padding class="remove-padding-top remove-padding-bottom">
-        <ion-segment [(ngModel)]="online" margin class="tab-bg">
+        <ion-segment [(ngModel)]="online" margin class="tab-bg margin-left-3 margin-right-3">
             <ion-segment-button col-4 value="following">Following</ion-segment-button>
             <ion-segment-button col-4 value="you">You</ion-segment-button>
             <ion-img class="uploadIcn" width="32" height="22" src="assets/upload.png"></ion-img>

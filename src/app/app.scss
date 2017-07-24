@@ -104,6 +104,7 @@ $font-normal: 16px;
 $font-large: 18px;
 $font-big: 20px;
 
+
 .font-small {
     font-size: $font-small!important;
 }
@@ -121,6 +122,12 @@ $font-big: 20px;
 }
 .font-big {
     font-size: $font-big!important;
+}
+.font-22 {
+    font-size: 22px!important;
+}
+.font-13 {
+    font-size: 13px!important;
 }
 .bg-white{
     background: white;
@@ -190,6 +197,9 @@ ion-toolbar ion-icon.icon.icon-md.ion-logo-usd {
 .remove-padding-bottom {
     padding-bottom:0!important;
 }
+.padding-bottom-10 {
+    padding-bottom: 10px!important;
+}
 .margin-bottom {
     margin-bottom:5px!important;
 }
@@ -232,6 +242,9 @@ ion-toolbar ion-icon.icon.icon-md.ion-logo-usd {
 .margin-bottom-15 {
     margin-bottom:15px;
 }
+.margin-bottom-2 {
+    margin-bottom:2em;
+}
 .margin-top-15 {
     margin-top: 15px;
 }
@@ -239,7 +252,7 @@ ion-toolbar ion-icon.icon.icon-md.ion-logo-usd {
     width: 20%;
 }
 .toolbar-title-md {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     font-weight: 400;
         padding-right: 52px!important;
 }
@@ -261,6 +274,9 @@ ion-toolbar ion-icon.icon.icon-md.ion-logo-usd {
     min-height: 32px;
     padding: 0px;
 }
+ion-navbar.toolbar.toolbar-md.toolbar-md-header {
+    min-height: 51px;
+}
 ion-buttons.borderForDriver {
     border-right: 1px solid rgba(255, 255, 255, 0.36);
     border-left: 1px solid rgba(255, 255, 255, 0.36);
@@ -280,7 +296,7 @@ ion-buttons.borderForDriver {
         margin: 0px 8px 5px 0px;
 }
 .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
-    box-shadow: inset 0 -1px 0 0 #f53d3d!important;
+    box-shadow: inset 0 0px 0 0 #f53d3d!important;
 }
 
 .loginPageWrapper .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child, .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
@@ -290,7 +306,7 @@ ion-buttons.borderForDriver {
 .loginPageWrapper > img {
     padding-left: 26%;
     padding-right: 26%;
-    padding-top: 10%;
+//    padding-top: 10%;
 }
 .loginPageWrapper {
     padding-left: 3.5em!important;
@@ -302,15 +318,21 @@ ion-buttons.borderForDriver {
     background-color: rgba(255, 255, 255, 0);
 }
 .loginPageWrapper .list-md .item-block .item-inner {
-    border-bottom: 1px solid #dedede!important;
+    border-bottom: 0px solid #dedede!important;
      font-size:$font-medium;
      font-weight: 100;
 }
-.loginPageWrapper .list-md .item-block .item-inner ion-label{
-    margin-top: 10px;
+.loginPageWrapper .list-md .item-block .item-inner ion-label {
+    margin-right: 2px;
+    margin-top: 8px;
+    margin-bottom: 0px;
     color:  color($text-color, gray);
         display: flex;
     align-items: center;
+}
+.loginPageWrapper .list-md .item-block .item-inner ion-input {
+    border-bottom: 1px solid #dedede !important;
+    padding: 5px 2px;
 }
 .loginPageWrapper ion-list ion-item:last-child{
     border-bottom:0!important;
@@ -328,14 +350,14 @@ ion-buttons.borderForDriver {
 }
 .item-md.item-input.input-has-focus .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner, .item-md.item-input.input-has-focus:last-child .item-inner {
   border-bottom-color: #10b1ac;
-  box-shadow: inset 0 -1px 0 0 #10b1ac!important;
+  box-shadow: inset 0 0px 0 0 #10b1ac!important;
 }
 .list-md .item-input.input-has-focus:last-child {
   border-bottom-color: rgba(255, 255, 255, 0);
   box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0);
 }
 .loginBottomWrapper > p {
-    font-size:$font-small;
+    font-size:13px;
 
 }
 .loginBottomWrapper > p:last-child {
@@ -347,7 +369,7 @@ ion-buttons.borderForDriver {
     margin-bottom: 8px;
 }
 .socialMediaIcons img{
-    width:85%;
+    width:78%;
 }
 
 /*End Login Page*/
@@ -383,10 +405,10 @@ ion-buttons.borderForDriver {
     border-radius: 30px;
 }
 .storefrontsWrap .segment-md .segment-button {
-    height: 2.6em;
+    height: 2em;
     border-bottom-width: 0px;
-    font-size: $font-medium;
-    line-height: 2.7;
+    font-size: $font-normal;
+    line-height: 2;
     text-transform: capitalize;
     color: color($colors, darkGrey);
     font-weight: 400;
@@ -394,8 +416,10 @@ ion-buttons.borderForDriver {
 .uploadIcn {
     position: absolute;
     right: 0;
-    top: 25px;
+    top: 22px;
     background: none;
+    width: 40px!important;
+    height: 30px!important;
 }
 .listingWrap ion-img {
     width: 92px!important;
@@ -633,7 +657,10 @@ ion-list.sideMenu.list.list-md {
     padding-left:0;
         background: rgba(255, 255, 255, 0);
 }
-
+.loginPageWrapper .text-input-md {
+    margin: 5px 8px -5px 0px;
+    font-size: 16px;
+}
 .favorites-page .card-subtitle {
     font-size: 1.0em;
     margin-top: -4.5em;
@@ -671,14 +698,43 @@ ion-list.sideMenu.list.list-md {
 //Reservation Page
 
 .reservationBody ion-title div {
-    font-size: $font-normal;
+    font-size: 17px;
     padding-left: 0;
 }
 .reservationBody ion-title + p {
-    font-size: $font-small;    
+    font-size: 13px;    
 }
 .reservationBody ion-title + div {
-    font-size: $font-small;
+    font-size: 13px;
+}
+.reservationBody {
+    padding-left: 1.5em !important;
+    padding-right: 1.5em !important;
+}
+.reservationBody form {
+    margin: -6px 15px 0px 15px;
+}
+.openingHours ion-item .item-inner {
+    border-top: 1px solid #dedede;
+}
+.openingHours .item-block {
+    min-height: 3.4rem;
+}
+.openingHours ion-item .item-inner ion-label {
+    margin-top: 0px!important;
+}
+.storefrontsWrap .card-md {
+    box-shadow: 0px 0px 0px;
+}
+ion-item.lastWrap.item.item-block.item-md .item-inner {
+    border-bottom: 1px solid #dedede !important;
+}
+ion-list.openingHours.list.list-md {
+    width: 260px;
+}
+.openingHours ion-item .item-inner span {
+    position: absolute;
+    right: 0;
 }
 
 //Reviews and Raating
@@ -889,17 +945,17 @@ ion-thumbnail.confirmationProfileWrap {
 
 .settingsBtn {
     background: #10b1ac;
-    font-size: 6px!important;
-    height: 22px!important;
+    font-size: 6px !important;
+    height: 23px !important;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
     width: 35px;
-    position: absolute;
-    left: 15.3em;
-    top: 3.5em;
+    left: 16.2em;
+    top: -17em;
 }
 .settingsBtn ion-icon {
     padding-right: 0;
+        font-size: 2.1em;
 }
 .phoneIcn {
     height: 23px !important;
@@ -980,7 +1036,7 @@ ion-col.btnRightSideDoc button {
 }
 .driverPageMap {
     border-top: 3px solid white;
-    margin-top: -5em;
+    margin-top: -8em;
 }
 .buttonDrivers, .buttonListings {
     width: 49.2%;
@@ -1004,7 +1060,7 @@ ion-col.btnRightSideDoc button {
 .button-md {
     height: 3.8rem;
     letter-spacing: 1.1px!important;
-    font-size: 1.7rem;
+    font-size: 16px;
     font-weight: 100;
 }
 .loginPageMasterWrapper {
@@ -1015,4 +1071,36 @@ ion-col.btnRightSideDoc button {
 }
 .termsPageWrapper .button-round-md {
     padding: 0 3.8rem;
+}
+.certifiedProHeading {
+    top: 1.5em;
+    position: absolute;
+    width: 100%;
+    padding-right: 30px;
+}
+.bottomMedText {
+    position: absolute;
+    bottom: 3.5em;
+    width: 100%;
+    padding-right: 30px;
+}
+.buttonSmall{
+    height: 26px !important;
+    font-size: 11px;
+}
+*::-webkit-input-placeholder {
+  color: #5f5f5f !important;
+}
+*:-moz-placeholder {
+  color: #5f5f5f !important;
+}
+*:-ms-input-placeholder { /* IE10+ */
+  color: #5f5f5f !important;
+}
+a[disabled], button[disabled], [ion-button][disabled] {
+    opacity: 1;
+}
+.termsAndCondBtn {
+    padding-left: 3.1rem;
+    padding-right: 3.1rem;
 }

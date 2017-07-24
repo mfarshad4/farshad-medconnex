@@ -1,21 +1,28 @@
 <ion-content padding>
-    <div class="loginPageMasterWrapper" style="margin-left: -15px;">
+    <div text-center>
+        <p class="font-22 font-bold certifiedProHeading margin-top-15" color="darkGrey">Certified Providers</p>
+    </div>
+    <div class="loginPageMasterWrapper" style="margin-left: -15px;margin-top: -20px;">
+        
         <div text-center class="loginPageWrapper">
-            <p class="font-normal" color="darkGrey" margin-bottom>Providers </p>
-            <ion-col class="margin-top-15" padding-bottom (click)="goDoctor()">
-                <img src="assets/icn-doctor.png"  width="90" />     
-                <p class="font-regular font-bold">Doctors</p>
-            </ion-col>
-            <ion-col (click)="goDrivers()">
-                <img src="assets/icn-drivers.png" width="90" />
-                <p class="font-regular font-bold">Drivers</p>
-            </ion-col>
-            <ion-col class="margin-bottom-15" padding-bottom>
-                <img src="assets/icn-storeFronts.png" width="90" (click)="goStorefronts()"/>      
-                <p class="font-regular font-bold">Storefronts</p>
-            </ion-col>
             
-            <p margin-top class="font-small" color="fontGray">Med Connex Provides Technology Services Only</p> 
+            <ion-col class="margin-top-15" (click)="goDrivers()">
+                <img src="assets/icn-drivers.png" width="100" />
+                <p class="font-normal">ON-Demand</p>
+            </ion-col>
+            <ion-col class="margin-top-15">
+                <img src="assets/icn-storeFronts.png" width="100" (click)="goStorefronts()"/>      
+                <p class="font-normal">Storefronts</p>
+            </ion-col>
+            <ion-col class="margin-top-15" (click)="goDoctor()">
+                <img src="assets/icn-doctor.png"  width="100" />     
+                <p class="font-normal">Industry Doctors</p>
+            </ion-col>        
+        
         </div>
+            
+    </div>
+    <div text-center>
+        <p margin-top class="font-13 bottomMedText" color="gray">Med Connex Provides Technology Services Only</p> 
     </div>
 </ion-content>

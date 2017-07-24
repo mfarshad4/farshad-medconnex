@@ -1,7 +1,8 @@
 <ion-header>
     <ion-navbar color="header">
         <button ion-button menuToggle no-margin>
-            <ion-icon name="menu"></ion-icon>
+<!--            <ion-icon name="menu"></ion-icon>-->
+            <img src="assets/menu-iconn.png" width="21"/>
         </button>
         
         
@@ -16,6 +17,7 @@
 -->
     </ion-navbar>
     
+<!--
     <ion-toolbar color="darkGreen" class="toolBarIcons">
         
             <ion-buttons> 
@@ -51,6 +53,7 @@
             </ion-buttons>
         
     </ion-toolbar>
+-->
 </ion-header>
 
 <ion-content class="storefrontsWrap">
@@ -58,7 +61,7 @@
     <img src="assets/reservationBanner.png" />
     
     <ion-row padding class="remove-padding-top remove-padding-bottom">
-        <ion-segment [(ngModel)]="reservations" margin class="tab-bg">
+        <ion-segment [(ngModel)]="reservations" margin class="tab-bg remove-margin-bottom margin-left-5 margin-right-5 tab-bg">
             <ion-segment-button col-4 value="schedule">Schedule</ion-segment-button>
             <ion-segment-button col-4 value="info">Info</ion-segment-button>
             <ion-img class="uploadIcn" width="32" height="22" src="assets/upload.png"></ion-img>
@@ -70,8 +73,8 @@
         
         <div *ngSwitchCase="'schedule'" class="reservationBody loginPageWrapper" padding>
             
-            <ion-title padding-bottom padding-left>Schedule an Appointment</ion-title>
-            <p padding-bottom  padding-left>As soon as we receive your information, we'll be in touch to confirm your appointment</p>
+            <ion-title padding-left class="remove-padding-left padding-bottom-10">Schedule an Appointment</ion-title>
+            <p color="gray" padding-bottom  padding-left class="remove-padding-left remove-margin-bottom">As soon as we receive your information, we'll get in touch with you as soon as possible to confirm your appointment time.</p>
             
             <form #reservationForm="ngForm"> 
                 <ion-list class="registerForm">
@@ -85,31 +88,32 @@
                         <ion-input type="text" placeholder="Phone" name="phone" required [(ngModel)]="reservationCredentials.phone" required></ion-input>
                     </ion-item>
                     <ion-item>
-                        <ion-input color="gray" type="date" name="date" [(ngModel)]="reservationCredentials.date" required></ion-input>
+                        <ion-input color="gray" value="Preferred Date" type="date" name="date" [(ngModel)]="reservationCredentials.date" required></ion-input>
                     </ion-item>
                     <ion-item>
-                        <ion-input type="time" name="time" [(ngModel)]="reservationCredentials.time" required></ion-input>
+                        <ion-input type="time" value="Preferred Time" name="time" [(ngModel)]="reservationCredentials.time" required></ion-input>
                     </ion-item>
                 </ion-list>
+                <button ion-button round (click)="reservation()" type="submit" full class="margin-bottom" color="pink" [disabled]="!reservationForm.form.valid">Request an Appointment</button>
             </form>
             
-            <button ion-button round (click)="reservation()" type="submit" full class="margin-bottom" color="pink" [disabled]="!reservationForm.form.valid">Request an Appointment</button>
+            
         </div>
         <div *ngSwitchCase="'info'" class="reservationBody loginPageWrapper" padding>
-            <ion-title padding-left padding-right>Book your Reservation TODAY</ion-title>
-            <div padding>
+            <ion-title padding-left padding-right class="remove-padding-left padding-bottom-10">Book your Reservation TODAY</ion-title>
+            <div padding class="remove-padding-left remove-padding-top remove-padding-bottom">
                 <p color="darkGreen">123 Calle Chingon, San Diego, CA 91910</p>
-                <p>Time Slots Available for Booking</p> 
+                <p color="gray">Time Slots Available for Booking</p> 
             </div>
             
-            <ion-list>
+            <ion-list class="openingHours" padding-top>
                 
-                <ion-item>
-                    Sunday - Friday    6:00 AM - 11:00 PM
+                <ion-item no-padding>
+                    Sunday - Friday    <span>6:00 AM - 11:00 PM</span>
                 </ion-item>
                 
-                <ion-item>
-                    Saturday           6:00 AM - 10:30 PM
+                <ion-item no-padding class="lastWrap">
+                    Saturday           <span>6:00 AM - 10:30 PM</span>
                 </ion-item>
                 
             </ion-list>

@@ -1,45 +1,45 @@
 <ion-content>            
     <div padding text-center class="loginPageWrapper">
-        <img src="assets/medconnex-logo.png" />
+        <img src="assets/medconnex-logo.png" style="padding: 24% 23% 0 23%;"/>
         
         <form (ngSubmit)="login()" #registerForm="ngForm">
             <ion-list>
                 <ion-item class="btn-email">
-                    <ion-label floating><img src="assets/icn-input-2.png"/> Phone</ion-label>
-                    <ion-input type="text" name="phone" [(ngModel)]="registerCredentials.phone" required></ion-input>
+                    <ion-label><img src="assets/icn-input-2.png"/> </ion-label>
+                    <ion-input type="text" name="phone" [(ngModel)]="registerCredentials.phone" required placeholder="Phone" clearInput></ion-input>
                 </ion-item>
                 
                 <ion-item class="btn-password">
-                    <ion-label floating><img src="assets/icn-input-3.png"/> Password</ion-label>
-                    <ion-input type="password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+                    <ion-label><img src="assets/icn-input-3.png"/></ion-label>
+                    <ion-input type="password" name="password" [(ngModel)]="registerCredentials.password" placeholder="Password" clearInput required></ion-input>
                 </ion-item>
             </ion-list>
             
             <button ion-button round full class="margin-bottom" color="pink" [disabled]="!registerForm.form.valid">
-                Signin
+                Sign In
             </button>
         </form>
         
         <div class="loginBottomWrapper">
-            <p color="gray" padding-top (click)="forgotPassword()">Forgot Password?</p>
-            <p color="gray">Don't have an account, <span color="pink" (click)="createAccount()">Sign Up?</span></p>
-            <p padding-top>or Login with</p>
-            <ion-row class="socialMediaIcons">
-                <ion-col col-2>
+            <p color="gray" padding-top (click)="forgotPassword()" class="text-underline">Forgot Password?</p>
+            <p color="gray">Don't have an account, <span color="pink" (click)="createAccount()" class="text-underline">Sign Up?</span></p>
+            <p padding-top class="font-normal">Or Login With</p>
+            <ion-row class="socialMediaIcons margin-top-5">
+                <ion-col col-2 no-padding>
                 </ion-col>
-                <ion-col col-2>
+                <ion-col col-2 no-padding>
                     <img src="assets/icn-fb.png" class="" />
                 </ion-col>
-                <ion-col col-2>
+                <ion-col col-2 no-padding>
                     <img src="assets/icn-twitter.png" class="" />
                 </ion-col>
-                <ion-col col-2>
+                <ion-col col-2 no-padding>
                     <img src="assets/icn-google.png" class="" />
                 </ion-col>
-                <ion-col col-2>
+                <ion-col col-2 no-padding>
                     <img src="assets/icn-email.png" class="" />
                 </ion-col> 
-                <ion-col col-2>
+                <ion-col col-2 no-padding>
                 </ion-col>
             </ion-row>
         </div>
