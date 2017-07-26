@@ -73,6 +73,9 @@ input:-ms-input-placeholder { /* IE10+ */
     background: #fff;
     border-radius: 20px;
 }
+.no-bg {
+    background: none;
+}
 
 ion-content {
     background: url(../assets/layoutBG.png) no-repeat center center fixed;
@@ -175,6 +178,7 @@ ion-toolbar ion-icon.icon.icon-md.ion-logo-usd {
     overflow: hidden;
     z-index: 12;
     position: relative;
+    float: left;
 }
 .prifile-pic-img img {
     width: 100%;
@@ -224,11 +228,20 @@ ion-toolbar ion-icon.icon.icon-md.ion-logo-usd {
 .margin-right-5 {
     margin-right: 5em!important;
 }
+.margin-left-4 {
+    margin-left: 4em!important;
+}
+.margin-right-4 {
+    margin-right: 4em!important;
+}
 .margin-left-3 {
     margin-left: 3em!important;
 }
-.margin-right-3 {
-    margin-right: 3em!important;
+.padding-left-3 {
+    padding-left: 3em!important;
+}
+.padding-right-3 {
+    padding-right: 3em!important;
 }
 .profileTwoBtn div {
     font-size: 11px;
@@ -416,10 +429,10 @@ ion-buttons.borderForDriver {
 .uploadIcn {
     position: absolute;
     right: 0;
-    top: 22px;
+    top: 16px;
     background: none;
-    width: 40px!important;
-    height: 30px!important;
+    min-width: 55px !important;
+    min-height: 42px !important;
 }
 .listingWrap ion-img {
     width: 92px!important;
@@ -949,13 +962,14 @@ ion-thumbnail.confirmationProfileWrap {
     height: 23px !important;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
-    width: 35px;
-    left: 16.2em;
-    top: -17em;
+    width: 38px;
+    margin-left: 16.7em;
+    margin-top: 3.4em;
+    position: absolute;
 }
 .settingsBtn ion-icon {
     padding-right: 0;
-        font-size: 2.1em;
+        font-size: 2em;
 }
 .phoneIcn {
     height: 23px !important;
@@ -970,10 +984,12 @@ ion-thumbnail.confirmationProfileWrap {
     height: 26px!important;
 }
 .phoneIcn ion-icon {
-    font-size: 14px;
+    font-size: 13px;
 }
 .refreshBtn ion-icon.icon.icon-md.ion-md-refresh {
-    font-size: 19px;
+    font-size: 16px;
+        padding-right: 6px;
+        padding-top: 1px;
 }
 .refreshBtn {
     height: 22px!important;
@@ -982,7 +998,7 @@ ion-thumbnail.confirmationProfileWrap {
     font-size: 6px;
     height: 16px;
     border-radius: 20px;
-    padding: 0px 4px 0px 0px!important;
+    padding: 0px 9px 2px 2px !important;
     margin-left: 0;
 }
 .refreshBtn span > span{
@@ -1036,7 +1052,26 @@ ion-col.btnRightSideDoc button {
 }
 .driverPageMap {
     border-top: 3px solid white;
-    margin-top: -8em;
+    margin-top: -6.7em;
+}
+.medconnexBtnDrivers {
+   
+}
+.medconnexBtnDrivers {
+     z-index: 9999;
+    width: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 2.3em;
+    border: 4px solid #ababab;
+    font-size: 20px;
+    margin: 0px auto;
+}
+.driversBottomWrap {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 4.6em;
 }
 .buttonDrivers, .buttonListings {
     width: 49.2%;
@@ -1103,4 +1138,43 @@ a[disabled], button[disabled], [ion-button][disabled] {
 .termsAndCondBtn {
     padding-left: 3.1rem;
     padding-right: 3.1rem;
+}
+.callIcon, .chatIcn, .SettIcn {
+    min-width: 11px;
+    padding-top: 4.6px;
+}
+ion-img.SettIcn.no-bg.img-loaded {
+    margin-left: 10px;
+}
+.medconnexBtnDrivers {
+    width: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 2.3em;
+    border: 4px solid rgb(171, 171, 171);
+    font-size: 20px;
+}
+.tripAmountBtnDrivers {
+    position: absolute;
+    z-index: 999;
+    right: 0px;
+    bottom: 0.3em;
+    padding: 8px;
+    font-size: 12px;
+    height: 2em;
+}
+.bagicn {
+    min-width: 16px;
+    padding: 3px 0px 0px 1px;
+    margin-right: 5px;
+}
+.tripAmountBtnDrivers {
+    position: absolute;
+    z-index: 999;
+    right: 12px;
+    bottom: 1em;
+    padding: 8px;
+    font-size: 12px;
+    height: 1.9em;
+    width: 78px;
 }
